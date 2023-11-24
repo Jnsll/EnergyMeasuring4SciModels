@@ -1,0 +1,1 @@
+../EnergiBridge/target/release/energibridge --summary --output ../output/energy_metrics.csv -c ../output/output_simulation.txt python ../models/machine_shop.py 
