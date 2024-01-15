@@ -1,0 +1,13 @@
+FROM mathworks/matlab:r2021b
+
+WORKDIR /app
+
+COPY ./app /app
+
+USER root
+
+
+ENTRYPOINT 
+
+
+VOLUME matlab_projects
