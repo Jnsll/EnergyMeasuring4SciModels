@@ -1,4 +1,4 @@
-FROM mathworks/matlab:r2021b
+FROM mathworks/matlab:r2023b
 
 
 #COPY ./src /energyscipipelines
