@@ -1,0 +1,1 @@
+docker run -it --rm -e MLM_LICENSE_FILE=/matlab.dat --shm-size=512M mathworks/matlab:r2023b
