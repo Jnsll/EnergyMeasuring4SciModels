@@ -2,7 +2,6 @@ import os.path
 import sys
 import time
 
-import pandas
 import pandas as pd
 import requests
 
@@ -43,12 +42,12 @@ day = today()
 
 for language in languages:
     print("Search for language: " + language)
-    list_path = f"./projects_{language}_before_2015tt.csv"
+    list_path = f"./projects_{language}.csv"
 
     if not os.path.isfile(list_path):
         project_list = pd.DataFrame(columns=["name", "url"])
     else:
-        project_list = pandas.read_csv(list_path)
+        project_list = pd.read_csv(list_path)
 
     while project_list.shape[0] < maximum_projects:
 
