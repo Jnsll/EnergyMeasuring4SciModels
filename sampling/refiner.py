@@ -9,6 +9,21 @@ from datetime import datetime
 
 # call this function with parameters <YOUR GITHUB LOGIN NAME> <YOUR GITHUB TOKEN>
 
+
+def remaining_rate():
+    response = requests.get("https://api.github.com/rate_limit", auth=(sys.argv[1], sys.argv[2])).json()
+    return response["rate"]["remaining"], response["rate"]["reset"]
+
+def check_remaining():
+    remaining, reset = remaining_rate()
+    if remaining < 2:
+        current_timestamp = int(time.time())
+        time_to_wait = reset - current_timestamp
+        if time_to_wait > 0:
+            print(f"Waiting for {time_to_wait} seconds.")
+            time.sleep(time_to_wait)
+
+
 def sleeep(x):
     print("Search failed: ", x.json()["message"], " Waiting 30s ...")
     time.sleep(30)
@@ -46,7 +61,10 @@ def analyze_commits(commits):
     return len(commits), first_commit.isoformat(), last_commit.isoformat(), (
             last_commit - first_commit).total_seconds() / 86400, len(authors)
 
+def too_many_tries(tries):
+    return tries > 4
 
+remaining_rate()
 list_path = "projects_Matlab.csv"
 list_path_refined = "projects_Matlab_refined.csv"
 
@@ -58,7 +76,6 @@ if not os.path.isfile(list_path_refined):
     project_list["last commit"] = ".."
     project_list["project life time (s)"] = -1
     project_list["#contributors"] = -1
-    project_list["stars"] = -1
     project_list["online"] = True
     project_list["included"] = True
 
@@ -73,17 +90,25 @@ for i in range(len(project_list)):
     while True:
         tries += 1
         commits = requests.get(API_commit_URL(project_list.iloc[i]["name"]), auth=(sys.argv[1], sys.argv[2]))
-        repo = requests.get(API_repo_URL(project_list.iloc[i]["name"]), auth=(sys.argv[1], sys.argv[2]))
-        if commits.ok and repo.ok or tries > 10:
+        if commits.ok or too_many_tries(tries):
             break
+        else:
+            check_remaining()
         sleeep(commits)
-    if tries > 10:
+    if too_many_tries(tries):
         project_list.loc[i, ["online", "included"]] = (False, False)
         continue
-    commits, repo = commits.json(), repo.json()
+    commits = commits.json()
     project_list.loc[
         i, ["#commits", "first commit", "last commit", "project life time (s)", "#contributors"]] = analyze_commits(
         commits)
-    project_list.loc[i, "stars"] = repo["stargazers_count"]
+
     if i % 100 == 0:
         project_list.to_csv(list_path_refined, index=False)
+
+
+    # project_list[".m lines"] = -1
+    # project_list["stars"] = -1
+
+    #repo = requests.get(API_repo_URL(project_list.iloc[i]["name"]), auth=(sys.argv[1], sys.argv[2]))
+    # project_list.loc[i, "stars"] = repo["stargazers_count"]
