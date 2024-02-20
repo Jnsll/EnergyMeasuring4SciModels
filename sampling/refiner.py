@@ -25,8 +25,8 @@ def check_remaining():
 
 
 def sleeep(x):
-    print("Search failed: ", x.json()["message"], " Waiting 30s ...")
-    time.sleep(30)
+    print("Search failed: ", x.json()["message"], " Waiting 3s ...")
+    time.sleep(3)
 
 
 def API_commit_URL(name):
@@ -61,9 +61,6 @@ def analyze_commits(commits):
     return len(commits), first_commit.isoformat(), last_commit.isoformat(), (
             last_commit - first_commit).total_seconds() / 86400, len(authors)
 
-def too_many_tries(tries):
-    return tries > 4
-
 remaining_rate()
 list_path = "projects_Matlab.csv"
 list_path_refined = "projects_Matlab_refined.csv"
@@ -80,22 +77,23 @@ if not os.path.isfile(list_path_refined):
     project_list["included"] = True
 
 else:
+    print("Resuming refining ...")
     project_list = pd.read_csv(list_path_refined)
 
 for i in range(len(project_list)):
-    if project_list.loc[i, "#commits"] != -1 or project_list.loc[i, "included"] is False:
+    if not np.isnan(project_list.loc[i, "#commits"]) or project_list.loc[i, "included"] is False:
         continue
     print(i, project_list.loc[i, "name"])
     tries = 0
     while True:
         tries += 1
         commits = requests.get(API_commit_URL(project_list.iloc[i]["name"]), auth=(sys.argv[1], sys.argv[2]))
-        if commits.ok or too_many_tries(tries):
+        if commits.ok or tries > 5:
             break
         else:
             check_remaining()
         sleeep(commits)
-    if too_many_tries(tries):
+    if tries > 5:
         project_list.loc[i, ["online", "included"]] = (False, False)
         continue
     commits = commits.json()
@@ -105,7 +103,10 @@ for i in range(len(project_list)):
 
     if i % 100 == 0:
         project_list.to_csv(list_path_refined, index=False)
-
+    if i % 500 == 0:
+        remaining, reset = remaining_rate()
+        print(f"{remaining} actions Remaining, currently")
+project_list.to_csv(list_path_refined, index=False)
 
     # project_list[".m lines"] = -1
     # project_list["stars"] = -1

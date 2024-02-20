@@ -15,15 +15,15 @@ def date_format(dt):
 
 
 def date_prior(dt):
-    return dt - timedelta(days=1)
+    return dt - timedelta(days=3)
 
 
 def today():
-    return datetime.now(timezone.utc).date() - timedelta(days=1)
+    return datetime(2024, 2, 14).date()           #datetime.now(timezone.utc).date()
 
 
 def construct_query(current_page, day):
-    return f'https://api.github.com/search/repositories?q=language:{language}+created:{date_format(day)}+mirror:false+template:false&per_page={per_page}&page={current_page}'
+    return f'https://api.github.com/search/repositories?q=language:{language}+created:{date_format(date_prior(day))}..{date_format(day)}+mirror:false+template:false&per_page={per_page}&page={current_page}'
 
 
 def sleeep(x):
@@ -45,7 +45,7 @@ for language in languages:
     list_path = f"./projects_{language}.csv"
 
     if not os.path.isfile(list_path):
-        project_list = pd.DataFrame(columns=["name", "url"])
+        project_list = pd.DataFrame(columns=["name", "URL", "stars"])
     else:
         project_list = pd.read_csv(list_path)
 
@@ -64,9 +64,7 @@ for language in languages:
             print(f"Search found {len(projects)} repositories for {date_format(day)}")
 
             for i in range(0, len(projects)):
-                new_project = [projects[i]["full_name"], projects[i]["html_url"]]
-                #if not (project_list == new_project).all(1).any():
-                project_list.loc[project_list.shape[0]] = [projects[i]["full_name"], projects[i]["html_url"]]
+                project_list.loc[project_list.shape[0]] = [projects[i]["full_name"], projects[i]["html_url"], projects[i]["stargazers_count"]]
 
             print(f"New project count: {project_list.shape[0]}\n")
             if x.json()["total_count"] > 1000:
@@ -74,7 +72,9 @@ for language in languages:
             if x.json()["total_count"] < current_page * per_page:
                 break
 
-        day = date_prior(day)
+        day = date_prior(day) - timedelta(days=1)
         project_list.to_csv(list_path, index=False)
+        if day < datetime(2008, 1, 1).date():
+            break
 
     project_list.sort_values(by=["name"]).to_csv(list_path, index=False)
