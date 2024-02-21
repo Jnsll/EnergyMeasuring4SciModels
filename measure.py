@@ -1,13 +1,36 @@
 import subprocess
 import sys
+import random
 #import pandas as pd
 
 
-#scripts_to_run_df = pd.read_csv('sci_script.csv')
-#for ind in scripts_to_run_df.index:
-#    sci_script = scripts_to_run_df['Paths'][ind]
-#sci_script= "/scripts/candidate_script.m"
-sci_script = "/scripts/deep-photo-styletransfer/gen_laplacian/gen_laplacian.m"
-script_command = ["/home/tdurieux/git/EnergiBridge/target/release/energibridge" ,"--summary" ,"--output", "./output/energy_metrics.csv" ,"-c" ,"./output/output_simulation.txt" ,"docker" ,"run", "--rm", "-v", "./scripts:/scripts" ,"-v" ,"./matlab.dat:/licenses/license.lic", "-e", "MLM_LICENSE_FILE=/licenses/license.lic", "mathworks/matlab:r2021b" ,"-batch", "run('" + str(sci_script) + "');exit();"]
+#### TO DO
+## Store the list and order of experiments that are run (storing the shuffled list)
+## Include timestamp + type of experiment (matlab project + repetition number) in the name of the energy measurement output file
+## Do we want to store simulation outputs? (would save storage)
+## Include DRAM metric in EnergiBridge
 
-result = subprocess.run(script_command)
+
+### Experimental Parameters
+repetition_number = 30
+random.seed(42)
+
+#sci_script = "/scripts/deep-photo-styletransfer/gen_laplacian/gen_laplacian.m"
+
+### Extracting scripts of Matlab projects to run
+with open("test.csv", "r") as file:
+    lines = file.read().splitlines()
+
+### Exerimentation set up
+## Repetition
+scripts_executions = lines * repetition_number
+## Shuffle of Matlab project to run
+random.shuffle(scripts_executions)
+print(scripts_executions)
+
+### Running experiment executions
+count = 0
+for execution in scripts_executions:
+    count += 1
+    script_command = ["/home/tdurieux/git/EnergiBridge/target/release/energibridge" ,"--summary" ,"--output", "./output/energy_metrics_" + str(count) + ".csv" ,"-c" ,"./output/output_simulation_"+ str(count) + ".txt" ,"docker" ,"run", "--rm", "-v", "./scripts:/scripts" ,"-v" ,"./matlab.dat:/licenses/license.lic", "-e", "MLM_LICENSE_FILE=/licenses/license.lic", "matlab-r2021b-toolbox" ,"-batch", "run('" + str(execution) + "');exit();"]
+    result = subprocess.run(script_command)
