@@ -50,7 +50,7 @@ RUN adduser --shell /bin/bash --disabled-password --gecos "" matlab \
     && chmod 0440 /etc/sudoers.d/matlab
 
 # Set user and work directory.
-USER matlab
+USER root
 WORKDIR /home/matlab
 
 # Run mpm to install MATLAB in the target location and delete the mpm installation afterwards.
