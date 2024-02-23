@@ -55,8 +55,8 @@ def clone(repo_name):
 def clone_repo(repo_info):
     name = repo_info["name"]
     try:
-        #clone(name)
-        #repo_info["#commits"] = count_commits(name)
+        clone(name)
+        repo_info["#commits"] = count_commits(name)
         repo_info["#pullrequests"] = get_pull_requests(name)
     except Exception as e:
         print(f"Something went wrong in cloning the repository {name}")
