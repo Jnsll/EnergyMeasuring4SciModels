@@ -71,7 +71,7 @@ if not os.path.isfile(list_path_refined):
     project_list["#commits"] = -1
     project_list["first commit"] = ".."
     project_list["last commit"] = ".."
-    project_list["project life time (s)"] = -1
+    project_list["project life time (d)"] = -1
     project_list["#contributors"] = -1
     project_list["online"] = True
     project_list["included"] = True
@@ -98,7 +98,7 @@ for i in range(len(project_list)):
         continue
     commits = commits.json()
     project_list.loc[
-        i, ["#commits", "first commit", "last commit", "project life time (s)", "#contributors"]] = analyze_commits(
+        i, ["#commits", "first commit", "last commit", "project life time (d)", "#contributors"]] = analyze_commits(
         commits)
 
     if i % 100 == 0:

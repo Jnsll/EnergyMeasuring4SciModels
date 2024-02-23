@@ -25,12 +25,12 @@ df["first_commit_in_seconds"] = df["first commit"].apply(lambda x: datetime.date
 df["last_commit_in_seconds"] = df["last commit"].apply(lambda x: datetime.datetime.strptime(x, '%Y-%m-%dT%H:%M:%S').timestamp())
 def filter_quantiles(df, columnreason):
     column, reason = columnreason
-    quantile = 0.1
-    df = df[df[column] > df[column].quantile(quantile)]
+    quantile = 0.85
+    df = df[df[column] >= df[column].quantile(quantile)]
     print(f"After filtering projects by >>{column.upper()}<< ({reason}), we still have: {len(df)}")
     return df
 
-filters = [("#contributors", "fewer contributors => toy project"), ("stars", "fewer stars => unimportant project"), ("#commits", "fewer commits => toy project"), ("project life time (s)", "short duration => toy project"), ("first_commit_in_seconds", "old project => irrelevant project setup for today"), ("last_commit_in_seconds", "last commit old => project long dead")]
+filters = [("#contributors", "fewer contributors => toy project"), ("stars", "fewer stars => unimportant project"), ("#commits", "fewer commits => toy project"), ("project life time (d)", "short duration => toy project"), ("first_commit_in_seconds", "old project => irrelevant project setup for today"), ("last_commit_in_seconds", "last commit old => project long dead")]
 for f in filters:
     df = filter_quantiles(df, f)
 
