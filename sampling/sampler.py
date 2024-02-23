@@ -1,3 +1,6 @@
+#finds all MATLAB projects in GitHub which can then later be sampled from
+#creates columns: name, URL, stars
+
 import os.path
 import sys
 import time

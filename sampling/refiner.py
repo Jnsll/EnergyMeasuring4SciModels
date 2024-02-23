@@ -1,3 +1,6 @@
+#refines first sample which only consists of names, URLs, stars of MATLAB projects
+#new columns: #commits, first commit, last commit, project life time (d), #contributors, online, included
+
 import numpy as np
 import pandas as pd
 import os

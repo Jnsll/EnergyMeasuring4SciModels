@@ -1,3 +1,6 @@
+#filters list of projects, so that the worst get kicked out
+#or the number gets down to a manageable number
+
 import pandas as pd
 import datetime
 

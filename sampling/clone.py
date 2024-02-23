@@ -1,3 +1,7 @@
+# clones repos
+#corrects number of commits of repos, if > 30
+#counts number of pull requests
+
 import subprocess
 import requests
 import pandas as pd
