@@ -12,8 +12,9 @@ import random
 
 
 ### Experimental Parameters
-repetition_number = 30
 random.seed(42)
+repetition_number = 30
+BASELINE = False
 
 #sci_script = "/scripts/deep-photo-styletransfer/gen_laplacian/gen_laplacian.m"
 
@@ -28,9 +29,34 @@ scripts_executions = lines * repetition_number
 random.shuffle(scripts_executions)
 print(scripts_executions)
 
+if BASELINE is True:
+    matlab_command = "exit();"
+else:
+    matlab_command = "run('" + str(execution) + "');exit();"
 ### Running experiment executions
+
 count = 0
-for execution in scripts_executions:
-    count += 1
-    script_command = ["/home/tdurieux/git/EnergiBridge/target/release/energibridge" ,"--summary" ,"--output", "./output/energy_metrics_" + str(count) + ".csv" ,"-c" ,"./output/output_simulation_"+ str(count) + ".txt" ,"docker" ,"run", "--rm", "-v", "./scripts:/scripts" ,"-v" ,"./matlab.dat:/licenses/license.lic", "-e", "MLM_LICENSE_FILE=/licenses/license.lic", "matlab-r2021b-toolbox" ,"-batch", "run('" + str(execution) + "');exit();"]
-    result = subprocess.run(script_command)
+if BASELINE is False:
+    for execution in scripts_executions:
+        count += 1
+        script_command = ["/home/tdurieux/git/EnergiBridge/target/release/energibridge" ,"--summary" ,"--output", "./output/energy_metrics_" + str(count) + ".csv" ,"-c" ,"./output/output_simulation_"+ str(count) + ".txt" ,"docker" ,"run", "--rm", "-v", "./scripts:/scripts" ,"-v" ,"./matlab.dat:/licenses/license.lic", "-e", "MLM_LICENSE_FILE=/licenses/license.lic", "matlab-r2021b-toolbox" ,"-batch", str(matlab_command)]
+        result = subprocess.run(script_command)
+else:
+    for count in range(1,repetition_number+1):
+        script_command = ["/home/tdurieux/git/EnergiBridge/target/release/energibridge" ,"--summary" ,"--output", "./output/energy_metrics_" + str(count) + ".csv" ,"-c" ,"./output/output_simulation_"+ str(count) + ".txt" ,"docker" ,"run", "--rm", "-v", "./scripts:/scripts" ,"-v" ,"./matlab.dat:/licenses/license.lic", "-e", "MLM_LICENSE_FILE=/licenses/license.lic", "matlab-r2021b-toolbox" ,"-batch", str(matlab_command)]
+        result = subprocess.run(script_command)
+
+
+
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+
+#parser.add_argument('-rep', '--repetitions')      # option that takes a value
+    parser.add_argument('-base', '--baseline',
+                    action='store_true')
+    args = parser.parse_args()
+
+    if args.baseline is True:
+        BASELINE = True
