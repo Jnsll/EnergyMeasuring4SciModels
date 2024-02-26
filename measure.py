@@ -14,7 +14,7 @@ import random
 ### Experimental Parameters
 random.seed(42)
 repetition_number = 30
-BASELINE = False
+#BASELINE = False
 
 #sci_script = "/scripts/deep-photo-styletransfer/gen_laplacian/gen_laplacian.m"
 
@@ -53,6 +53,4 @@ if __name__ == "__main__":
     parser.add_argument('-base', '--baseline',
                     action='store_true')
     args = parser.parse_args()
-
-    if args.baseline is True:
-        BASELINE = True
+    BASELINE = args.baseline
