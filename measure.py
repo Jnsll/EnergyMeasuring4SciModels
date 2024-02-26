@@ -22,7 +22,7 @@ def run_experiments_matlab(repetition_number, baseline):
     print("Is it a baseline exp:", baseline)
     if baseline:
         for count in range(1,repetition_number+1):
-            script_command = ["/home/tdurieux/git/EnergiBridge/target/release/energibridge" ,"--summary" ,"--output", "./output/energy_metrics_" + str(count) + ".csv" ,"-c" ,"./output/output_simulation_"+ str(count) + ".txt" ,"docker" ,"run", "--rm", "-v", "./scripts:/scripts" ,"-v" ,"./matlab.dat:/licenses/license.lic", "-e", "MLM_LICENSE_FILE=/licenses/license.lic", "matlab-r2021b-toolbox" ,"-batch", "exit();"]
+            script_command = ["/home/tdurieux/git/EnergiBridge/target/release/energibridge" ,"--summary" ,"--output", "./output/energy_metrics_baseline" + str(count) + ".csv" ,"-c" ,"./output/output_simulation_baseline"+ str(count) + ".txt" ,"docker" ,"run", "--rm", "-v", "./scripts:/scripts" ,"-v" ,"./matlab.dat:/licenses/license.lic", "-e", "MLM_LICENSE_FILE=/licenses/license.lic", "matlab-r2021b-toolbox" ,"-batch", "exit();"]
             result = subprocess.run(script_command)
     else:
         ### Extracting scripts of Matlab projects to run
