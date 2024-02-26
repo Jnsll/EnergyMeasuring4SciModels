@@ -2,7 +2,7 @@ import subprocess
 import sys
 import random
 #import pandas as pd
-
+import argparse
 
 #### TO DO
 ## Store the list and order of experiments that are run (storing the shuffled list)
@@ -14,7 +14,7 @@ import random
 ### Experimental Parameters
 random.seed(42)
 repetition_number = 30
-#BASELINE = False
+BASELINE = args.baseline
 
 #sci_script = "/scripts/deep-photo-styletransfer/gen_laplacian/gen_laplacian.m"
 
@@ -30,7 +30,7 @@ random.shuffle(scripts_executions)
 print(scripts_executions)
 
 ### Running experiment executions
-
+print(BASELINE)
 count = 0
 if BASELINE is False:
     for execution in scripts_executions:
@@ -46,11 +46,10 @@ else:
 
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
+#if __name__ == "__main__":
+parser = argparse.ArgumentParser()
 
 #parser.add_argument('-rep', '--repetitions')      # option that takes a value
-    parser.add_argument('-base', '--baseline',
+parser.add_argument('-base', '--baseline',
                     action='store_true')
-    args = parser.parse_args()
-    BASELINE = args.baseline
+args = parser.parse_args()
