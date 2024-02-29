@@ -33,7 +33,7 @@ def run_experiments_matlab(repetition_number):
     ## Repetition
     scripts_executions = lines * repetition_number
     print(scripts_executions)
-    scripts_executions.append([""] * repetition_number)
+    scripts_executions += [""] * repetition_number
     print(scripts_executions)
         ## Shuffle of Matlab project to run
     random.shuffle(scripts_executions)
