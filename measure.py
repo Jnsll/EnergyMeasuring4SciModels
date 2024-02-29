@@ -15,6 +15,7 @@ import time
 ### Experimental Parameters
 random.seed(42)
 repetition_number = 30
+sleep_time = 5
 
 #sci_script = "/scripts/deep-photo-styletransfer/gen_laplacian/gen_laplacian.m"
 
@@ -59,7 +60,7 @@ def run_experiments_matlab(repetition_number):
         with open("execution_elapsed_time_" + str(count) + ".csv", "w") as file_time:
             file_time.write(elapsed_time_execution)
         print("Elapsed Time (s):", elapsed_time_execution)
-        time.sleep(5)
+        time.sleep(sleep_time)
     
         
 
