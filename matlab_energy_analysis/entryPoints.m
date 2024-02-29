@@ -1,5 +1,11 @@
-function entryPoints()
-    basePath = "../sampling/repos_projects_filtered_ge85p";
+function entryPoints(basePath)
+    if nargin < 1
+        basePath = "../sampling/repos_projects_filtered_ge85p";
+    end
+    if ~exist(basePath, 'dir')
+        fprintf("The given directory %s does not exist on your file system. Stopping script.", basePath)
+        return
+    end
     projectsPaths = dir(basePath);
     projectsPaths = projectsPaths([projectsPaths.isdir]);
     projectsPaths = projectsPaths(~ismember({projectsPaths.name}, {'.', '..'}));
