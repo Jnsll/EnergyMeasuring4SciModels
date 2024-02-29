@@ -39,7 +39,10 @@ def run_experiments_matlab(repetition_number):
         ## Shuffle of Matlab project to run
     random.shuffle(scripts_executions)
     print(scripts_executions)
-    print("\n".join(scripts_executions))
+    format_file_execution_order = "\n".join(scripts_executions)
+    # write out the CSV
+    with open("executions_order.csv", "w") as file:
+        file.write(format_file_execution_order)
 
         ### Running experiment executions
     count = 0
