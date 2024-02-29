@@ -39,6 +39,7 @@ def run_experiments_matlab(repetition_number):
         ## Shuffle of Matlab project to run
     random.shuffle(scripts_executions)
     print(scripts_executions)
+    print("\n".join(scripts_executions))
 
         ### Running experiment executions
     count = 0
@@ -49,7 +50,7 @@ def run_experiments_matlab(repetition_number):
         result = subprocess.run(script_command)
         end = time.time()
         elapsed_time_execution = (end - start)
-        print("Elapsed Tine:", elapsed_time_execution)
+        print("Elapsed Time:", elapsed_time_execution)
     
         
 
