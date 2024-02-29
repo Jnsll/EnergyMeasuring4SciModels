@@ -31,20 +31,23 @@ def run_experiments_matlab(repetition_number):
         lines = file.read().splitlines()
 
     ### Exerimentation set up
-    ## Repetition
+    ## Repetitions
+    # Matlab projects
     scripts_executions = lines * repetition_number
-    #print(scripts_executions)
+    # Baseline executions
     scripts_executions += [""] * repetition_number
-    #print(scripts_executions)
-        ## Shuffle of Matlab project to run
+
+    ## Shuffle of Matlab project to run
     random.shuffle(scripts_executions)
     print(scripts_executions)
-    format_file_execution_order = "\n".join(scripts_executions)
+
+    ## Storing the execution order into a csv file
+    format_file_execution_order = "\n".join(scripts_executions) # 1 line = 1 execution
     # write out the CSV
     with open("executions_order.csv", "w") as file:
         file.write(format_file_execution_order)
 
-        ### Running experiment executions
+    ### Running experiment executions
     count = 0
     for execution in scripts_executions:
         count += 1
@@ -53,7 +56,10 @@ def run_experiments_matlab(repetition_number):
         result = subprocess.run(script_command)
         end = time.time()
         elapsed_time_execution = (end - start)
-        print("Elapsed Time:", elapsed_time_execution)
+        with open("execution_elapsed_time_" + str(count) + ".csv", "w") as file_time:
+            file_time.write(elapsed_time_execution)
+        print("Elapsed Time (s):", elapsed_time_execution)
+        time.sleep(5)
     
         
 
