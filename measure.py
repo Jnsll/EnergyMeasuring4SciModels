@@ -3,6 +3,7 @@ import sys
 import random
 #import pandas as pd
 import argparse
+import time
 
 #### TO DO
 ## Store the list and order of experiments that are run (storing the shuffled list)
@@ -32,9 +33,9 @@ def run_experiments_matlab(repetition_number):
     ### Exerimentation set up
     ## Repetition
     scripts_executions = lines * repetition_number
-    print(scripts_executions)
+    #print(scripts_executions)
     scripts_executions += [""] * repetition_number
-    print(scripts_executions)
+    #print(scripts_executions)
         ## Shuffle of Matlab project to run
     random.shuffle(scripts_executions)
     print(scripts_executions)
@@ -44,7 +45,12 @@ def run_experiments_matlab(repetition_number):
     for execution in scripts_executions:
         count += 1
         script_command = ["/home/tdurieux/git/EnergiBridge/target/release/energibridge" ,"--summary" ,"--output", "./output/energy_metrics_" + str(count) + ".csv" ,"-c" ,"./output/output_simulation_"+ str(count) + ".txt" ,"docker" ,"run", "--rm", "-v", "./scripts:/scripts" ,"-v" ,"./matlab.dat:/licenses/license.lic", "-e", "MLM_LICENSE_FILE=/licenses/license.lic", "matlab-r2021b-toolbox" ,"-batch", "run('" + str(execution) + "');exit();"]
+        start = time.time()
         result = subprocess.run(script_command)
+        end = time.time()
+        elapsed_time_execution = (end - start)
+        print("Elapsed Tine:", elapsed_time_execution)
+    
         
 
 
