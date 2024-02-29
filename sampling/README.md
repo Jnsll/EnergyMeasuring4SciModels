@@ -10,8 +10,3 @@ In my case, I run in this order:
 - `python clone.py lanpirot ghp_1dZW...z85mU`
 
 To not get overwhelmed with too many projects, maybe interrupt `sampler.py` after a while.
-
-## Entry Points
-
-Execute `entryPoints.m`. All possible entrypoint-.m-files will get listed in each project 
-in a `entrypoints.csv` file in the project's root directory.
