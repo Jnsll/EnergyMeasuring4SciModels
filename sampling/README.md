@@ -1,5 +1,6 @@
 # Usage
 
+## Sampling
 
 Call most python programs, here, like this `python <script> <YOUR GITHUB LOGIN NAME> <YOUR GITHUB TOKEN>`.
 In my case, I run in this order:
