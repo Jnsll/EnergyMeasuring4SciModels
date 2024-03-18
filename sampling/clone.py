@@ -13,7 +13,7 @@ import sys
 
 
 
-repo_info_csv = "projects_filtered_ge85p.csv"
+repo_info_csv = "projects_filtered_top100stars.csv"
 repo_folder = "repos_" + repo_info_csv[:-4]
 
 
