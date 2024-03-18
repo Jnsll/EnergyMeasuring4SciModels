@@ -102,13 +102,13 @@ end
 function zeroParameters = zeroParameters(fileContentNoComments)
     zeroParameters = false;
     
-    pattern = '^\s*function\s+(?:[\[\w\s,]+\]\s*=\s*)?\w+\(([^)]*)\)';
+    pattern = '^\s*function\s+(?:[\[\w\s,\]]+\s*=\s*)?(\w+)\s*\(([^)]*)\)';
     [tokens, match] = regexp(fileContentNoComments, pattern, 'tokens', 'match', 'once');
     
     if ~isempty(match)
         % If a match is found, extract the input argument list
-        inputArgs = tokens{1};
-        zeroParameters = isempty(inputArgs);
+        inputArgs = tokens{2};
+        zeroParameters = isempty(strtrim(inputArgs));
     end
 end
 
