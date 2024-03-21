@@ -6,9 +6,15 @@ import argparse
 import time
 
 #### TO DO
+<<<<<<< HEAD
 ## Store the list and order of experiments that are run (storing the shuffled list): DONE
 ## Include timestamp + type of experiment (matlab project + repetition number) in the name of the energy measurement output file
 ## Do we want to store simulation outputs? (would save storage): DONE
+=======
+## Store the list and order of experiments that are run (storing the shuffled list) DONE
+## Include timestamp + type of experiment (matlab project + repetition number) in the name of the energy measurement output file
+## Do we want to store simulation outputs? (would save storage) YES
+>>>>>>> 2bf021c7e7084f42c2fe8bb593e1174129d55ff3
 ## Include DRAM metric in EnergiBridge
 ## Use the Matlab Profiler => history of files being executed
 ## Code analyser MLint: suggestions in Matlab (command line): can we save energy with accepting the suggestions? 
@@ -16,9 +22,22 @@ import time
 ### Experimental Parameters
 random.seed(42)
 repetition_number = 30
-sleep_time = 5
+SLEEP_TIME = 5
 
 #sci_script = "/scripts/deep-photo-styletransfer/gen_laplacian/gen_laplacian.m"
+
+
+def fibonacci(n):
+    if n<= 0:
+        print("Incorrect input")
+    # First Fibonacci number is 0
+    elif n == 1:
+        return 0
+    # Second Fibonacci number is 1
+    elif n == 2:
+        return 1
+    else:
+        return fibonacci(n-1)+fibonacci(n-2)
 
 
 def run_experiments_matlab(repetition_number):
@@ -49,6 +68,15 @@ def run_experiments_matlab(repetition_number):
     with open("executions_order.csv", "w") as file:
         file.write(format_file_execution_order)
 
+
+    ### Warm Up
+    warm_up_start = time.time()
+    fibonacci(35)
+    warm_up_end = time.time()
+    warm_up_duration = (warm_up_end - warm_up_start)
+    print("Duration of Warm up:", warm_up_duration)
+        
+
     ### Running experiment executions
     count = 0
     for execution in scripts_executions:
@@ -61,7 +89,7 @@ def run_experiments_matlab(repetition_number):
         with open("execution_elapsed_time_" + str(count) + ".csv", "w") as file_time:
             file_time.write(str(elapsed_time_execution))
         print("Elapsed Time (s):", elapsed_time_execution)
-        time.sleep(sleep_time)
+        time.sleep(SLEEP_TIME)
     
         
 
