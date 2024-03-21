@@ -33,7 +33,7 @@ def fibonacci(n):
         return fibonacci(n-1)+fibonacci(n-2)
 
 
-def run_experiments_matlab(repetition_number):
+def run_experiments_matlab(input_file, repetition_number):
     #print("Is it a baseline exp:", baseline)
     #if baseline:
     #    for count in range(1,repetition_number+1):
@@ -41,7 +41,7 @@ def run_experiments_matlab(repetition_number):
     #        result = subprocess.run(script_command)
     #else:
     ### Extracting scripts of Matlab projects to run
-    with open("test.csv", "r") as file:
+    with open(input_file, "r") as file:
         lines = file.read().splitlines()
 
     ### Exerimentation set up
@@ -92,8 +92,8 @@ def run_experiments_matlab(repetition_number):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    #parser.add_argument('-rep', '--repetitions')   
+    parser.add_argument('-f', '--file')   
     #parser.add_argument('-base', '--baseline', action='store_true')
     args = parser.parse_args()
-    run_experiments_matlab(repetition_number)
+    run_experiments_matlab(args.file, repetition_number)
 
