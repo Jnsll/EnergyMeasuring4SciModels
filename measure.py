@@ -92,7 +92,6 @@ def run_experiments_matlab(repetition_number):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-
     #parser.add_argument('-rep', '--repetitions')   
     #parser.add_argument('-base', '--baseline', action='store_true')
     args = parser.parse_args()
