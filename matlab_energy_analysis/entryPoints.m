@@ -1,6 +1,6 @@
 function entryPoints(basePath)
     if nargin < 1
-        basePath = "../sampling/repos_projects_filtered_ge85p";
+        basePath = "../sampling/repos_projects_filtered_top100stars";
     end
     if ~exist(basePath, 'dir')
         fprintf("The given directory %s does not exist on your file system. Stopping script.", basePath)
