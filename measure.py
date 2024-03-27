@@ -58,7 +58,7 @@ def run_experiments_matlab(input_file, repetition_number):
     ## Storing the execution order into a csv file
     format_file_execution_order = "\n".join(scripts_executions) # 1 line = 1 execution
     # write out the CSV
-    with open("executions_order.csv", "w") as file:
+    with open("output/executions_order.csv", "w") as file:
         file.write(format_file_execution_order)
 
 
@@ -79,7 +79,7 @@ def run_experiments_matlab(input_file, repetition_number):
         result = subprocess.run(script_command)
         end = time.time()
         elapsed_time_execution = (end - start)
-        with open("execution_elapsed_time_" + str(count) + ".csv", "w") as file_time:
+        with open("output/execution_elapsed_time_" + str(count) + ".csv", "w") as file_time:
             file_time.write(elapsed_time_execution)
         print("Elapsed Time (s):", elapsed_time_execution)
         time.sleep(SLEEP_TIME)
