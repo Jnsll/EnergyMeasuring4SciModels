@@ -81,6 +81,7 @@ def run_experiments_matlab(input_file, repetition_number):
         elapsed_time_execution = (end - start)
         with open("output/execution_elapsed_time_" + str(count) + ".csv", "w") as file_time:
             file_time.write(elapsed_time_execution)
+        print("Execution:", execution)
         print("Elapsed Time (s):", elapsed_time_execution)
         time.sleep(SLEEP_TIME)
     
