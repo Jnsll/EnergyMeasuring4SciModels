@@ -6,11 +6,12 @@ import argparse
 import time
 
 #### TO DO
-## Store the list and order of experiments that are run (storing the shuffled list) DONE
+## Store the list and order of experiments that are run (storing the shuffled list): DONE
 ## Include timestamp + type of experiment (matlab project + repetition number) in the name of the energy measurement output file
-## Do we want to store simulation outputs? (would save storage) YES
+## Do we want to store simulation outputs? (would save storage): DONE
 ## Include DRAM metric in EnergiBridge
-
+## Use the Matlab Profiler => history of files being executed
+## Code analyser MLint: suggestions in Matlab (command line): can we save energy with accepting the suggestions? 
 
 ### Experimental Parameters
 random.seed(42)
@@ -68,7 +69,7 @@ def run_experiments_matlab(input_file, repetition_number):
     warm_up_end = time.time()
     warm_up_duration = (warm_up_end - warm_up_start)
     print("Duration of Warm up:", warm_up_duration)
-        
+
 
     ### Running experiment executions
     count = 0
@@ -80,8 +81,7 @@ def run_experiments_matlab(input_file, repetition_number):
         end = time.time()
         elapsed_time_execution = (end - start)
         with open("output/execution_elapsed_time_" + str(count) + ".csv", "w") as file_time:
-            file_time.write(elapsed_time_execution)
-        print("Execution:", execution)
+            file_time.write(str(elapsed_time_execution))
         print("Elapsed Time (s):", elapsed_time_execution)
         time.sleep(SLEEP_TIME)
     
