@@ -6,15 +6,9 @@ import argparse
 import time
 
 #### TO DO
-<<<<<<< HEAD
 ## Store the list and order of experiments that are run (storing the shuffled list): DONE
 ## Include timestamp + type of experiment (matlab project + repetition number) in the name of the energy measurement output file
 ## Do we want to store simulation outputs? (would save storage): DONE
-=======
-## Store the list and order of experiments that are run (storing the shuffled list) DONE
-## Include timestamp + type of experiment (matlab project + repetition number) in the name of the energy measurement output file
-## Do we want to store simulation outputs? (would save storage) YES
->>>>>>> 2bf021c7e7084f42c2fe8bb593e1174129d55ff3
 ## Include DRAM metric in EnergiBridge
 ## Use the Matlab Profiler => history of files being executed
 ## Code analyser MLint: suggestions in Matlab (command line): can we save energy with accepting the suggestions? 
@@ -65,7 +59,7 @@ def run_experiments_matlab(input_file, repetition_number):
     ## Storing the execution order into a csv file
     format_file_execution_order = "\n".join(scripts_executions) # 1 line = 1 execution
     # write out the CSV
-    with open("executions_order.csv", "w") as file:
+    with open("output/executions_order.csv", "w") as file:
         file.write(format_file_execution_order)
 
 
@@ -75,7 +69,7 @@ def run_experiments_matlab(input_file, repetition_number):
     warm_up_end = time.time()
     warm_up_duration = (warm_up_end - warm_up_start)
     print("Duration of Warm up:", warm_up_duration)
-        
+
 
     ### Running experiment executions
     count = 0
@@ -86,7 +80,7 @@ def run_experiments_matlab(input_file, repetition_number):
         result = subprocess.run(script_command)
         end = time.time()
         elapsed_time_execution = (end - start)
-        with open("execution_elapsed_time_" + str(count) + ".csv", "w") as file_time:
+        with open("output/execution_elapsed_time_" + str(count) + ".csv", "w") as file_time:
             file_time.write(str(elapsed_time_execution))
         print("Elapsed Time (s):", elapsed_time_execution)
         time.sleep(SLEEP_TIME)
