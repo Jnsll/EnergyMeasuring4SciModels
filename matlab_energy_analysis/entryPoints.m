@@ -1,4 +1,6 @@
 function entryPoints(basePath)
+    originalDirectory = pwd;
+    entrCSV = 'entrypoints.csv';
     if nargin < 1
         basePath = "../sampling/repos_projects_filtered_top100stars";
     end
@@ -9,26 +11,105 @@ function entryPoints(basePath)
     projectsPaths = dir(basePath);
     projectsPaths = projectsPaths([projectsPaths.isdir]);
     projectsPaths = projectsPaths(~ismember({projectsPaths.name}, {'.', '..'}));
+    timeCrashResults = struct('scriptName', {}, 'time', {}, 'crash', {}, 'errorMessage', {});
     for i = 1:length(projectsPaths)
+        if i == 81
+            continue
+        end
+        fprintf("Currently, %i entry Points were found\n", sum([timeCrashResults.crash] == 0))
         fullPath = [projectsPaths(i).folder filesep projectsPaths(i).name];
-        shortPath = projectsPaths(i).name;
-        fprintf('Searching entry point for project: %s\n', shortPath);
-        depPoints = dependencyPoints(fullPath);
-        mfiles = vertcat(dir(fullfile(fullPath, strcat('**',filesep,'*.m'))));
-        entryPoints = {};
-        for j = 1:length(mfiles)
-            fullPathM = [mfiles(j).folder filesep mfiles(j).name];
-            mfiles(j).executable = determineExecutability(fullPathM);
-            if determineExecutability(fullPathM) && ismember({fullPathM}, depPoints)
-                entryPoints{end + 1} = fullPathM;
-            end
+        thisEntrCSV = [fullPath filesep entrCSV];
+        if init(fullPath, thisEntrCSV)%we already did visit this repository (i.e. there is a .csv file)
+            timeCrashResults = [timeCrashResults table2struct(readtable(thisEntrCSV, 'Delimiter', ',', 'PreserveVariableNames', true))'];
+            continue
         end
-        readmeEntryPoints = parseReadmes(fullPath);
-        if ~isempty(entryPoints) && ~isempty(readmeEntryPoints)
-            entryPoints = filterReadmeEntryPoints(entryPoints, readmeEntryPoints);
-        end
-        writecell(entryPoints', [fullPath filesep 'entrypoints.csv']);
+        basicEntryPoints = findBasicEntrypoints(projectsPaths(i));
+        timeCrashResults = [timeCrashResults findGoodEntrypoints(basicEntryPoints, thisEntrCSV)];
     end
+    cleanUpAndWriteOutput(originalDirectory, timeCrashResults, entrCSV)
+end
+
+%return to original directory
+%replace substrings for UNIX users:
+%remove backslashes
+%remove common prefixes
+function cleanUpAndWriteOutput(originalDirectory, timeCrashResults, entrCSV)
+    cd(originalDirectory)
+    commonPrefixLength = commonprefixlength(timeCrashResults(1).scriptName, timeCrashResults(end).scriptName);
+    for i = 1:length(timeCrashResults)
+        timeCrashResults(i).scriptName = regexprep(timeCrashResults(i).scriptName(commonPrefixLength:end), '\\', '/');
+    end
+    writetable(struct2table(timeCrashResults), entrCSV)
+    fprintf("%i entry Points were found\n", sum([timeCrashResults.crash] == 0))
+end
+
+function length = commonprefixlength(a, b)
+    for length = 1:min(strlength(a), strlength(b))
+        if a(length) == b(length)
+            continue
+        else
+            return
+        end
+    end
+end
+
+function alreadyVisited = init(path, csvFile)
+    cd(path);
+    %!git reset --hard
+    alreadyVisited = exist(csvFile);
+end
+
+%dynamically identify entry points into .m scripts
+%statically found scripts are run and tested, whether they run
+%logging errors and run time until script finished or crashed
+function timeCrashResults = findGoodEntrypoints(entrypoints, csvFile)
+    timeCrashResults = struct('scriptName', {}, 'time', {}, 'crash', {}, 'errorMessage', {});
+    writetable(struct2table(timeCrashResults), csvFile)
+    for i = 1:length(entrypoints)
+        timeCrashResults(end + 1) = runEntryPoint(entrypoints{i});
+    end
+    writetable(struct2table(timeCrashResults), csvFile)
+end
+
+function timeCrashResult = runEntryPoint(entrypoint)
+    timeCrashResult = struct;
+    tic
+    try
+        timeCrashResult.scriptName = entrypoint;
+        run(entrypoint);
+        timeCrashResult.time = toc;
+        timeCrashResult.crash = 0;
+        timeCrashResult.errorMessage = "";
+        fprintf("###################################\nFound a good Entry Point: %s\n###################################\n", entrypoint)
+    catch ME
+        timeCrashResult.time = toc;
+        timeCrashResult.crash = 1;
+        timeCrashResult.errorMessage = ME.message;
+    end
+end
+
+%statically identify entry points into .m scripts
+%using things like excluding called scripts
+%instead finding calling scripts
+function basicEntryPoints = findBasicEntrypoints(projectPath)
+    shortPath = projectPath.name;
+    fullPath = [projectPath.folder filesep projectPath.name];
+    fprintf('Searching entry point for project: %s\n', shortPath);
+    depPoints = dependencyPoints(fullPath);
+    mfiles = vertcat(dir(fullfile(fullPath, strcat('**',filesep,'*.m'))));
+    entryPoints = {};
+    for j = 1:length(mfiles)
+        fullPathM = [mfiles(j).folder filesep mfiles(j).name];
+        mfiles(j).executable = determineExecutability(fullPathM);
+        if determineExecutability(fullPathM) && ismember({fullPathM}, depPoints)
+            entryPoints{end + 1} = fullPathM;
+        end
+    end
+    readmeEntryPoints = parseReadmes(fullPath);
+    if ~isempty(entryPoints) && ~isempty(readmeEntryPoints)
+        entryPoints = filterReadmeEntryPoints(entryPoints, readmeEntryPoints);
+    end
+    basicEntryPoints = entryPoints;
 end
 
 %build a dependency graph (forest) of .m files, choose roots of forest

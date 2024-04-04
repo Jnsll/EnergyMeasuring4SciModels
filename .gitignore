@@ -1,2 +1,4 @@
 sampling/archive
 sampling/.idea
+*.asv
+.*

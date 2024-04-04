@@ -1,0 +1,915 @@
+scriptName,time,crash,errorMessage
+2DASL/3D_results_plot/test_good_byXgtu.m,0.0330756,1,Unable to find file or directory 'tri.mat'.
+2DASL/3D_results_plot/write_objs.m,0.0178192,1,Unable to find file or directory 'tri.mat'.
+2DASL/evaluation/nme_croPoses_for_alignment_68pts_2d.m,0.0172017,1,File not found.
+2DASL/evaluation/nme_for_3DReconstruction.m,0.1070377,1,Unable to find file or directory 'Model_Expression.mat'.
+2DASL/evaluation/nme_for_alignment_68pts_2d.m,0.5663545,0,
+2DASL/evaluation/nme_for_alignment_68pts_3d.m,0.3945451,0,
+2DASL/evaluation/nme_for_alignment_dense_2d.m,0.0402602,1,Unable to find file or directory 'Model_Expression.mat'.
+2DASL/evaluation/nme_for_alignment_dense_3d.m,0.0218213,1,Unable to find file or directory 'Model_Expression.mat'.
+2DASL/evaluation/3D_ICP-master/icp_test.m,0.3483854,0,
+2DASL/evaluation/3D_ICP-master/icp_test_xgtu.m,0.7387006,1,Unable to find file or directory './NME_3dFR/andrew_j_feustel_0001.mat'.
+2DASL/test_codes/test.data/AFLW-2000-3D/Code/main_show_with_BFM.m,0.0275203,1,Unable to find file or directory 'Model_Shape.mat'.
+2DASL/test_codes/test.data/AFLW-2000-3D/Code/ModelGeneration/ModelGenerate.m,0.0225688,1,Unable to find file or directory '01_MorphableModel.mat'.
+AMSoftmax/draw/draw_sphere/get_feature.m,0.0109162,1,Unable to resolve the name 'caffe.set_mode_gpu'.
+Awesome-Speech-Enhancement/tools/metric/measure_Csig_Cbak_Covl_segSNR_pesq_K14513_CD.m,0.0850211,1,Invalid file identifier. Use fopen to generate a valid file identifier.
+BPL/demo_fit.m,0.0108652,1,Undefined function 'warning_mode' for input arguments of type 'char'.
+BPL/bottomup/skeleton/test_generate_skeleton.m,0.0189555,1,Unable to find file or directory 'data_background_processed'.
+BPL/classification/demo_refit.m,0.0396065,1,Unrecognized function or variable 'loadlib'.
+BPL/forward_model/test_generate_character.m,0.0100758,1,Unrecognized function or variable 'defaultps'.
+BPL/forward_model/test_generate_exemplars.m,0.0092204,1,Unrecognized function or variable 'defaultps'.
+BPL/generate_exemplars/demo_generate_exemplar.m,0.0089108,1,Undefined function 'makestr' for input arguments of type 'char'.
+BPL/mcmc/TestMCMC.m,0.0089474,1,Unrecognized function or variable 'defaultps'.
+BPL/search/TestFitNewExemplar.m,0.0109488,1,Unrecognized function or variable 'defaultps'.
+BPL/stroke_util/test_nested_util.m,0.0094937,1,Undefined function 'vec' for input arguments of type 'double'.
+BPL/stroke_util/test_stroke_util.m,0.0155149,1,Undefined function 'aeq' for input arguments of type 'double'.
+BeatTheBookie/src/Figure1.m,0.1596551,1,Invalid file identifier. Use fopen to generate a valid file identifier.
+BeatTheBookie/src/Figure2A.m,0.2392808,1,Invalid file identifier. Use fopen to generate a valid file identifier.
+BeatTheBookie/src/Figure2B.m,0.1646131,1,Unrecognized function or variable 'ids'.
+BeatTheBookie/src/Figure3.m,0.2389033,1,Invalid file identifier. Use fopen to generate a valid file identifier.
+CBIG/external_packages/SD/SDv1.5.1-svn593/compile_all.m,0.9012634,1,"Supported compiler not detected. You can install the freely available MinGW-w64 C/C++ compiler; see <a href=""matlab: helpview([docroot '/matlab/helptargets.map'],'install_mingw')"">Install MinGW-w64 Compiler</a>. For more options, visit <a href=""https://www.mathworks.com/support/compilers"">https://www.mathworks.com/support/compilers</a>."
+DeepLearnToolbox/CAE/caeexamples.m,0.0584495,1,Unable to find file or directory 'mnist_uint8'.
+DeepLearnToolbox/tests/runalltests.m,0.1321761,0,
+DeepLearnToolbox/util/myOctaveVersion.m,0.0381825,0,
+DeepXi/eval_example.m,0.0026545,1,Execution of script run as a function is not supported:
+DeepXi/run.m,NaN,NaN,
+DeepXi/eval_stats.m,0.0001905,1,Execution of script run as a function is not supported:
+DeepXi/run.m,NaN,NaN,
+DeepXi/objective_scoring.m,0.0001573,1,Execution of script run as a function is not supported:
+DeepXi/run.m,NaN,NaN,
+DeepXi/run.m,0.0001634,1,Execution of script run as a function is not supported:
+DeepXi/run.m,NaN,NaN,
+DeepXi/spectral_distortion_gamma.m,0.0001316,1,Execution of script run as a function is not supported:
+DeepXi/run.m,NaN,NaN,
+DeepXi/spectral_distortion_xi.m,0.0001282,1,Execution of script run as a function is not supported:
+DeepXi/run.m,NaN,NaN,
+DeepXi/demand_voice_bank_objective_scoring/objective_scoring.m,0.0001266,1,Execution of script run as a function is not supported:
+DeepXi/run.m,NaN,NaN,
+DeepXi/log/monitor_epoch.m,0.0001466,1,Execution of script run as a function is not supported:
+DeepXi/run.m,NaN,NaN,
+DeepXi/log/monitor_iter.m,0.0001271,1,Execution of script run as a function is not supported:
+DeepXi/run.m,NaN,NaN,
+DeepXi/set/deep_xi_test_set.m,0.0001217,1,Execution of script run as a function is not supported:
+DeepXi/run.m,NaN,NaN,
+DeepXi/set/deep_xi_train_set.m,0.0001334,1,Execution of script run as a function is not supported:
+DeepXi/run.m,NaN,NaN,
+Detect-Track/rfcn_build.m,0.0607492,1,"Supported compiler not detected. You can install the freely available MinGW-w64 C/C++ compiler; see <a href=""matlab: helpview([docroot '/matlab/helptargets.map'],'install_mingw')"">Install MinGW-w64 Compiler</a>. For more options, visit <a href=""https://www.mathworks.com/support/compilers"">https://www.mathworks.com/support/compilers</a>."
+Detect-Track/experiments/script_DetectTrack_ILSVRC_vid_ResNet_OHEM_rpn.m,0.4347103,1,matcaffe is missing from H:\RFCN\caffe-rfcn\matlab; See README.md
+Detect-Track/experiments/script_Detect_ILSVRC_vid_ResNet_OHEM_rpn.m,0.4153288,1,matcaffe is missing from H:\RFCN\caffe-rfcn\matlab; See README.md
+Detect-Track/utils/vis_inputs.m,0.019532,1,Unable to resolve the name 'caffe_solver.net.blob_vec'.
+DnCNN/Demo_FDnCNN_Color.m,0.132406,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+DnCNN/Demo_FDnCNN_Color_Clip.m,0.1157932,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+DnCNN/Demo_FDnCNN_Gray.m,0.1125797,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+DnCNN/Demo_FDnCNN_Gray_Clip.m,0.1163093,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+DnCNN/Demo_test_CDnCNN_Specific.m,0.1154377,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+DnCNN/Demo_test_DnCNN.m,0.1066808,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+DnCNN/Demo_test_DnCNN3.m,0.1154596,1,Undefined function 'vl_simplenn_move' for input arguments of type 'struct'.
+DnCNN/Demo_test_DnCNN_C.m,0.1082034,1,Undefined function 'vl_simplenn_move' for input arguments of type 'struct'.
+DnCNN/TrainingCodes/DnCNN_TrainingCodes_DagNN_v1.1/Demo_Test_DnCNN_DAG.m,0.1280304,1,Unable to resolve the name 'dagnn.DagNN.loadobj'.
+DnCNN/TrainingCodes/DnCNN_TrainingCodes_DagNN_v1.1/Demo_Train_DnCNN_DAG.m,0.1317176,1,Unable to resolve the name 'dagnn.DagNN'.
+DnCNN/TrainingCodes/DnCNN_TrainingCodes_DagNN_v1.1/DnCNN_Init.m,0.0133129,1,Unable to resolve the name 'dagnn.DagNN'.
+DnCNN/TrainingCodes/DnCNN_TrainingCodes_DagNN_v1.1/utilities/Demo_DagNN_Merge_Bnorm.m,0.0647985,1,Unable to resolve the name 'dagnn.DagNN.loadobj'.
+DnCNN/TrainingCodes/DnCNN_TrainingCodes_v1.0/Demo_Test_model_64_25_Res_Bnorm_Adam.m,0.113917,1,Unable to find file or directory 'data\model_64_25_Res_Bnorm_Adam\model_64_25_Res_Bnorm_Adam-epoch-1.mat'.
+DnCNN/TrainingCodes/DnCNN_TrainingCodes_v1.0/Demo_Train_model_64_25_Res_Bnorm_Adam.m,0.0316175,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+DnCNN/TrainingCodes/DnCNN_TrainingCodes_v1.0/data/GenerateData_model_64_25_Res_Bnorm_Adam.m,139.0080414,0,
+DnCNN/TrainingCodes/DnCNN_TrainingCodes_v1.1/Demo_Test_model_64_25_Res_Bnorm_Adam.m,0.1083165,1,Unable to find file or directory 'data\model_64_25_Res_Bnorm_Adam\model_64_25_Res_Bnorm_Adam-epoch-50.mat'.
+DnCNN/TrainingCodes/DnCNN_TrainingCodes_v1.1/Demo_Train_model_64_25_Res_Bnorm_Adam.m,0.0326709,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+DnCNN/TrainingCodes/DnCNN_TrainingCodes_v1.1/data/GenerateTrainingPatches.m,0.0439531,0,
+DnCNN/utilities/Merge_Bnorm_Demo.m,2.3948911,0,
+ECO/demo_ECO.m,2.4632517,1,Unable to find file or directory 'networks/imagenet-vgg-m-2048.mat'.
+ECO/demo_ECO_HC.m,0.0504908,1,Undefined function 'fhog' for input arguments of type 'single'.
+ECO/demo_ECO_gpu.m,0.722741,1,Unable to find file or directory 'networks/imagenet-vgg-m-2048.mat'.
+ECO/install.m,0.025078,1,A C/C++ compiler has not been selected with mex -setup
+Exclusively-Dark-Image-Dataset/SPIC/demo.m,0.0988434,1,Undefined function 'vl_argparse' for input arguments of type 'struct'.
+Exposure_Correction/demo_image_directory.m,2.9812146,1,Undefined function 'pre_process_img' for input arguments of type 'double'.
+FaceVerification/PCA_matching_tp.m,0.028759,1,Unable to find file or directory 'pair_lfw'.
+FaceVerification/ReadFeature.m,0.0124494,1,Invalid file identifier. Use fopen to generate a valid file identifier.
+FaceVerification/ReadFeatureLFW.m,0.0125256,1,Unable to resolve the name 'caffe.reset_all'.
+FaceVerification/ReadFeatureLFW64.m,0.0115988,1,Unable to resolve the name 'caffe.reset_all'.
+FaceVerification/ReadFeatureLFW_BLUFR.m,0.0155755,1,Unable to find file or directory 'D:\face project\BLUFR\config\lfw\blufr_lfw_config.mat'.
+FaceVerification/ReadFeatureLFWmirror.m,0.0127815,1,Unable to resolve the name 'caffe.reset_all'.
+FaceVerification/ReadFeaturePairs.m,0.0093234,1,Unrecognized function or variable 'AllFeature'.
+FaceVerification/ReadFeatureWX.m,0.0111119,1,Unable to resolve the name 'caffe.reset_all'.
+FaceVerification/ReadFeatureWX_BLUFR.m,0.0174541,1,Unable to find file or directory 'D:\face project\BLUFR\config\lfw\blufr_lfw_config.mat'.
+FaceVerification/ReadTestFeature.m,0.0133029,1,Invalid file identifier. Use fopen to generate a valid file identifier.
+FaceVerification/VerificationDemo.m,0.0153026,1,Unable to resolve the name 'caffe.reset_all'.
+FaceVerification/lfwEnsemble.m,0.009688,1,Unrecognized function or variable 'AllFeature1'.
+FaceVerification/lfwJB.m,0.0089663,1,Unrecognized function or variable 'AllFeature1'.
+FaceVerification/lfwL2.m,0.0085966,1,Unrecognized function or variable 'AllFeature1'.
+FaceVerification/lfwPCA.m,0.0141569,1,Unrecognized function or variable 'AllFeature1'.
+FaceVerification/showError.m,0.0092265,1,Unrecognized function or variable 'class_casia'.
+FaceVerification/test_lfw.m,0.0162828,1,Unable to find file or directory 'D:\wf\face\dataset\WDRef\id_lfw.mat'.
+FaceVerification/test_lfw_restrict.m,0.0194136,1,Unable to find file or directory 'E:\datasets\WDRef\id_lfw.mat'.
+FaceVerification/test_lfw_validate.m,0.0184459,1,Unable to find file or directory 'D:\wf\face\dataset\WDRef\id_lfw.mat'.
+FaceVerification/test_wdref.m,0.0174328,1,Unable to find file or directory 'D:\wf\face\dataset\WDRef\lbp_WDRef.mat'.
+FaceVerification/BLUFR/demo_pca.m,0.0143275,1,Unable to find file or directory '../config/lfw/blufr_lfw_config.mat'.
+FaceVerification/dataset/checklist.m,0.016367,1,Invalid file identifier. Use fopen to generate a valid file identifier.
+FaceVerification/dataset/general_align.m,0.1056628,1,"The system cannot find the path specified.
+"
+FaceVerification/dataset/get10TrainList.m,0.0177267,1,Invalid file identifier. Use fopen to generate a valid file identifier.
+FaceVerification/dataset/getTestList.m,0.0189,1,Invalid file identifier. Use fopen to generate a valid file identifier.
+FaceVerification/dataset/CFEE/create_list.m,0.1257621,1,Invalid file identifier. Use fopen to generate a valid file identifier.
+FaceVerification/dataset/CK/align_CK.m,0.0918279,1,"The system cannot find the path specified.
+"
+FaceVerification/dataset/CK/create_list.m,0.0904256,1,Invalid file identifier. Use fopen to generate a valid file identifier.
+FaceVerification/dataset/KDEF/align_KDEF.m,0.098702,1,"The system cannot find the path specified.
+"
+FaceVerification/dataset/KDEF/create_list.m,0.0989491,1,Empty keys are not allowed in this container.
+FaceVerification/dataset/LFW/getlfwPairs.m,2.3858317,0,
+FaceVerification/dataset/LFW/zzzgetPairs.m,0.0491977,1,Invalid file identifier. Use fopen to generate a valid file identifier.
+FaceVerification/dataset/MS-Celeb/extract_and_align_ms_face.m,0.0283077,1,Unable to resolve the name 'caffe.set_mode_gpu'.
+FaceVerification/dataset/MS-Celeb/extract_ms_face.m,0.0264973,1,Invalid file identifier. Use fopen to generate a valid file identifier.
+FaceVerification/dataset/Megaface/align_facescrub.m,0.0966067,1,"The system cannot find the path specified.
+"
+FaceVerification/dataset/Megaface/align_facescrub_failures.m,0.0960618,1,"The system cannot find the path specified.
+"
+FaceVerification/dataset/Megaface/align_megaface_failures.m,0.0245507,1,Could not open file F:\datasets\megaface\devkit\templatelists\megaface_features_list.json. No such file or directory.
+FaceVerification/dataset/Megaface/align_megaface_from_list.m,0.0223572,1,Could not open file E:\datasets\megaface\devkit\templatelists\megaface_features_list.json_10000_1. No such file or directory.
+FaceVerification/dataset/Megaface/draw_curve.m,0.0221372,1,Could not open file E:\datasets\MegaFace\results\cmc_facescrub_megaface_cos-m35_1000000_1.json. No such file or directory.
+FaceVerification/dataset/Megaface/extract_facescrub_feature.m,0.0321878,1,Unable to resolve the name 'caffe.reset_all'.
+FaceVerification/dataset/Megaface/extract_megaface_feature.m,0.0196491,1,Unable to resolve the name 'caffe.reset_all'.
+FaceVerification/dataset/Megaface/overview.m,0.0276846,1,Could not open file F:\datasets\megaface\devkit\templatelists\megaface_features_list.json. No such file or directory.
+FaceVerification/dataset/Pain/create_database.m,0.0271337,1,Unable to resolve the name 'caffe.set_mode_gpu'.
+FaceVerification/dataset/Pain/create_hdf5.m,1.2236567,1,Unable to open 'hdf5\hdf5_subset0.h5'. File or folder not found.
+FaceVerification/dataset/YTF/compare_feature.m,0.0288637,1,Invalid file identifier. Use fopen to generate a valid file identifier.
+FaceVerification/dataset/YTF/extract_feature.m,0.096191,1,Unable to resolve the name 'caffe.reset_all'.
+FaceVerification/dataset/YTF/general_align.m,0.0918885,1,"The system cannot find the path specified.
+"
+FaceVerification/dataset/YTF/test_label_distribution.m,0.0193894,1,Undefined variable 'C'.
+Gait-Tracking-With-x-IMU/Gait Tracking With x-IMU/Script.m,64.8334862,0,NaN
+Gait-Tracking-With-x-IMU/Gait Tracking With x-IMU/Quaternions/TestScript.m,0.467612,0,NaN
+ICNet/evaluation/eval_all.m,0.1695912,1,Unable to open file.
+IRCNN/Demo_SISR_RGB.m,0.1927025,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+IRCNN/Demo_SISR_RGB_IRCNN_closedform_final.m,0.314548,1,Unable to find file or directory 'kernels.mat'.
+IRCNN/Demo_SISR_YCbCr.m,0.0051345,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+IRCNN/Demo_SISR_direct_downsampler_RGB.m,0.3869372,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+IRCNN/Demo_SISR_direct_downsampler_YCbCr.m,0.0500333,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+IRCNN/Demo_SISR_direct_downsampler_real_application.m,0.1444512,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+IRCNN/Demo_deblur.m,0.1819798,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+IRCNN/Demo_deblur_real_application.m,0.4966806,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+IRCNN/Demo_demosaiking.m,1.6775919,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+IRCNN/Demo_denoising_color.m,0.2682064,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+IRCNN/Demo_denoising_gray.m,0.2713597,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+IRCNN/Demo_inpaint.m,0.4614663,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+IRCNN/Demo_inpaint_real_application.m,0.5279505,1,Undefined function 'vl_simplenn_tidy' for input arguments of type 'struct'.
+Image-Harmonization-Dataset-iHarmony4/Lalonde and Efros/colorStatistics/3rd_party/emd/demo_emd.m,2.8018277,0,NaN
+MBeautifier/resources/testdata/testfile.m,0.0465235,1,Undefined function 'f' for input arguments of type 'double'.
+MCM-ICM/2019美赛特等奖/2019_MCM-ICM_Problems/2018_MCMProblemC_DATA/NFLIS.m,4.8554958,0,NaN
+MCM-ICM/2019美赛特等奖/2019_MCM-ICM_Problems/2018_MCMProblemC_DATA/loading.m,0.0402049,0,NaN
+MCM-ICM/2019美赛特等奖/2019_MCM-ICM_Problems/2018_MCMProblemC_DATA/uscities.m,3.2028409,0,NaN
+MIMO_OFDM/第10章 天线分集与空时编码技术/Alamouti空时块码/Alamouti_scheme.m,61.6436596,0,
+MIMO_OFDM/第10章 天线分集与空时编码技术/瑞利衰落信道下MRC性能/MRC_scheme.m,12.0097066,0,
+MIMO_OFDM/第10章 天线分集与空时编码技术/空时块码/STBC_3x4_simulation.m,0.0491648,1,Undefined function 'randint' for input arguments of type 'double'.
+MIMO_OFDM/第10章 天线分集与空时编码技术/空时格码/STTC_simulation.m,29.8052764,0,
+MIMO_OFDM/第11章 空间复用的MIMO系统的信号检测/MIMO系统的MMSE检测/MMSE_detection_2x2.m,0.0079496,1,Unrecognized function or variable 'Viterbi_init'.
+MIMO_OFDM/第11章 空间复用的MIMO系统的信号检测/MIMO系统的QRM-MLD检测器的软判决/QRM_MLD_simulation.m,0.0475672,1,Undefined function 'randint' for input arguments of type 'double'.
+MIMO_OFDM/第11章 空间复用的MIMO系统的信号检测/SISO系统的软硬判决性能/soft_hard_SISO.m,0.021642,1,Undefined function 'randint' for input arguments of type 'double'.
+MIMO_OFDM/第12章 在发射端利用信道状态信息/MMSE预均衡/pre_MMSE.m,0.0554631,1,Unable to resolve the name 'modem.qammod'.
+MIMO_OFDM/第12章 在发射端利用信道状态信息/天线选择技术/Alamouti_2x1_ant_selection.m,0.0208252,1,Unable to resolve the name 'modem.qammod'.
+MIMO_OFDM/第12章 在发射端利用信道状态信息/天线选择技术/MIMO_channel_cap_ant_sel_optimal.m,0.5363947,0,
+MIMO_OFDM/第12章 在发射端利用信道状态信息/天线选择技术/MIMO_channel_cap_ant_sel_subopt.m,12.9010023,0,
+MIMO_OFDM/第12章 在发射端利用信道状态信息/码本生成和预编码/Alamouti_2x1_precoding.m,0.0268988,1,Unable to resolve the name 'modem.qammod'.
+MIMO_OFDM/第13章 多用户MIMO/信道反转的多用户MIMO系统/multi_user_MIMO.m,0.0178391,1,Undefined function 'randint' for input arguments of type 'double'.
+MIMO_OFDM/第13章 多用户MIMO/块对角化/Block_diagonalization.m,0.0220101,1,Undefined function 'randint' for input arguments of type 'double'.
+MIMO_OFDM/第13章 多用户MIMO/脏纸编码和Tomlinson-Harashima预编码/Dirty_or_TH_precoding.m,0.0252183,1,Undefined function 'randint' for input arguments of type 'double'.
+MIMO_OFDM/第1章 无线信道：传播和衰落/IEEE802.16d模型/plot_PL_IEEE80216d.m,0.8082408,1,Invalid argument. Type 'help legend' for more information.
+MIMO_OFDM/第1章 无线信道：传播和衰落/Okumura&Hata模型/plot_PL_Hata.m,0.0782069,1,Invalid argument. Type 'help legend' for more information.
+MIMO_OFDM/第1章 无线信道：传播和衰落/瑞利衰落和莱斯衰落信道模型/plot_Ray_Ric_channel.m,0.1955428,0,
+MIMO_OFDM/第1章 无线信道：传播和衰落/自由空间路径损耗/plot_PL_general.m,0.2348925,0,
+MIMO_OFDM/第2章 SISO信道模型/2径信道模型和指数信道模型/plot_2ray_exp_model.m,0.5033767,0,
+MIMO_OFDM/第2章 SISO信道模型/FWGN信道模型/plot_FWGN.m,0.5688725,0,
+MIMO_OFDM/第2章 SISO信道模型/IEEE802.11信道模型/plot_IEEE80211_model.m,1.977947,0,
+MIMO_OFDM/第2章 SISO信道模型/Jakes模型/plot_Jakes_model.m,66.7049563,0,
+MIMO_OFDM/第2章 SISO信道模型/SUI信道模型/plot_SUI_channel.m,1.5781,0,
+MIMO_OFDM/第2章 SISO信道模型/Saleh-Valenzuela信道模型/plot_SV_model_ct.m,2.5248475,0,
+MIMO_OFDM/第2章 SISO信道模型/UWB信道模型/plot_UWB_channel.m,9.1284324,1,Invalid argument. Type 'help legend' for more information.
+MIMO_OFDM/第2章 SISO信道模型/射线信道模型/plot_ray_fading.m,0.112444,0,
+MIMO_OFDM/第2章 SISO信道模型/改进FWGN信道模型/plot_modeified_FWGN.m,0.2508927,0,
+MIMO_OFDM/第4章 OFDM概述/仿真OFDM传输系统/OFDM_basic.m,0.7722623,1,Undefined function 'randint' for input arguments of type 'double'.
+MIMO_OFDM/第4章 OFDM概述/检验正交性/test_orthogonality.m,0.3818889,0,
+MIMO_OFDM/第5章 CFO估计技术/CFO_estimation.m,0.3181679,0,
+MIMO_OFDM/第6章 信道估计/channel_estimation.m,0.1094394,1,Unable to resolve the name 'modem.qammod'.
+MIMO_OFDM/第7章 PAPR/Chu序列和IEEE802.16e前导的PAPR/PAPR_of_Chu.m,0.1018025,0,
+MIMO_OFDM/第7章 PAPR/Chu序列和IEEE802.16e前导的PAPR/PAPR_of_preamble.m,0.0561583,1,Unable to find file or directory 'C:\Users\Administrator\Desktop\MIMO OFDM Wireless Communication\PAPR\ChuÐòÁÐºÍIEEE802.16eÇ°µ¼µÄPAPR\Wibro-Preamble\Preamble_sym0.dat'.
+MIMO_OFDM/第7章 PAPR/DFT扩频的PAPR/compare_DFT_spreading.m,0.0298342,1,Unable to resolve the name 'modem.qammod'.
+MIMO_OFDM/第7章 PAPR/OFDM信号的CCDF/plot_CCDF.m,0.0272761,1,Unable to resolve the name 'modem.pskmod'.
+MIMO_OFDM/第7章 PAPR/PTS技术/compare_CCDF_PTS.m,0.0590648,1,Unable to resolve the name 'modem.qammod'.
+MIMO_OFDM/第7章 PAPR/SQNR与限幅电平/SQNR_with_quantization_clipping.m,0.0269098,1,Unable to resolve the name 'modem.qammod'.
+MIMO_OFDM/第7章 PAPR/单载波信号的PAPR/single_carrier_PAPR.m,0.0225567,1,Unable to resolve the name 'modem.pskmod'.
+MIMO_OFDM/第7章 PAPR/时域OFDM信号概率分析/OFDM_signal.m,0.0265987,1,Unable to resolve the name 'modem.pskmod'.
+MIMO_OFDM/第7章 PAPR/脉冲成形的DFT扩频的PAPR/compare_DFT_spreading_w_psf.m,0.6390264,1,Unable to resolve the name 'modem.qammod'.
+MIMO_OFDM/第7章 PAPR/限幅和滤波/PDF_of_clipped_and_filtered_OFDM_signal.m,0.1478801,1,Unable to resolve the name 'modem.pskmod'.
+MIMO_OFDM/第7章 PAPR/限幅和滤波的PAPR分布和BER/CCDF_of_clipped_filtered_OFDM_signal.m,0.1783823,1,Unable to resolve the name 'modem.qammod'.
+MIMO_OFDM/第9章 MIMO信道容量/Ergodic_Capacity_CDF.m,0.6207507,0,
+MIMO_OFDM/第9章 MIMO信道容量/Ergodic_Capacity_Correlation.m,0.1528148,0,
+MIMO_OFDM/第9章 MIMO信道容量/Ergodic_Capacity_vs_SNR.m,0.1173266,0,
+MIMO_OFDM/第9章 MIMO信道容量/OL_CL_Comparison.m,0.0694385,1,Index exceeds the number of array elements. Index must not exceed 0.
+MTCNN_face_detection_alignment/code/codes/MTCNNv1/demo.m,0.044988,1,Unable to resolve the name 'caffe.set_mode_gpu'.
+MTCNN_face_detection_alignment/code/codes/MTCNNv2/demo.m,0.0349393,1,Unable to resolve the name 'caffe.set_mode_gpu'.
+Matlab-Machine/001_Data regression prediction based on BP neural network/main.m,0.6876864,1,Not enough input arguments.
+Matlab-Machine/002_Data classification prediction based on BP neural network/main.m,0.323657,1,Not enough input arguments.
+Matlab-Machine/003_Time series forecasting based on BP neural network/main.m,0.4203288,1,Not enough input arguments.
+Matlab-Machine/004_Data regression prediction based on support vector machine (libsvm)/main.m,1.9389694,0,
+Matlab-Machine/005_Data classification prediction based on support vector machine (libsvm)/main.m,6.6401561,0,
+Matlab-Machine/006_Time series forecasting based on support vector machine (libsvm)/main.m,2.9554716,0,
+Matlab-Machine/007_Optimize data regression prediction of BP neural network based on genetic algorithm/main.m,2.4465495,1,Not enough input arguments.
+Matlab-Machine/008_Optimize data classification prediction of BP neural network based on genetic algorithm/main.m,0.4088017,1,Not enough input arguments.
+Matlab-Machine/009_Optimize time series prediction of BP neural network based on genetic algorithm/main.m,0.3777425,1,Not enough input arguments.
+Matlab-Machine/010_Data regression prediction based on random forest algorithm/main.m,4.6077981,0,
+Matlab-Machine/011_Data classification prediction based on random forest algorithm/main.m,6.3578563,0,
+Matlab-Machine/012_Time series forecasting based on random forest algorithm/main.m,4.9077729,0,
+Matlab-Machine/013_Data regression prediction based on radial basis neural networks/main.m,3.5965498,1,Not enough input arguments.
+Matlab-Machine/014_Data classification prediction based on radial basis neural network/main.m,0.3199639,1,Not enough input arguments.
+Matlab-Machine/015_Time series forecasting based on radial basis neural networks/main.m,0.2843716,1,Not enough input arguments.
+Matlab-Machine/016_Multi-output data regression prediction based on BP neural network/main.m,0.3845715,1,Not enough input arguments.
+Matlab-Machine/017_Data regression prediction based on convolutional neural networks/main.m,101.3365812,1,Invalid data type. First argument must be numeric or logical.
+Matlab-Machine/018_Data classification prediction based on convolutional neural networks/main.m,17.4240527,1,Invalid data type. First argument must be numeric or logical.
+Matlab-Machine/019_Time series forecasting based on convolutional neural networks/main.m,57.6228119,1,Invalid data type. First argument must be numeric or logical.
+Matlab-Machine/020_Data regression prediction based on BP neural network - predicting new data/NewData.m,3.490102,0,
+Matlab-Machine/020_Data regression prediction based on BP neural network - predicting new data/main.m,0.2895779,1,Not enough input arguments.
+Matlab-Machine/021_Data regression prediction based on long short-term memory networks/main.m,48.1962846,1,Invalid data type. First argument must be numeric or logical.
+Matlab-Machine/022_Data classification prediction based on long short-term memory network/main.m,43.3908389,1,Invalid data type. First argument must be numeric or logical.
+Matlab-Machine/023_Time series forecasting based on long short-term memory networks/main.m,149.7139765,1,Invalid data type. First argument must be numeric or logical.
+Matlab-Machine/024_Data regression prediction based on particle swarm optimization algorithm optimized BP neural network/main.m,0.2165694,1,Not enough input arguments.
+Matlab-Machine/025_Data classification prediction based on particle swarm optimization algorithm optimized BP neural network/main.m,0.258067,1,Not enough input arguments.
+Matlab-Machine/026_Time series forecasting based on particle swarm optimization algorithm optimized BP neural network/main.m,0.2321119,1,Not enough input arguments.
+Matlab-Machine/027_Data regression prediction based on extreme learning machine/main.m,0.6078816,0,
+Matlab-Machine/028_Data classification prediction based on extreme learning machine/main.m,3.3061538,0,
+Matlab-Machine/029_Time series forecasting based on extreme learning machine/main.m,1.7904319,0,
+Matlab-Machine/030_Data regression prediction based on particle swarm optimization algorithm optimized support vector machine (libsvm)/main.m,3.5382357,0,
+Matlab-Machine/031_Data classification prediction based on particle swarm optimization algorithm optimized support vector machine (libsvm)/main.m,4.3071983,0,
+Matlab-Machine/032_Time series forecasting based on particle swarm optimization algorithm optimized support vector machine (libsvm)/main.m,3.5310232,0,
+Matlab-Machine/033_Data regression prediction based on partial least squares algorithm/main.m,2.3986588,0,
+Matlab-Machine/034_Data classification prediction based on partial least squares algorithm/main.m,1.9725517,0,
+Matlab-Machine/035_Time series forecasting based on partial least squares algorithm/main.m,1.7824259,0,
+Matlab-Machine/036_Data regression prediction based on least squares support vector machine/main.m,0.3054801,0,
+MatlabFunc/ANNS/Hashing/GenKmeansPartitions.m,0.0446863,1,Undefined function 'fvecs_read' for input arguments of type 'char'.
+MatlabFunc/ANNS/Hashing/HashingRunLongCode.m,0.0265467,1,Undefined function 'checkFILEmkDIR' for input arguments of type 'char'.
+NaveGo/examples/allan-variance/navego_example_allan.m,0.5233034,1,Unrecognized function or variable 'navego_print_version'.
+NaveGo/examples/real-data/navego_example_real_ekinox.m,25.716483,0,
+NaveGo/examples/real-data/navego_example_real_gnss_outage.m,42.9498087,0,
+NaveGo/examples/real-data/navego_example_real_ins_ekinox.m,78.8579791,0,
+NaveGo/examples/real-data/navego_example_real_mpu6000.m,56.3536921,0,
+NaveGo/examples/sensor-read-example/navego_example_sensor_read.m,8.3173183,0,
+NaveGo/examples/synthetic-data/navego_example_synth.m,1.6235785,1,"The current random number generator is the legacy generator.  This is because you have executed a command such as rand('state',0), which activates MATLAB's legacy random number behavior.  You may not use RNG to reseed the legacy random number generator.
+
+Use rng('default') to reinitialize the random number generator to its startup configuration, or call RNG using a specific generator type, such as rng(seed,'twister')."
+NaveGo/examples/visual-data/navego_example_canada_data.m,195.466835,0,
+NaveGo/examples/visual-data/navego_example_katwijk_data.m,1.7165006,1,Unable to find file or directory './katwijk-planetary-data/data/gnss_planetary_r.mat'.
+NaveGo/examples/visual-data/canada-planetary-data/scripts/gnss_sparse_structure.m,0.0391573,1,Unable to find or open './external-data/canada/gnss/global-pose-utm.txt'. Check the path and filename or file permissions.
+NaveGo/examples/visual-data/canada-planetary-data/scripts/gnss_structure.m,0.0353857,1,Unable to find or open './external-data/canada/gnss/global-pose-utm.txt'. Check the path and filename or file permissions.
+NaveGo/examples/visual-data/canada-planetary-data/scripts/imu_structure.m,0.0310429,1,Unable to find or open './external-data/canada/imu/imu.txt'. Check the path and filename or file permissions.
+NaveGo/examples/visual-data/canada-planetary-data/scripts/optimizer.m,0.0279926,0,
+NaveGo/examples/visual-data/canada-planetary-data/scripts/visual_structure.m,0.0330511,1,Unable to find file or directory './canada-planetary-data/data//gnss_planetary_r.mat'.
+NaveGo/examples/visual-data/katwijk-planetary-data/scripts/gnss_sparse_structure.m,0.0302289,1,Unable to find or open './external-data/katwijk/gnss/gps-latlong.txt'. Check the path and filename or file permissions.
+NaveGo/examples/visual-data/katwijk-planetary-data/scripts/gnss_structure.m,0.0306796,1,Unable to find or open './external-data/katwijk/gnss/gps-latlong.txt'. Check the path and filename or file permissions.
+NaveGo/examples/visual-data/katwijk-planetary-data/scripts/imu_structure.m,0.033254,1,Unable to find or open './external-data/katwijk/imu/imu0.csv'. Check the path and filename or file permissions.
+NaveGo/examples/visual-data/katwijk-planetary-data/scripts/optimizer.m,0.0366793,0,
+NaveGo/examples/visual-data/katwijk-planetary-data/scripts/visual_structure.m,0.0340611,1,Unable to find file or directory './katwijk-planetary-data/data/gnss_planetary_r.mat'.
+OpenFace/exe/releases/package_windows_executables.m,0.0912005,1,No matching files named 'C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\OpenFace\exe\releases\..\..\Release\AU_predictors' were found.
+OpenTLD/compile.m,0.0714998,1,"Supported compiler not detected. You can install the freely available MinGW-w64 C/C++ compiler; see <a href=""matlab: helpview([docroot '/matlab/helptargets.map'],'install_mingw')"">Install MinGW-w64 Compiler</a>. For more options, visit <a href=""https://www.mathworks.com/support/compilers"">https://www.mathworks.com/support/compilers</a>."
+OpenTLD/run_TLD.m,0.1574162,1,Undefined function 'FSPECIAL' for input arguments of type 'char'.
+OpenTLD/img/cam_record.m,0.029272,1,Unrecognized function or variable 'vid'.
+OpenTLD/img/gt_create.m,0.0373062,1,Index exceeds the number of array elements. Index must not exceed 0.
+OpenTLD/img/gt_display.m,0.041143,1,Unable to find file or directory 'X:\PhD\Publications\2009-06_OLCV2009\Web\MultiFace\gt.mat'.
+OpenTLD/img/img_merge_frames.m,0.0765253,0,
+OpenTLD/other/init_workspace.m,0.0041361,0,
+OpenTLD/other/run_TLD_demo.m,0.0806985,1,Index exceeds the number of array elements. Index must not exceed 0.
+OpenTLD/other/stabilize.m,0.0268148,1,The file 'D:\_TLD_Video\bety\5272\tld.txt' could not be opened because: No such file or directory
+OpenTLD/other/usbclear.m,0.0236612,1,Unrecognized function or variable 'vid'.
+OpenTLD/test/test_bb_scan.m,0.0308609,1,Not enough input arguments.
+OpenTLD/test/test_face_detector.m,0.0092002,1,Undefined function 'feature_create' for input arguments of type 'char'.
+OpenTLD/test/test_featureGenerata.m,0.0253084,1,Undefined function 'tldFeatureGenerate' for input arguments of type 'double'.
+OpenTLD/test/test_getPatch.m,0.0192605,1,Invalid input arguments.
+OpenTLD/test/test_tmdPatch2Pattern.m,0.0801898,1,Undefined function 'FSPECIAL' for input arguments of type 'char'.
+OptimTraj/demo/acrobot/Derive_acrobot.m,4.6078167,1,Unrecognized function or variable 'G'.
+OptimTraj/demo/acrobot/MAIN.m,8.8491264,0,
+OptimTraj/demo/cartPole/Derive_cartPole.m,1.4434495,1,"Unable to create a symbolic variable 'empty' by using 'syms' inside a MATLAB function because 'empty' is an existing function name, class name, or other artifact name. Use 'sym' instead."
+OptimTraj/demo/cartPole/MAIN_minForce.m,4.2434692,0,
+OptimTraj/demo/cartPole/MAIN_minTime.m,7.4619881,0,
+OptimTraj/demo/cartPole/RESULTS_makePlots.m,7.1109484,0,
+OptimTraj/demo/cartPole/TEST_openLoopDynamics.m,1.041206,0,
+OptimTraj/demo/fiveLinkBiped/Derive_Equations.m,4.0160552,1,Unable to perform assignment because the left and right sides have a different number of elements.
+OptimTraj/demo/fiveLinkBiped/MAIN.m,3.0929837,0,
+OptimTraj/demo/fiveLinkBiped/RESULTS.m,21.2441236,0,
+OptimTraj/demo/fiveLinkBiped/TEST_drawRobot.m,0.2360789,0,
+OptimTraj/demo/fiveLinkBiped/costOfTransport/Derive_Equations.m,3.9803412,1,Unable to perform assignment because the left and right sides have a different number of elements.
+OptimTraj/demo/fiveLinkBiped/costOfTransport/MAIN.m,3.0835498,0,
+OptimTraj/demo/fiveLinkBiped/costOfTransport/TEST_drawRobot.m,0.2607034,0,
+OptimTraj/demo/fiveLinkBiped/costOfTransport/TEST_dynamics.m,0.0361325,1,Index in position 1 exceeds array bounds. Index must not exceed 5.
+OptimTraj/demo/fiveLinkBiped/costOfTransport/TEST_heelStrike.m,0.0348244,1,Undefined function 'heelStrikeMap' for input arguments of type 'struct'.
+OptimTraj/demo/goddardRocket/MAIN.m,0.195051,0,
+OptimTraj/demo/gradientsTutorial/MAIN.m,3.311736,0,
+OptimTraj/demo/minTimeBvp/MAIN.m,3.8792529,0,
+OptimTraj/demo/minimumSnap/chainIntegrator/MAIN.m,0.7632061,0,
+OptimTraj/demo/minimumSnap/minAccel/MAIN.m,1.3741126,0,
+OptimTraj/demo/minimumSnap/minJerk/MAIN.m,1.4507568,0,
+OptimTraj/demo/minimumSnap/minSnap/MAIN.m,1.4267604,0,
+OptimTraj/demo/minimumWork/MAIN_cstWork.m,52.8851734,0,
+OptimTraj/demo/minimumWork/MAIN_forceSquared.m,0.2977847,0,
+OptimTraj/demo/minimumWork/MAIN_smoothWork.m,1.3874576,0,
+OptimTraj/demo/quadRotor2d/Derive_EoM.m,0.8692097,1,"Character vectors and strings in the first argument can only specify a variable or number. To evaluate character vectors and strings representing symbolic expressions, use 'str2sym'."
+OptimTraj/demo/quadRotor2d/MAIN_minAccelTraj.m,8.1480525,0,
+OptimTraj/demo/quadRotor2d/MAIN_minForceTraj.m,9.4885335,0,
+OptimTraj/demo/quadRotor2d/MAIN_minJerkTraj.m,45.9079619,0,
+OptimTraj/demo/quadRotor2d/MAIN_simulate.m,0.2863835,0,
+OptimTraj/demo/quadRotor3d/MAIN_minThrottleTraj.m,9.4277585,0,
+OptimTraj/demo/quadRotor3d/MAIN_minTimeTraj.m,16.9909285,0,
+OptimTraj/demo/quadRotor3d/TESTRUNNER.m,5.3325482,0,
+OptimTraj/demo/quadRotor3d/test/TEST_Euler2RotMat.m,0.0196559,0,
+OptimTraj/demo/quadRotor3d/test/TEST_computePropOpPoint.m,0.0204017,0,
+OptimTraj/demo/quadRotor3d/test/TEST_definePropulsionModel.m,1.7801334,0,
+OptimTraj/demo/quadRotor3d/test/TEST_dynBodyFrame.m,0.037921,1,Undefined function 'dynBodyFrame' for input arguments of type 'struct'.
+OptimTraj/demo/quadRotor3d/test/TEST_dynQuadRotor3d.m,0.0407017,1,Undefined function 'dynQuadRotor3d' for input arguments of type 'struct'.
+OptimTraj/demo/quadRotor3d/test/TEST_plotPropLoc.m,0.1369869,0,
+OptimTraj/demo/quadRotor3d/utilities/loadPlant_QuadRotor3d.m,0.0266682,0,
+OptimTraj/demo/simplePendulum/MAIN.m,1.0609721,0,
+OptimTraj/demo/simpleWalker/Derive_simpleWalker.m,2.5879896,0,
+OptimTraj/demo/simpleWalker/MAIN.m,0.6862363,0,
+OptimTraj/demo/toyCar/MAIN.m,1.5129423,0,
+PIDtoolbox/PIDtoolbox.m,0.1854925,1,Undefined function 'PTlinecmap' for input arguments of type 'double'.
+PIDtoolbox/PTdispSetupInfoUIcontrol.m,0.026873,1,Unrecognized function or variable 'fnameMaster'.
+PIDtoolbox/PTerrUIcontrol.m,0.0272167,1,Unrecognized function or variable 'filenameA'.
+PIDtoolbox/PTfreqTime.m,0.0333982,1,Unrecognized function or variable 'PTspecfig3'.
+PIDtoolbox/PTfreqTimeUIcontrol.m,0.0370419,1,Unrecognized function or variable 'fnameMaster'.
+PIDtoolbox/PTload.m,0.0336661,0,
+PIDtoolbox/PTplotLogViewer.m,0.0481399,1,Unrecognized function or variable 'fnameMaster'.
+PIDtoolbox/PTplotPIDerror.m,299.0335863,0,
+PIDtoolbox/PTplotSpec.m,0.0751872,1,Unrecognized function or variable 'fnameMaster'.
+PIDtoolbox/PTplotSpec2D.m,0.0578192,1,Unrecognized function or variable 'fnameMaster'.
+PIDtoolbox/PTplotStats.m,0.1036505,1,Unrecognized function or variable 'filenameA'.
+PIDtoolbox/PTprocess.m,3.474738,0,
+PIDtoolbox/PTsaveSettings.m,0.036164,1,Unrecognized function or variable 'fnameMaster'.
+PIDtoolbox/PTspec2DUIcontrol.m,0.0474896,1,Unrecognized function or variable 'fnameMaster'.
+PIDtoolbox/PTspecUIcontrol.m,0.0435373,1,Unrecognized function or variable 'fnameMaster'.
+PIDtoolbox/PTstatsUIcontrol.m,0.037445,1,Unrecognized function or variable 'filenameA'.
+PIDtoolbox/PTtablecomp.m,0.0279298,1,Unable to resolve the name 'dataA.SetupInfo'.
+PIDtoolbox/PTtuneUIcontrol.m,0.0311387,1,Unrecognized function or variable 'fnameMaster'.
+PIDtoolbox/PTtuningParams.m,0.0546166,1,Unrecognized function or variable 'screensz_multiplier'.
+PIDtoolbox/PTviewerUIcontrol.m,0.0382716,1,Unrecognized function or variable 'vPos'.
+PIDtoolbox/movingPhaseLag.m,0.0277144,1,Unable to resolve the name 'DATmainA.debug'.
+PRMLT/demo/ch01/info_demo.m,0.0319729,1,Undefined function 'jointEntropy' for input arguments of type 'double'.
+PRMLT/demo/ch03/linRegEm_demo.m,0.4467102,1,Undefined function 'linRnd' for input arguments of type 'double'.
+PRMLT/demo/ch03/linRegFp_demo.m,0.0240428,1,Undefined function 'linRnd' for input arguments of type 'double'.
+PRMLT/demo/ch03/linReg_demo.m,0.0195702,1,Undefined function 'linRnd' for input arguments of type 'double'.
+PRMLT/demo/ch04/logitBin_demo.m,0.0190808,1,Undefined function 'kmeansRnd' for input arguments of type 'double'.
+PRMLT/demo/ch04/logitMn_demo.m,0.0173133,1,Undefined function 'kmeansRnd' for input arguments of type 'double'.
+PRMLT/demo/ch05/mlp_demo.m,0.0202017,1,Undefined function 'mlpReg' for input arguments of type 'double'.
+PRMLT/demo/ch06/knCenter_demo.m,0.0195122,1,Undefined function 'knCenter' for input arguments of type 'function_handle'.
+PRMLT/demo/ch06/knKmeans_demo.m,0.021292,1,Undefined function 'kmeansRnd' for input arguments of type 'double'.
+PRMLT/demo/ch06/knLin_demo.m,0.0210508,1,Undefined function 'knReg' for input arguments of type 'function_handle'.
+PRMLT/demo/ch06/knReg_demo.m,0.0192243,1,Undefined function 'knReg' for input arguments of type 'function_handle'.
+PRMLT/demo/ch07/rvmBinEm_demo.m,0.0184582,1,Undefined function 'kmeansRnd' for input arguments of type 'double'.
+PRMLT/demo/ch07/rvmBinFp_demo.m,0.0184797,1,Undefined function 'kmeansRnd' for input arguments of type 'double'.
+PRMLT/demo/ch07/rvmRegEm_demo.m,0.0209053,1,Undefined function 'rvmRegEm' for input arguments of type 'double'.
+PRMLT/demo/ch07/rvmRegEm_spSignal_demo.m,0.0240125,1,Undefined function 'unitize' for input arguments of type 'double'.
+PRMLT/demo/ch07/rvmRegFp_demo.m,0.0194241,1,Undefined function 'rvmRegFp' for input arguments of type 'double'.
+PRMLT/demo/ch07/rvmRegFp_spSignal_demo.m,0.020393,1,Undefined function 'unitize' for input arguments of type 'double'.
+PRMLT/demo/ch07/rvmRegSeq_demo.m,0.0186087,1,Undefined function 'rvmRegSeq' for input arguments of type 'double'.
+PRMLT/demo/ch07/rvmRegSeq_spSignal_demo.m,0.0227314,1,Undefined function 'unitize' for input arguments of type 'double'.
+PRMLT/demo/ch08/mrf_demo.m,0.1448357,1,Undefined function 'mrfIsGa' for input arguments of type 'double'.
+PRMLT/demo/ch08/nbBern_demo.m,0.0511169,1,Undefined function 'mixBernRnd' for input arguments of type 'double'.
+PRMLT/demo/ch08/nbGauss_demo.m,0.0197734,1,Undefined function 'kmeansRnd' for input arguments of type 'double'.
+PRMLT/demo/ch09/kmeans_demo.m,0.0223873,1,Undefined function 'kmeansRnd' for input arguments of type 'double'.
+PRMLT/demo/ch09/kmeans_mixGaussEm_demo.m,0.0202529,1,Undefined function 'mixGaussRnd' for input arguments of type 'double'.
+PRMLT/demo/ch09/kmedoids_demo.m,0.0182859,1,Undefined function 'kmeansRnd' for input arguments of type 'double'.
+PRMLT/demo/ch09/linRegEm_demo.m,0.0172845,1,Undefined function 'linRnd' for input arguments of type 'double'.
+PRMLT/demo/ch09/mixBernEm_demo.m,0.0210648,1,Undefined function 'mixBernRnd' for input arguments of type 'double'.
+PRMLT/demo/ch09/mixGaussEm_demo.m,0.0263068,1,Undefined function 'mixGaussRnd' for input arguments of type 'double'.
+PRMLT/demo/ch10/mixGaussVb_demo.m,0.0208173,1,Undefined function 'mixGaussRnd' for input arguments of type 'double'.
+PRMLT/demo/ch10/rvmRegVb_demo.m,0.0208098,1,Undefined function 'linRegVb' for input arguments of type 'double'.
+PRMLT/demo/ch10/rvmRegVb_spSignal_demo.m,0.0201238,1,Undefined function 'unitize' for input arguments of type 'double'.
+PRMLT/demo/ch11/gauss_demo.m,0.0317202,1,Undefined function 'logGauss' for input arguments of type 'double'.
+PRMLT/demo/ch11/mixGaussGb_demo.m,0.0228233,1,Undefined function 'mixGaussRnd' for input arguments of type 'double'.
+PRMLT/demo/ch12/fa_demo.m,0.0221758,1,Undefined function 'ppcaRnd' for input arguments of type 'double'.
+PRMLT/demo/ch12/pca_demo.m,0.0214032,1,Undefined function 'ppcaRnd' for input arguments of type 'double'.
+PRMLT/demo/ch12/ppcaEm_demo.m,0.0188644,1,Undefined function 'ppcaRnd' for input arguments of type 'double'.
+PRMLT/demo/ch12/ppcaVb_demo.m,0.0186588,1,Undefined function 'ppcaRnd' for input arguments of type 'double'.
+PRMLT/demo/ch13/hmm_demo.m,0.0214874,1,Undefined function 'hmmRnd' for input arguments of type 'double'.
+PRMLT/demo/ch13/lds_demo.m,0.0221127,1,Undefined function 'ldsRnd' for input arguments of type 'struct'.
+PRMLT/demo/ch14/adaboostBin_demo.m,0.0180479,1,Undefined function 'kmeansRnd' for input arguments of type 'double'.
+PRMLT/demo/ch14/mixLinReg_demo.m,0.0191508,1,Undefined function 'mixLinRnd' for input arguments of type 'double'.
+PRMLT/demo/ch14/mixLogitBin_demo.m,0.017725,1,Undefined function 'kmeansRnd' for input arguments of type 'double'.
+R-FCN/rfcn_build.m,0.0680189,1,"Supported compiler not detected. You can install the freely available MinGW-w64 C/C++ compiler; see <a href=""matlab: helpview([docroot '/matlab/helptargets.map'],'install_mingw')"">Install MinGW-w64 Compiler</a>. For more options, visit <a href=""https://www.mathworks.com/support/compilers"">https://www.mathworks.com/support/compilers</a>."
+R-FCN/startup.m,0.4737692,1,matcaffe is missing from external/caffe/matlab; See README.md
+R-FCN/experiments/script_rfcn_VOC0712_ResNet101_OHEM_rpn.m,0.5475219,1,matcaffe is missing from external/caffe/matlab; See README.md
+R-FCN/experiments/script_rfcn_VOC0712_ResNet101_OHEM_ss.m,0.4981452,1,matcaffe is missing from external/caffe/matlab; See README.md
+R-FCN/experiments/script_rfcn_VOC0712_ResNet101_rpn.m,0.4764857,1,matcaffe is missing from external/caffe/matlab; See README.md
+R-FCN/experiments/script_rfcn_VOC0712_ResNet50_OHEM_rpn.m,0.4684076,1,matcaffe is missing from external/caffe/matlab; See README.md
+R-FCN/experiments/script_rfcn_VOC0712_ResNet50_OHEM_ss.m,0.4791036,1,matcaffe is missing from external/caffe/matlab; See README.md
+R-FCN/experiments/script_rfcn_VOC0712_ResNet50_rpn.m,0.5650935,1,matcaffe is missing from external/caffe/matlab; See README.md
+R-FCN/experiments/script_rfcn_demo.m,0.5402379,1,matcaffe is missing from external/caffe/matlab; See README.md
+R-FCN/fetch_data/fetch_caffe_mex_windows_vs2013_cuda75.m,22.6692622,0,
+R-FCN/fetch_data/fetch_demo_model_ResNet101.m,34.7630596,0,
+R-FCN/fetch_data/fetch_model_ResNet101.m,41.2736113,0,
+R-FCN/fetch_data/fetch_model_ResNet50.m,19.997223,0,
+R-FCN/fetch_data/fetch_region_proposals.m,112.4070597,0,
+RankIQA/data/data_generator/distortion_saver.m,0.033565,0,NaN
+SFD/sfd_test_code/FDDB/fddb_from_rectangle_to_ellipse/fitting.m,0.0355912,1,Invalid file identifier. Use fopen to generate a valid file identifier.
+Smart-Algorithm/Ant_Colony_Optimization/ACO_MatLab/AC解决函数最优解/SolveMax.m,0.3416498,0,
+Smart-Algorithm/Ant_Colony_Optimization/ACO_MatLab/AC解决机器人路径规划/main.m,27.3895302,0,
+Smart-Algorithm/Ant_Colony_Optimization/ACO_MatLab/AOC解决TSP问题/mian.m,11.565067,0,
+Smart-Algorithm/Genetic_Algorithm/GA_MatLab/GA遗传算法工具箱/Test.m,0.0899816,1,"Error: Invalid text character. Check for unsupported symbol, invisible character, or pasting of non-ASCII characters."
+Smart-Algorithm/Genetic_Algorithm/GA_MatLab/GA遗传算法解决TSP问题/main.m,0.7477722,0,
+Smart-Algorithm/Genetic_Algorithm/GA_MatLab/GA遗传算法解决非线性最优解/main.m,0.6345052,0,
+Smart-Algorithm/Immunity_Algorithm/IMA/main.m,124.3423708,0,
+Smart-Algorithm/Immunity_Algorithm/IMA解决TSP问题/main.m,20.3710642,0,
+Smart-Algorithm/Immunity_Algorithm/IMA解决非线性问题求解/main.m,10.6369849,0,
+Smart-Algorithm/Particle_Swarm_Optimization/PSO-Toolbox/main.m,0.1328581,0,
+Smart-Algorithm/Particle_Swarm_Optimization/PSO-basic/DrawGriewank.m,0.1452698,0,
+Smart-Algorithm/Particle_Swarm_Optimization/PSO-basic/DrawRastrigin.m,0.1262931,0,
+Smart-Algorithm/Particle_Swarm_Optimization/PSO-basic/main.m,0.8154277,0,
+Stanford-CS-229/CS229官网当前文档/extra-notes/boosting_example.m,0.080988,1,Undefined function 'stump_booster' for input arguments of type 'double'.
+activityrecognition/code/matlab/example_usage.m,0.0198319,1,Unrecognized function or variable 'data'.
+activityrecognition/code/percom18_stl/demo.m,0.0425738,1,Unable to find file or directory 'data/activity_recognition/dsads.mat'.
+automated-driving-control/ch10/brake_calibration.m,178.3469721,1,"Failed to load library 'Solver_SF' referenced by '<a href=""matlab:open_and_hilite_hyperlink ('calibration/CarSim S-Function','error')"">calibration/CarSim S-Function</a>'."
+automated-driving-control/ch10/thr_calibration.m,0.1542825,1,"Failed to load library 'Solver_SF' referenced by '<a href=""matlab:open_and_hilite_hyperlink ('calibration/CarSim S-Function','error')"">calibration/CarSim S-Function</a>'."
+automated-driving-control/ch11/brake_calibration.m,0.2773032,1,"Failed to load library 'Solver_SF' referenced by '<a href=""matlab:open_and_hilite_hyperlink ('calibration/CarSim S-Function','error')"">calibration/CarSim S-Function</a>'."
+automated-driving-control/ch11/thr_calibration.m,0.1246922,1,"Failed to load library 'Solver_SF' referenced by '<a href=""matlab:open_and_hilite_hyperlink ('calibration/CarSim S-Function','error')"">calibration/CarSim S-Function</a>'."
+automated-driving-control/ch12/brake_calibration.m,0.1641186,1,"Failed to load library 'Solver_SF' referenced by '<a href=""matlab:open_and_hilite_hyperlink ('calibration/CarSim S-Function','error')"">calibration/CarSim S-Function</a>'."
+automated-driving-control/ch12/thr_calibration.m,0.076803,1,"Failed to load library 'Solver_SF' referenced by '<a href=""matlab:open_and_hilite_hyperlink ('calibration/CarSim S-Function','error')"">calibration/CarSim S-Function</a>'."
+automatic-driving-decision-and-planning-for-matlab/EMPlanner/emplanner_init.m,31070.5334053,0,
+automatic-driving-decision-and-planning-for-matlab/EMPlanner/testctrl.m,0.0285706,1,Unable to resolve the name 'control_debug.LQR_debug.host_x.data'.
+automatic-driving-decision-and-planning-for-matlab/EMPlannerV0.5/debug.m,0.028096,1,Unable to resolve the name 'debug_control.xr_desire.data'.
+automatic-driving-decision-and-planning-for-matlab/EMPlannerV0.5/emplanner_init.m,4.8876011,0,
+automatic-driving-decision-and-planning-for-matlab/EMPlannerV0.5/init.m,0.0305613,1,Unable to find file or directory 'calibration_table'.
+automatic-driving-decision-and-planning-for-matlab/EMPlannerV0.5/testctrl.m,0.0185089,1,Unable to resolve the name 'control_debug.LQR_debug.host_x.data'.
+automatic-driving-decision-and-planning-for-matlab/EMPlanner_v0.1/emplanner_init.m,4.0089213,0,
+automatic-driving-decision-and-planning-for-matlab/EMPlanner_v0.1/testctrl.m,0.0164496,1,Unable to resolve the name 'control_debug.LQR_debug.host_x.data'.
+automatic-driving-decision-and-planning-for-matlab/EMPlanner_v0.11/debug.m,0.0155838,1,Unable to resolve the name 'debug_planning.debug_planning_info.xr_desire_m_.time'.
+automatic-driving-decision-and-planning-for-matlab/EMPlanner_v0.11/emplanner_init.m,3.6831426,0,
+automatic-driving-decision-and-planning-for-matlab/EMPlanner_v0.11/init.m,0.024225,1,Unable to find file or directory 'calibration_table'.
+automatic-driving-decision-and-planning-for-matlab/EMPlanner_v0.11/testctrl.m,0.0144781,1,Unable to resolve the name 'control_debug.LQR_debug.host_x.data'.
+automatic-driving-decision-and-planning-for-matlab/EMPlanner_v0.4/debug.m,0.0138159,1,Unable to resolve the name 'debug_control.xr_desire.data'.
+automatic-driving-decision-and-planning-for-matlab/EMPlanner_v0.4/emplanner_init.m,3.711424,0,
+automatic-driving-decision-and-planning-for-matlab/EMPlanner_v0.4/init.m,0.0240296,1,Unable to find file or directory 'calibration_table'.
+automatic-driving-decision-and-planning-for-matlab/EMPlanner_v0.4/testctrl.m,0.0149451,1,Unable to resolve the name 'control_debug.LQR_debug.host_x.data'.
+automatic-driving-decision-and-planning-for-matlab/EMplanner_v0.2/debug.m,0.015588,1,Unable to resolve the name 'debug_control.xr_desire.data'.
+automatic-driving-decision-and-planning-for-matlab/EMplanner_v0.2/emplanner_init.m,3.658056,0,
+automatic-driving-decision-and-planning-for-matlab/EMplanner_v0.2/init.m,0.031059,1,Unable to find file or directory 'calibration_table'.
+automatic-driving-decision-and-planning-for-matlab/EMplanner_v0.2/testctrl.m,0.0157523,1,Unable to resolve the name 'control_debug.LQR_debug.host_x.data'.
+automatic-driving-decision-and-planning-for-matlab/EMplanner_v0.3/debug.m,0.0136523,1,Unable to resolve the name 'debug_control.xr_desire.data'.
+automatic-driving-decision-and-planning-for-matlab/EMplanner_v0.3/emplanner_init.m,3.6765981,0,
+automatic-driving-decision-and-planning-for-matlab/EMplanner_v0.3/init.m,0.023625,1,Unable to find file or directory 'calibration_table'.
+automatic-driving-decision-and-planning-for-matlab/EMplanner_v0.3/testctrl.m,0.0146828,1,Unable to resolve the name 'control_debug.LQR_debug.host_x.data'.
+cfnet/src/tracking/run_baseline5_evaluation.m,0.0457748,1,Undefined function 'vl_argparse' for input arguments of type 'struct'.
+cfnet/src/tracking/run_cfnet1_evaluation.m,0.0246773,1,Undefined function 'vl_argparse' for input arguments of type 'struct'.
+cfnet/src/tracking/run_cfnet2_evaluation.m,0.0240414,1,Undefined function 'vl_argparse' for input arguments of type 'struct'.
+cfnet/src/tracking/run_cfnet3_evaluation.m,0.0284838,1,Undefined function 'vl_argparse' for input arguments of type 'struct'.
+chebfun/ODEformats.m,0.0999035,0,
+chebfun/cheblogo.m,1.7546125,0,
+chebfun/tests/adchebfun/test_lintest_rdivide.m,2.5719491,1,Undefined function 'chebfun' for input arguments of type 'function_handle'.
+chebfun/tests/adchebfun/test_lintest_times.m,2.3339757,1,Undefined function 'chebfun' for input arguments of type 'function_handle'.
+chebfun/tests/ballfun/test_coeffs3.m,2.4721657,1,Undefined function 'ballfun' for input arguments of type 'function_handle'.
+chebfun/tests/ballfun/test_vscale.m,2.6162068,1,Undefined function 'ballfun' for input arguments of type 'function_handle'.
+chebfun/tests/ballfunv/test_isempty.m,2.6455211,1,Unrecognized function or variable 'ballfunv'.
+chebfun/tests/ballfunv/test_size.m,2.3514683,1,Undefined function 'ballfun' for input arguments of type 'function_handle'.
+chebfun/tests/cheb/test_galleryball.m,2.6528809,0,
+chebfun/tests/chebfun/test_svd.m,2.7214044,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/chebfun2/test_chebpolyval2.m,2.3354015,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/chebfun2/test_roots.m,2.535804,1,Undefined function 'chebfun2' for input arguments of type 'function_handle'.
+chebfun/tests/chebfun3/test_chebpolyval3.m,2.5206743,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/chebfun3/test_construnctorsyntax.m,2.3790739,1,Undefined function 'chebpts3' for input arguments of type 'double'.
+chebfun/tests/chebfun3/test_domainChck.m,2.5659003,1,Undefined function 'chebfun3' for input arguments of type 'function_handle'.
+chebfun/tests/chebfun3/test_emptyObjects.m,2.3393779,1,Unrecognized function or variable 'chebfun3'.
+chebfun/tests/chebfun3/test_fold_unfold.m,2.645813,1,Unable to resolve the name 'chebfun3.unfold'.
+chebfun/tests/chebfun3/test_isequal.m,2.5922089,1,Undefined function 'chebfun3' for input arguments of type 'function_handle'.
+chebfun/tests/chebfun3/test_isreal.m,2.6371681,1,Undefined function 'chebfun3' for input arguments of type 'function_handle'.
+chebfun/tests/chebfun3/test_iszero.m,2.7786296,1,Undefined function 'chebfun3' for input arguments of type 'double'.
+chebfun/tests/chebfun3/test_ndf.m,2.5510749,1,Unrecognized function or variable 'chebfun3'.
+chebfun/tests/chebfun3/test_plotting.m,2.7122517,1,Undefined function 'chebfun3' for input arguments of type 'function_handle'.
+chebfun/tests/chebfun3/test_rank.m,2.9405471,1,Undefined function 'chebfun3' for input arguments of type 'function_handle'.
+chebfun/tests/chebfun3t/test_ndf.m,2.353976,1,Unrecognized function or variable 'chebfun3t'.
+chebfun/tests/chebfun3v/test_empty.m,2.521035,1,Unrecognized function or variable 'chebfun3v'.
+chebfun/tests/chebfun3v/test_isreal.m,1.8465875,1,Undefined function 'chebfun3v' for input arguments of type 'function_handle'.
+chebfun/tests/chebfun3v/test_quiver3.m,1.0987358,1,Undefined function 'chebfun3v' for input arguments of type 'function_handle'.
+chebfun/tests/chebfun3v/test_size.m,1.9173747,1,Undefined function 'chebfun3v' for input arguments of type 'function_handle'.
+chebfun/tests/chebop/test_vectorizeOp.m,2.0017999,1,Undefined function 'chebfun' for input arguments of type 'function_handle'.
+chebfun/tests/chebpref/test_chebfunpref.m,1.5409401,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/chebpref/test_cheboppref.m,1.4290669,1,Unrecognized function or variable 'cheboppref'.
+chebfun/tests/diskfun/test_BMCsvd.m,1.7093889,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_Poisson.m,2.4404279,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_abs.m,2.4377633,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_biharm.m,2.2907659,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_cdr.m,2.6974096,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_coeffs2.m,2.3822114,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_coeffs2diskfun.m,2.5917045,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_constructor.m,2.7637505,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_curl.m,2.4304412,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_diag.m,2.5010399,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_diff.m,2.511793,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_feval.m,2.3946253,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_flipshiftrotate.m,2.9877609,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_grad.m,2.3966462,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_harmonic.m,2.5971892,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_helmholtz.m,2.5472026,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_inherited.m,2.6296306,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_integral.m,2.4399148,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_integral2.m,2.3379775,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_isempty.m,2.5024227,1,Unrecognized function or variable 'diskfun'.
+chebfun/tests/diskfun/test_iszero.m,2.6419333,1,Undefined function 'diskfun' for input arguments of type 'function_handle'.
+chebfun/tests/diskfun/test_laplacian.m,2.6420724,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_mean.m,2.499213,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_median.m,2.3482782,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_norm.m,2.3311674,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_partitionCombine.m,2.2974249,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_plus.m,2.3289402,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_power.m,2.4836816,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_projection.m,2.3794056,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_rank.m,2.3602052,1,Undefined function 'diskfun' for input arguments of type 'function_handle'.
+chebfun/tests/diskfun/test_sample.m,2.5800662,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_sum.m,2.4917358,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_sum2.m,2.5060288,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_svd.m,2.3286592,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_times.m,2.2977874,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfun/test_vertcat.m,2.2552816,1,Undefined function 'diskfun' for input arguments of type 'function_handle'.
+chebfun/tests/diskfunv/test_constructor.m,2.3434273,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfunv/test_cross.m,2.4443735,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfunv/test_curl.m,2.4724673,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfunv/test_diff.m,2.2333525,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfunv/test_div.m,2.2854654,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfunv/test_dot.m,2.2309029,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfunv/test_empty.m,2.3034149,1,Unrecognized function or variable 'diskfunv'.
+chebfun/tests/diskfunv/test_feval.m,2.2569051,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfunv/test_jacobian.m,2.466677,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfunv/test_transpose.m,2.3401305,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/diskfunv/test_vectorRelations.m,2.2874612,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/linop/test_eigs.m,2.490011,1,Unable to resolve the name 'operatorBlock.diff'.
+chebfun/tests/misc/test_jac2jac.m,2.46067,1,"The current random number generator is the legacy generator.  This is because you have executed a command such as rand('state',0), which activates MATLAB's legacy random number behavior.  You may not use RNG to reseed the legacy random number generator.
+
+Use rng('default') to reinitialize the random number generator to its startup configuration, or call RNG using a specific generator type, such as rng(seed,'twister')."
+chebfun/tests/spherefun/test_BMCsvd.m,2.2209559,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_HelmholtzSolver.m,2.1586479,1,Unable to resolve the name 'spherefun.sphharm'.
+chebfun/tests/spherefun/test_Poisson.m,2.3143985,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_abs.m,2.3098842,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_biharm.m,2.5689986,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_cdr.m,2.3390922,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_coeffs2.m,2.3390267,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_constructor.m,2.2413717,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_curl.m,2.3880404,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_diff.m,2.2250401,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_feval.m,2.2403843,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_gaussfilt.m,2.3182935,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_grad.m,2.3726213,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_inherited.m,2.2039109,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_isempty.m,2.306701,1,Unrecognized function or variable 'spherefun'.
+chebfun/tests/spherefun/test_iszero.m,2.1849622,1,Undefined function 'spherefun' for input arguments of type 'function_handle'.
+chebfun/tests/spherefun/test_laplacian.m,2.2486199,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_norm.m,2.5653085,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_partitionCombine.m,2.4380687,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_plus.m,2.3139311,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_power.m,2.253207,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_projection.m,2.1989937,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_sample.m,2.3041089,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_sphharm.m,2.2629344,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_sum2.m,2.1514042,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_svd.m,2.2081388,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_times.m,2.1347636,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefun/test_vertcat.m,2.2755008,1,Undefined function 'spherefun' for input arguments of type 'function_handle'.
+chebfun/tests/spherefunv/test_constructor.m,2.470651,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefunv/test_cross.m,2.5999347,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefunv/test_curl.m,2.0960224,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefunv/test_div.m,2.2416462,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefunv/test_dot.m,2.1583256,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefunv/test_empty.m,2.4131917,1,Unrecognized function or variable 'spherefunv'.
+chebfun/tests/spherefunv/test_feval.m,2.4963064,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefunv/test_helmholtzdecomp.m,2.5462385,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefunv/test_tangentnormal.m,2.2515979,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefunv/test_transpose.m,2.3307289,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefunv/test_vectorRelations.m,2.5278081,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spherefunv/test_vort.m,2.198075,1,Unrecognized function or variable 'chebfunpref'.
+chebfun/tests/spinop/test_spin.m,2.3062876,1,Undefined function 'spinop' for input arguments of type 'char'.
+chebfun/tests/spinop/test_spinop.m,2.3248974,1,Undefined function 'spinop' for input arguments of type 'char'.
+chebfun/tests/spinop2/test_spin2.m,2.3497397,1,Undefined function 'spinop2' for input arguments of type 'char'.
+chebfun/tests/spinop2/test_spinop2.m,2.5524152,1,Undefined function 'spinop2' for input arguments of type 'char'.
+chebfun/tests/spinop3/test_spin3.m,2.2178164,1,Undefined function 'spinop3' for input arguments of type 'char'.
+chebfun/tests/spinop3/test_spinop3.m,2.2351029,1,Undefined function 'spinop3' for input arguments of type 'char'.
+chebfun/tests/spinopsphere/test_spinopsphere.m,2.304649,1,Undefined function 'spinopsphere' for input arguments of type 'char'.
+chebfun/tests/spinopsphere/test_spinsphere.m,2.5650667,1,Undefined function 'spinopsphere' for input arguments of type 'char'.
+chebfun/tests/spinpref/test_spinpref.m,2.5143388,1,Undefined function 'spinpref' for input arguments of type 'char'.
+chebfun/tests/spinpref2/test_spinpref2.m,2.6171601,1,Undefined function 'spinpref2' for input arguments of type 'char'.
+chebfun/tests/spinpref3/test_spinpref3.m,2.2135687,1,Undefined function 'spinpref3' for input arguments of type 'char'.
+chebfun/tests/spinprefsphere/test_spinprefsphere.m,2.8882238,1,Undefined function 'spinprefsphere' for input arguments of type 'char'.
+chebfun/tests/spinscheme/test_phiFun.m,2.7626765,1,Unable to resolve the name 'expinteg.phiFun'.
+chebfun/tests/spinscheme/test_startMultistep.m,2.5286643,1,Undefined function 'spinop' for input arguments of type 'char'.
+chebfun/tests/treeVar/test_toFirstOrder.m,2.6810807,1,Undefined function 'chebfun' for input arguments of type 'function_handle'.
+cnn-for-image-retrieval/compute_MAP.m,0.1676411,1,Unable to find file or directory 'feat4096Norml.mat'.
+cnn-for-image-retrieval/extractCNN.m,0.7896347,1,Unable to find file or directory 'imagenet-vgg-f.mat'.
+cnn-for-image-retrieval/queryInDatabaseDemo.m,0.1433742,1,Unable to find file or directory 'feat4096Norml.mat'.
+cnn-for-image-retrieval/matconvnet-1.0-beta17/examples/imagenet/cnn_imagenet_camdemo.m,0.8391671,1,Undefined function 'webcam' for input arguments of type 'double'.
+cnn-for-image-retrieval/matconvnet-1.0-beta17/examples/imagenet/cnn_imagenet_googlenet.m,0.0563351,1,Unable to change current folder to 'C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\cnn-for-image-retrieval\matconvnet-1.0-beta17\examples\imagenet\matlab' (Name is nonexistent or not a folder).
+cnn-for-image-retrieval/matconvnet-1.0-beta17/examples/imagenet/cnn_imagenet_minimal.m,17.6885571,1,Execution of script vl_nnconv as a function is not supported:
+C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\cnn-for-image-retrieval\matconvnet-1.0-beta17\matlab\vl_nnconv.m
+cnn-for-image-retrieval/matconvnet-1.0-beta17/examples/mnist/cnn_mnist_experiments.m,7.7094414,1,Execution of script vl_nnconv as a function is not supported:
+C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\cnn-for-image-retrieval\matconvnet-1.0-beta17\matlab\vl_nnconv.m
+cnn-for-image-retrieval/matconvnet-1.0-beta17/examples/vggfaces/cnn_vgg_faces.m,0.0317589,1,Unable to change current folder to 'C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\cnn-for-image-retrieval\matconvnet-1.0-beta17\examples\vggfaces\matlab' (Name is nonexistent or not a folder).
+cnn-for-image-retrieval/matconvnet-1.0-beta17/matlab/vl_setupnn.m,0.636925,0,
+cnn-for-image-retrieval/matconvnet-1.0-beta17/matlab/xtest/vl_bench_imreadjpeg.m,0.0080339,1,Execution of script vl_imreadjpeg as a function is not supported:
+C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\cnn-for-image-retrieval\matconvnet-1.0-beta17\matlab\vl_imreadjpeg.m
+cnn-for-image-retrieval/matconvnet-1.0-beta17/matlab/xtest/vl_test_bnorm.m,0.4096066,1,Execution of script vl_nnbnorm as a function is not supported:
+C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\cnn-for-image-retrieval\matconvnet-1.0-beta17\matlab\vl_nnbnorm.m
+cnn-for-image-retrieval/matconvnet-1.0-beta17/matlab/xtest/vl_test_economic_relu.m,0.0801773,1,"Unrecognized field name ""weights""."
+cnn-for-image-retrieval/matconvnet-1.0-beta17/matlab/xtest/vl_test_gpureset.m,15.9849392,1,Execution of script vl_nnconv as a function is not supported:
+C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\cnn-for-image-retrieval\matconvnet-1.0-beta17\matlab\vl_nnconv.m
+cnn-for-image-retrieval/matconvnet-1.0-beta17/utils/evaluate_ref_models.m,0.7045145,1,Make sure that ILSVRC data is correctly installed in data\imagenet12-ram
+cnn-for-image-retrieval/matconvnet-1.0-beta17/utils/test_examples.m,0.2702078,1,Undefined function 'cnn_mnist' for input arguments of type 'struct'.
+cnn-for-image-retrieval/matconvnet-1.0-beta17/utils/tidy_ref_models.m,0.5396949,1,Unable to find file or directory 'data\models\imagenet-matconvnet-alex.mat'.
+cnn-for-image-retrieval/matconvnet-1.0-beta18/examples/imagenet/cnn_imagenet_camdemo.m,0.6878331,1,Undefined function 'webcam' for input arguments of type 'double'.
+cnn-for-image-retrieval/matconvnet-1.0-beta18/examples/imagenet/cnn_imagenet_googlenet.m,0.0437917,1,Unable to change current folder to 'C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\cnn-for-image-retrieval\matconvnet-1.0-beta18\examples\imagenet\matlab' (Name is nonexistent or not a folder).
+cnn-for-image-retrieval/matconvnet-1.0-beta18/examples/imagenet/cnn_imagenet_minimal.m,2.2320581,1,Execution of script vl_nnconv as a function is not supported:
+C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\cnn-for-image-retrieval\matconvnet-1.0-beta18\matlab\vl_nnconv.m
+cnn-for-image-retrieval/matconvnet-1.0-beta18/examples/mnist/cnn_mnist_experiments.m,0.7565453,1,Uknown parameter 'useBnorm'
+cnn-for-image-retrieval/matconvnet-1.0-beta18/examples/vggfaces/cnn_vgg_faces.m,0.0420829,1,Unable to change current folder to 'C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\cnn-for-image-retrieval\matconvnet-1.0-beta18\examples\vggfaces\matlab' (Name is nonexistent or not a folder).
+cnn-for-image-retrieval/matconvnet-1.0-beta18/matlab/vl_setupnn.m,0.5275077,0,
+cnn-for-image-retrieval/matconvnet-1.0-beta18/matlab/xtest/vl_bench_imreadjpeg.m,0.0068927,1,Execution of script vl_imreadjpeg as a function is not supported:
+C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\cnn-for-image-retrieval\matconvnet-1.0-beta18\matlab\vl_imreadjpeg.m
+cnn-for-image-retrieval/matconvnet-1.0-beta18/matlab/xtest/vl_test_bnorm.m,0.0765403,1,Execution of script vl_nnbnorm as a function is not supported:
+C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\cnn-for-image-retrieval\matconvnet-1.0-beta18\matlab\vl_nnbnorm.m
+cnn-for-image-retrieval/matconvnet-1.0-beta18/matlab/xtest/vl_test_economic_relu.m,0.0308661,1,"Unrecognized field name ""weights""."
+cnn-for-image-retrieval/matconvnet-1.0-beta18/matlab/xtest/vl_test_gpureset.m,9.4366813,1,Execution of script vl_nnconv as a function is not supported:
+C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\cnn-for-image-retrieval\matconvnet-1.0-beta18\matlab\vl_nnconv.m
+cnn-for-image-retrieval/matconvnet-1.0-beta18/utils/evaluate_ref_models.m,0.7698109,1,Make sure that ILSVRC data is correctly installed in data\imagenet12-ram
+cnn-for-image-retrieval/matconvnet-1.0-beta18/utils/test_examples.m,0.2390128,1,Undefined function 'cnn_mnist' for input arguments of type 'struct'.
+cnn-for-image-retrieval/matconvnet-1.0-beta18/utils/tidy_ref_models.m,0.566025,1,Unable to find file or directory 'data\models\imagenet-matconvnet-alex.mat'.
+crfasrnn/matlab-scripts/crfrnn_demo.m,0.030036,1,You need a network model file. Please download our default model by running ./download_trained_model.sh
+crfasrnn/matlab-scripts/devtools/tvg_VOCinit.m,0.0346188,0,
+deep-photo-styletransfer/gen_laplacian/gen_laplacian.m,982.8308351,0,
+deep-photo-styletransfer/gen_laplacian/matting/runMatting.m,0.0601825,1,Unrecognized function or variable 'img_name'.
+edges/edgeBoxesDemo.m,0.5879573,1,Undefined function 'getPrmDflt' for input arguments of type 'cell'.
+edges/edgeBoxesSweeps.m,0.025583,1,Undefined function 'getPrmDflt' for input arguments of type 'cell'.
+edges/edgesDemo.m,0.0359326,1,Undefined function 'getPrmDflt' for input arguments of type 'cell'.
+edges/edgesDemoRgbd.m,0.0228761,1,Undefined function 'getPrmDflt' for input arguments of type 'cell'.
+edges/edgesSweeps.m,0.0258927,1,Undefined function 'getPrmDflt' for input arguments of type 'cell'.
+edges/spDemo.m,0.6400771,1,Undefined function 'getPrmDflt' for input arguments of type 'cell'.
+face_verification_experiment/code/evaluation.m,1.2514801,0,NaN
+fashion-detection/demo.m,0.0226957,1,"Error: File: C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\fashion-detection\demo.m Line: 74
+A CONTINUE may only be used within a FOR or WHILE loop, and then only within the same file as its corresponding FOR or WHILE statement."
+faster_rcnn/faster_rcnn_build.m,0.7086178,1,"Supported compiler not detected. You can install the freely available MinGW-w64 C/C++ compiler; see <a href=""matlab: helpview([docroot '/matlab/helptargets.map'],'install_mingw')"">Install MinGW-w64 Compiler</a>. For more options, visit <a href=""https://www.mathworks.com/support/compilers"">https://www.mathworks.com/support/compilers</a>."
+faster_rcnn/startup.m,0.6482812,1,matcaffe is missing from external/caffe/matlab; See README.md
+faster_rcnn/experiments/script_fast_rcnn_VOC0712_VGG16.m,0.6550186,1,matcaffe is missing from external/caffe/matlab; See README.md
+faster_rcnn/experiments/script_fast_rcnn_VOC0712_ZF.m,0.5462278,1,matcaffe is missing from external/caffe/matlab; See README.md
+faster_rcnn/experiments/script_fast_rcnn_VOC2007_VGG16.m,0.6942423,1,matcaffe is missing from external/caffe/matlab; See README.md
+faster_rcnn/experiments/script_fast_rcnn_VOC2007_ZF.m,0.7050629,1,matcaffe is missing from external/caffe/matlab; See README.md
+faster_rcnn/experiments/script_faster_rcnn_VOC0712_VGG16.m,0.5642743,1,matcaffe is missing from external/caffe/matlab; See README.md
+faster_rcnn/experiments/script_faster_rcnn_VOC0712_ZF.m,0.5442767,1,matcaffe is missing from external/caffe/matlab; See README.md
+faster_rcnn/experiments/script_faster_rcnn_VOC0712plus_VGG16.m,0.6305598,1,matcaffe is missing from external/caffe/matlab; See README.md
+faster_rcnn/experiments/script_faster_rcnn_VOC2007_VGG16.m,0.704277,1,matcaffe is missing from external/caffe/matlab; See README.md
+faster_rcnn/experiments/script_faster_rcnn_VOC2007_ZF.m,0.5863913,1,matcaffe is missing from external/caffe/matlab; See README.md
+faster_rcnn/experiments/script_faster_rcnn_VOC2012_VGG16.m,0.5285188,1,matcaffe is missing from external/caffe/matlab; See README.md
+faster_rcnn/experiments/script_faster_rcnn_demo.m,0.7026432,1,matcaffe is missing from external/caffe/matlab; See README.md
+faster_rcnn/fetch_data/fetch_caffe_mex_windows_vs2013_cuda65.m,10.4155043,0,
+faster_rcnn/fetch_data/fetch_faster_rcnn_final_model.m,230.0883616,0,
+faster_rcnn/fetch_data/fetch_model_VGG16.m,155.5173775,0,
+faster_rcnn/fetch_data/fetch_model_ZF.m,74.943526,0,
+gramm/examples.m,84.0024058,1,"Unable to find file or directory 'spectra.mat'.  It is found in 
+<a href = ""matlab:internal.matlab.desktop.commandwindow.executeCommandForUser('openExample ''bioinfo/AUCNormalizationExample''')"">bioinfo/AUCNormalizationExample</a>
+<a href = ""matlab:internal.matlab.desktop.commandwindow.executeCommandForUser('openExample ''bioinfo/MaximumIntensityNormalizationExample''')"">bioinfo/MaximumIntensityNormalizationExample</a>
+<a href = ""matlab:internal.matlab.desktop.commandwindow.executeCommandForUser('openExample ''bioinfo/PlotASetOfMassSpectraDataExample''')"">bioinfo/PlotASetOfMassSpectraDataExample</a>
+<a href = ""matlab:internal.matlab.desktop.commandwindow.executeCommandForUser('openExample ''bioinfo/QuantileNormalizationExample''')"">bioinfo/QuantileNormalizationExample</a>
+<a href = ""matlab:internal.matlab.desktop.commandwindow.executeCommandForUser('openExample ''bioinfo/SmoothMassSpectrometryDataExample''')"">bioinfo/SmoothMassSpectrometryDataExample</a>
+<a href = ""matlab:internal.matlab.desktop.commandwindow.executeCommandForUser('openExample ''bioinfo/biodistcompdemo''')"">bioinfo/biodistcompdemo</a>
+<a href = ""matlab:internal.matlab.desktop.commandwindow.executeCommandForUser('openExample ''bioinfo/lcmsdemo''')"">bioinfo/lcmsdemo</a>
+<a href = ""matlab:internal.matlab.desktop.commandwindow.executeCommandForUser('openExample ''stats/CalculateVariableImportanceInProjectionForPLSRegressionExample''')"">stats/CalculateVariableImportanceInProjectionForPLSRegressionExample</a>
+<a href = ""matlab:internal.matlab.desktop.commandwindow.executeCommandForUser('openExample ''stats/PerformPartialLeastSquaresRegressionExample''')"">stats/PerformPartialLeastSquaresRegressionExample</a>
+<a href = ""matlab:internal.matlab.desktop.commandwindow.executeCommandForUser('openExample ''stats/WiseDataViaLassoAndParallelComputingExample''')"">stats/WiseDataViaLassoAndParallelComputingExample</a>
+<a href = ""matlab:internal.matlab.desktop.commandwindow.executeCommandForUser('openExample ''stats/plspcrdemo''')"">stats/plspcrdemo</a>'."
+hashing-baseline-for-image-retrieval/cifar10_10class_visualization.m,0.0554923,1,Unable to find file or directory 'cifar-10-batches-mat/data_batch_1.mat'.
+kalibr_allan/matlab/SCRIPT_allan_matparallel.m,0.2048241,1,Unable to find file or directory '../data/imu_visensor.mat'.
+kalibr_allan/matlab/SCRIPT_process_results.m,0.3043657,1,Unable to find file or directory '../data/bags/results_20180206T140217.mat'.
+lrslibrary/demo.m,4.3605692,1,C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\lrslibrary\libs\vlfeat\toolbox\vl_setup not found.
+matlab2tikz/src/private/errorUnknownEnvironment.m,0.4379597,1,"Unknown environment ""MATLAB"". Need MATLAB(R) or Octave."
+matlab2tikz/src/private/getEnvironment.m,0.050874,0,
+matlab2tikz/test/examples/example_bar_plot.m,1.1701338,1,Undefined function 'matlab2tikz' for input arguments of type 'matlab.ui.Figure'.
+matlab2tikz/test/examples/example_quivers.m,0.2567339,0,
+matlab2tikz/test/private/StreamMaker.m,0.032668,0,
+matlab2tikz/test/private/getEnvironment.m,0.2033601,0,
+matlab2tikz/test/private/initializeGlobalState.m,5.0944469,0,
+matlab2tikz/test/suites/private/getEnvironment.m,0.2631638,0,
+mexopencv/opencv_contrib/samples/BackgroundSubtractorDemo.m,0.5158192,1,Unable to resolve the name 'cv.BackgroundSubtractorMOG'.
+mexopencv/opencv_contrib/samples/SIFT_detector.m,0.0830872,1,Unable to resolve the name 'cv.imread'.
+mexopencv/opencv_contrib/samples/SURF_descriptor.m,0.085913,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/SURF_detector.m,0.0809691,1,Unable to resolve the name 'cv.imread'.
+mexopencv/opencv_contrib/samples/aruco_calibrate_camera_charuco_demo.m,0.0888597,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/opencv_contrib/samples/aruco_calibrate_camera_demo.m,0.0876906,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/opencv_contrib/samples/aruco_create_board_charuco_demo.m,0.0789182,1,Unable to resolve the name 'cv.drawCharucoBoard'.
+mexopencv/opencv_contrib/samples/aruco_create_board_demo.m,0.0785612,1,Unable to resolve the name 'cv.drawPlanarBoard'.
+mexopencv/opencv_contrib/samples/aruco_create_diamond_demo.m,0.0770407,1,Unable to resolve the name 'cv.drawCharucoDiamond'.
+mexopencv/opencv_contrib/samples/aruco_create_marker_demo.m,0.073084,1,Unable to resolve the name 'cv.drawMarkerAruco'.
+mexopencv/opencv_contrib/samples/aruco_detect_board_charuco_demo.m,0.0857967,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/opencv_contrib/samples/aruco_detect_board_demo.m,0.0942611,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/opencv_contrib/samples/aruco_detect_diamonds_demo.m,0.08322,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/opencv_contrib/samples/aruco_detect_markers_demo.m,0.0794169,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/opencv_contrib/samples/bgsegm_synthetic_seq_demo.m,0.0896258,1,Unable to resolve the name 'cv.BackgroundSubtractorGSOC'.
+mexopencv/opencv_contrib/samples/color_balance_demo.m,0.0824642,1,Unable to resolve the name 'cv.imread'.
+mexopencv/opencv_contrib/samples/computeSaliency_demo.m,0.0857316,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/dataset_mnist_demo.m,0.1027821,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/descriptor_extractor_brief_demo.m,0.0749735,1,Unable to resolve the name 'cv.imread'.
+mexopencv/opencv_contrib/samples/disparity_filtering_demo.m,0.096542,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/dnn_img_classify_demo.m,0.0797414,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/dnn_objdetect_demo.m,0.081014,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/face_swapping_demo.m,0.0974499,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/facemark_aam_train_demo.m,0.0901124,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/facemark_kazemi_detect_img_demo.m,0.0859929,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/facemark_kazemi_detect_vid_demo.m,0.0821531,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/facemark_kazemi_train2_demo.m,0.082848,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/facemark_kazemi_train_config_demo.m,0.0777103,1,Unable to resolve the name 'cv.FileStorage'.
+mexopencv/opencv_contrib/samples/facemark_kazemi_train_demo.m,0.0852994,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/facemark_lbf_fitting_demo.m,0.0789838,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/facemark_lbf_train_demo.m,0.0879253,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/facerec_demo.m,0.0885479,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/fast_hough_transform_demo.m,0.0789589,1,Unable to resolve the name 'cv.imread'.
+mexopencv/opencv_contrib/samples/fld_lines_demo.m,0.0824159,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/fourier_descriptors_demo_gui.m,0.1303624,1,Unable to resolve the name 'mexopencv.isOctave'.
+mexopencv/opencv_contrib/samples/gms_matcher_img_demo.m,0.0914021,1,Unable to resolve the name 'cv.ORB'.
+mexopencv/opencv_contrib/samples/gms_matcher_vid_demo.m,0.0824973,1,Unable to resolve the name 'cv.ORB'.
+mexopencv/opencv_contrib/samples/gpc_demo.m,0.1025816,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/graphsegmentation_demo.m,0.0947867,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/hfs_segment_demo.m,0.0811125,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/line_extraction_demo.m,0.0971506,1,Unable to resolve the name 'mexopencv.isOctave'.
+mexopencv/opencv_contrib/samples/line_matching_demo.m,0.0924661,1,Unable to resolve the name 'cv.imread'.
+mexopencv/opencv_contrib/samples/line_radius_matching_demo.m,0.0932663,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/niblack_thresholding_demo.m,0.0961797,1,Unable to resolve the name 'mexopencv.isOctave'.
+mexopencv/opencv_contrib/samples/optical_flow_evaluation_demo.m,0.0958273,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/peilin_demo.m,0.0825333,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/plotting_demo.m,0.1345849,1,Unable to resolve the name 'cv.Plot2d'.
+mexopencv/opencv_contrib/samples/retina_demo.m,0.0945148,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/opencv_contrib/samples/structured_edge_detection_demo.m,0.0936707,1,Unable to resolve the name 'cv.imread'.
+mexopencv/opencv_contrib/samples/superpixels_demo.m,0.0980142,1,Unable to resolve the name 'cv.imread'.
+mexopencv/opencv_contrib/samples/textboxes_demo.m,0.0882556,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/opencv_contrib/samples/textboxes_dnn_demo.m,0.0948889,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/FileStorage_demo.m,0.1371203,1,Unable to resolve the name 'cv.FileStorage'.
+mexopencv/samples/RotatedRect_demo.m,0.0890686,1,Unable to resolve the name 'cv.RotatedRect.points'.
+mexopencv/samples/akaze_match_demo.m,0.1041744,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/asift_demo.m,0.1025915,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/backproject_demo_gui.m,0.0915825,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/caffe_googlenet_demo.m,0.0964822,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/calibration_capture_demo.m,0.0953721,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/samples/calibration_demo.m,0.1237403,1,Unable to resolve the name 'cv.glob'.
+mexopencv/samples/calibration_pose_demo.m,0.0886072,1,"calibration result not found, run calibration_demo.m first"
+mexopencv/samples/camshift_track_demo.m,0.0956608,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/samples/capture_demo_gui.m,0.0940993,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/samples/classification_demo.m,0.0478424,1,Unable to resolve the name 'cv.ANN_MLP'.
+mexopencv/samples/cloning_demo.m,0.0539912,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/contours2_demo.m,0.0624468,1,Unable to resolve the name 'cv.line'.
+mexopencv/samples/contours_demo.m,0.0521029,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/contours_hierarchy_demo.m,0.0474167,1,Unable to resolve the name 'cv.rectangle'.
+mexopencv/samples/convexhull_demo.m,0.0426934,1,Unable to resolve the name 'cv.convexHull'.
+mexopencv/samples/create_mask_ipt_demo.m,0.0382456,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/dbt_face_detection_demo.m,0.0357328,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/delaunay2_demo.m,0.0726126,1,Unable to resolve the name 'cv.Subdiv2D'.
+mexopencv/samples/descriptors_compute_match_demo.m,0.0410463,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/detect_blob_demo.m,0.0421006,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/dft_demo.m,0.0375616,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/dnn_face_detector.m,0.041062,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/dnn_face_recognition.m,0.0479459,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/dnn_style_transfer.m,0.0419681,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/draw_text_demo.m,0.040772,1,Unable to resolve the name 'cv.getTextSize'.
+mexopencv/samples/drawing_basic_demo.m,0.0418097,1,Unable to resolve the name 'cv.ellipse'.
+mexopencv/samples/drawing_demo.m,1.6051819,1,Unable to resolve the name 'cv.line'.
+mexopencv/samples/em_demo.m,0.0628168,1,Unable to resolve the name 'mexopencv.isOctave'.
+mexopencv/samples/epipolar_geometry_demo.m,0.0361263,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/face_eyes_detect_demo.m,0.0373124,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/facedetect.m,0.0334011,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/fback_demo.m,0.0324121,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/samples/fcn_semsegm_demo.m,0.0359664,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/feature_detector_fast_demo.m,0.0334693,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/feature_homography_demo.m,0.0375293,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/file_storage_demo.m,0.0430949,1,Unable to resolve the name 'cv.FileStorage'.
+mexopencv/samples/fitline_demo_gui.m,0.0472966,1,Unable to resolve the name 'mexopencv.isOctave'.
+mexopencv/samples/floodfill_demo.m,0.0373628,1,Unable to resolve the name 'cv.rectangle'.
+mexopencv/samples/gabor_demo.m,0.0335663,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/gausian_median_blur_bilateral_filter.m,0.0780106,0,
+mexopencv/samples/gaussian_mix_demo.m,0.0389679,1,Unable to resolve the name 'mexopencv.require'.
+mexopencv/samples/generalContours_demo1.m,0.0352471,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/generalContours_demo2.m,0.0345864,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/generalized_hough_demo.m,0.0339626,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/generic_corner_detector_demo.m,0.0441472,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/hdr_imaging_demo.m,0.0439695,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/histogram_2d_demo.m,0.036763,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/histogram_calculation_demo.m,0.036277,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/histogram_comparison_demo.m,0.0370237,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/histogram_equalization_demo.m,0.0360173,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/hitmiss_demo.m,0.0661493,1,Unable to resolve the name 'cv.copyMakeBorder'.
+mexopencv/samples/hough_circles_demo.m,0.0326606,1,Unable to resolve the name 'mexopencv.isOctave'.
+mexopencv/samples/hough_lines_demo.m,0.0348354,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/image_alignment_demo.m,0.0364841,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/image_bitwise_demo.m,0.0320765,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/kalman_demo.m,2.2228948,1,Unable to resolve the name 'cv.KalmanFilter'.
+mexopencv/samples/kmeans_color_quantize_demo.m,0.0342075,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/kmeans_demo.m,0.0619647,1,Unable to resolve the name 'mexopencv.isOctave'.
+mexopencv/samples/knn_demo.m,0.0372686,1,Unable to resolve the name 'mexopencv.require'.
+mexopencv/samples/knn_ocr_digits_demo.m,0.0345297,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/knn_ocr_letters_demo.m,0.0372014,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/laplace_demo_gui.m,0.0340087,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/samples/laplace_operator_demo.m,0.033311,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/lk_homography_demo.m,0.0367904,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/samples/lk_track_demo.m,0.0394896,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/samples/logistic_regression_demo.m,0.0349999,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/lsd_lines_demo.m,0.0321865,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/lucas_kanade_demo.m,0.0354,1,Unable to resolve the name 'mexopencv.require'.
+mexopencv/samples/mask_tmpl_demo.m,0.0344801,1,Unable to resolve the name 'mexopencv.isOctave'.
+mexopencv/samples/minarea_demo.m,0.0373228,1,Unable to resolve the name 'cv.minAreaRect'.
+mexopencv/samples/ml_demo.m,0.0372921,1,Unable to resolve the name 'cv.createConcentricSpheresTestSet'.
+mexopencv/samples/morphology_demo_3.m,0.0375826,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/mouse_and_match_demo.m,0.0368258,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/mser_demo.m,0.0329464,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/samples/non_local_means_demo.m,0.039039,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/npr_demo.m,0.0374298,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/opt_flow_demo.m,0.0407719,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/samples/orb_demo.m,0.0335694,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/pca_demo.m,0.0319087,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/pca_intro_demo.m,0.0337887,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/peopledetect_demo.m,0.0355668,1,Unable to resolve the name 'cv.HOGDescriptor'.
+mexopencv/samples/phase_corr_demo.m,0.0334954,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/samples/plane_tracker_demo.m,0.0342368,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/pointPolygonTest_demo.m,0.0344453,1,Unable to resolve the name 'cv.line'.
+mexopencv/samples/points_polygon_demo.m,0.0087645,1,Unable to resolve the name 'cv.pointPolygonTest'.
+mexopencv/samples/polar_transforms_demo.m,0.0340035,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/samples/pyramids_blending.m,0.035961,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/pyrlk_optical_flow_demo.m,0.0335289,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/samples/remap_demo.m,0.0330181,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/remap_fun_demo.m,0.0693751,1,Unable to resolve the name 'cv.remap'.
+mexopencv/samples/rgba_png_demo.m,0.048556,1,Unable to resolve the name 'cv.imwrite'.
+mexopencv/samples/segment_objects_demo.m,0.0392307,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/shape_context_demo.m,0.0341301,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/smiledetect_demo.m,0.0371312,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/smoothing_demo.m,0.0326509,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/sobel_derivatives_demo.m,0.0349437,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/squares_detector_demo.m,0.0403066,1,Unable to resolve the name 'cv.glob'.
+mexopencv/samples/stereo_calibration_demo.m,0.0501474,1,Unable to resolve the name 'cv.glob'.
+mexopencv/samples/stereo_match_demo.m,0.0387085,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/stitching_demo.m,0.036318,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/stitching_detailed_demo.m,0.0628528,1,Unable to resolve the name 'mexopencv.require'.
+mexopencv/samples/super_resolution_demo.m,0.0416778,1,Unable to resolve the name 'cv.SuperResolution'.
+mexopencv/samples/svm_hog_ocr_digits_demo.m,0.0410973,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/svm_intro_demo.m,0.0445724,1,Unable to resolve the name 'mexopencv.isOctave'.
+mexopencv/samples/synth_video_demo.m,0.0335538,1,Undefined function 'createVideoCapture' for input arguments of type 'double'.
+mexopencv/samples/texture_flow_demo.m,0.0336084,1,Unable to resolve the name 'mexopencv.root'.
+mexopencv/samples/thresholding_demo.m,0.1123544,1,Unable to resolve the name 'cv.threshold'.
+mexopencv/samples/train_svmsgd_demo_gui.m,0.0431588,1,Unable to resolve the name 'mexopencv.isOctave'.
+mexopencv/samples/turing_patterns_demo.m,0.9991332,1,Unable to resolve the name 'cv.VideoWriter'.
+mexopencv/samples/tvl1_optical_flow_demo.m,0.0402943,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/video_write_demo.m,0.0332015,1,Unable to resolve the name 'cv.VideoCapture'.
+mexopencv/samples/videostab_demo.m,0.0479942,1,Unable to resolve the name 'mexopencv.require'.
+mexopencv/samples/warp_affine_demo.m,0.0372172,1,Unable to resolve the name 'cv.imread'.
+mexopencv/samples/watershed_segmentation_demo.m,0.0344112,1,Unable to resolve the name 'mexopencv.root'.
+netvlad/demo.m,0.0444917,1,Unrecognized function or variable 'localPaths'.
+netvlad/demoRetrieval.m,0.0339169,1,Unrecognized function or variable 'localPaths'.
+quadrotor/control/runsim.m,1.9570497,0,
+quadrotor/traj_planning/init_script.m,0.044024,1,Unrecognized function or variable 'map'.
+quadrotor/traj_planning/runsim.m,1.8724105,0,
+rcnn/experiments/rcnn_exp_bbox_reg_train_and_test.m,0.0573309,1,Unable to change current folder to 'C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\rcnn\experiments\.\datasets\VOCdevkit2007' (Name is nonexistent or not a folder).
+rcnn/experiments/rcnn_exp_train_and_test.m,0.0446643,1,Unable to change current folder to 'C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\rcnn\experiments\.\datasets\VOCdevkit2007' (Name is nonexistent or not a folder).
+rcnn/experiments/rcnn_run_pool5_explorer.m,0.0431531,1,Unable to change current folder to 'C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\rcnn\experiments\.\datasets\VOCdevkit2007' (Name is nonexistent or not a folder).
+rcnn/utils/test_2010_from_2012.m,0.0441645,1,Unable to change current folder to 'C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\rcnn\utils\.\datasets\VOCdevkit2012' (Name is nonexistent or not a folder).
+rcnn/utils/verify_caffe_crops.m,0.0477351,1,Unable to find file or directory '~/working/caffe-rbg/matlab/caffe/ilsvrc_2012_mean.mat'.
+refinenet/libs/matconvnet/examples/imagenet/cnn_imagenet_camdemo.m,0.8750759,1,Undefined function 'webcam' for input arguments of type 'double'.
+refinenet/libs/matconvnet/examples/imagenet/cnn_imagenet_googlenet.m,0.0395956,1,Unable to change current folder to 'C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\refinenet\libs\matconvnet\examples\imagenet\matlab' (Name is nonexistent or not a folder).
+refinenet/libs/matconvnet/examples/imagenet/cnn_imagenet_minimal.m,2.4428751,1,Execution of script vl_nnconv as a function is not supported:
+C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\refinenet\libs\matconvnet\matlab\vl_nnconv.m
+refinenet/libs/matconvnet/examples/mnist/cnn_mnist_experiments.m,7.1776404,1,Execution of script vl_nnconv as a function is not supported:
+C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\refinenet\libs\matconvnet\matlab\vl_nnconv.m
+refinenet/libs/matconvnet/examples/vggfaces/cnn_vgg_faces.m,67.2412979,1,Unable to find file or directory 'data/models/vgg-face.mat'.
+refinenet/libs/matconvnet/matlab/vl_setupnn.m,0.8069113,0,
+refinenet/libs/matconvnet/matlab/xtest/vl_bench_imreadjpeg.m,0.010518,1,Execution of script vl_imreadjpeg as a function is not supported:
+C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\refinenet\libs\matconvnet\matlab\vl_imreadjpeg.m
+refinenet/libs/matconvnet/matlab/xtest/vl_test_bnorm.m,0.0862997,1,Execution of script vl_nnbnorm as a function is not supported:
+C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\refinenet\libs\matconvnet\matlab\vl_nnbnorm.m
+refinenet/libs/matconvnet/matlab/xtest/vl_test_economic_relu.m,0.0406041,1,"Unrecognized field name ""weights""."
+refinenet/libs/matconvnet/matlab/xtest/vl_test_gpureset.m,47.1657154,1,Execution of script vl_nnconv as a function is not supported:
+C:\work\EnergyMeasuring4SciModels\sampling\repos_projects_filtered_top100stars\refinenet\libs\matconvnet\matlab\vl_nnconv.m
+refinenet/libs/matconvnet/utils/evaluate_ref_models.m,0.6572654,1,Make sure that ILSVRC data is correctly installed in data\imagenet12-s256
+refinenet/libs/matconvnet/utils/simplenn_caffe_testdeploy.m,0.5356523,1,MatCaffe not in path.
+refinenet/libs/matconvnet/utils/test_examples.m,0.2167878,1,Undefined function 'cnn_mnist' for input arguments of type 'struct'.
+refinenet/libs/matconvnet/utils/tidy_ref_models.m,0.6276451,1,Unable to find file or directory 'data\models-import\imagenet-resnet-152-dag.mat'.
+refinenet/main/demo_evaluate_saved_prediction_voc.m,0.321661,1,..\cache_data\test_examples_voc\result_20180212182355_evaonly_custom_data_valset_5scales\predict_result_fused\output.txt: File not found.
+refinenet/main/demo_fuse_saved_prediction_voc.m,0.2319171,1,..\cache_data\test_examples_voc\result_20180212182355_evaonly_custom_data_valset_5scales\predict_result_fused_mscale\output.txt: File not found.
+refinenet/main/demo_predict_mscale_ade.m,20.1664401,1,trained_model is not existed!
+refinenet/main/demo_predict_mscale_cityscapes.m,32.2406836,1,trained_model is not existed!
+refinenet/main/demo_predict_mscale_nyud.m,24.2385383,1,trained_model is not existed!
+refinenet/main/demo_predict_mscale_pascalcontext.m,26.6322793,1,trained_model is not existed!
+refinenet/main/demo_predict_mscale_person_parts.m,21.3181627,1,trained_model is not existed!
+refinenet/main/demo_predict_mscale_sunrgbd.m,21.848514,1,trained_model is not existed!
+refinenet/main/demo_predict_mscale_voc.m,21.8236067,1,trained_model is not existed!
+refinenet/main/demo_refinenet_train.m,0.8449465,1,Invalid file identifier. Use fopen to generate a valid file identifier.
+refinenet/main/demo_refinenet_train_reduce_learning_rate.m,0.7504799,1,Invalid file identifier. Use fopen to generate a valid file identifier.
+refinenet/main/demo_test_simple_city.m,22.2674901,1,trained_model is not existed!
+refinenet/main/demo_test_simple_voc.m,21.5997934,1,trained_model is not existed!
+refinenet/main/gen_class_info_ade.m,0.0381639,0,
+refinenet/main/gen_class_info_cityscapes.m,0.0240932,0,
+refinenet/main/gen_class_info_nyud.m,0.0504774,0,
+refinenet/main/gen_class_info_pascalcontext.m,0.0504046,0,
+refinenet/main/gen_class_info_person_parts.m,0.0382763,0,
+refinenet/main/gen_class_info_sunrgbd.m,0.0417811,0,
+refinenet/main/gen_class_info_voc.m,0.0368622,0,
+refinenet/main/update_legacy_model.m,0.6900458,1,Unable to find file or directory '../model_trained/imagenet-resnet-101-dag.mat'.
+toolbox/classify/demoCluster.m,0.1018375,1,Undefined function 'getPrmDflt' for input arguments of type 'cell'.
+toolbox/detector/acfDemoCal.m,0.0508052,1,Undefined function 'dbInfo' for input arguments of type 'char'.
+toolbox/detector/acfDemoInria.m,0.0464925,1,Undefined function 'dbInfo' for input arguments of type 'char'.
+toolbox/matlab/ccc.m,0.0380421,0,
+vgg_face2/standard_evaluation/demo_proj.m,0.033764,1,Unrecognized function or variable 'YOUR_DATA_DIR'.
+voc-dpm/demo_cascade.m,2.3032436,1,This code is not supported on Windows.
+voc-dpm/car_grammar/car_grammar_init.m,0.037931,1,Unrecognized function or variable 'voc_config'.
+voc-dpm/person_grammar/person_grammar_init.m,0.0342933,1,Unrecognized function or variable 'voc_config'.
+vrn/run.m,0.0063671,1,Execution of script run as a function is not supported:
+vrn/run.m,NaN,NaN,
