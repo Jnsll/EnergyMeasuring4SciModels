@@ -13,16 +13,10 @@ function entryPoints(basePath)
     projectsPaths = projectsPaths(~ismember({projectsPaths.name}, {'.', '..'}));
     timeCrashResults = struct('scriptName', {}, 'time', {}, 'crash', {}, 'errorMessage', {});
     for i = 1:length(projectsPaths)
-        if i == 81
-            continue
-        end
         fprintf("Currently, %i entry Points were found\n", sum([timeCrashResults.crash] == 0))
         fullPath = [projectsPaths(i).folder filesep projectsPaths(i).name];
+        cd(fullPath);
         thisEntrCSV = [fullPath filesep entrCSV];
-        if init(fullPath, thisEntrCSV)%we already did visit this repository (i.e. there is a .csv file)
-            timeCrashResults = [timeCrashResults table2struct(readtable(thisEntrCSV, 'Delimiter', ',', 'PreserveVariableNames', true))'];
-            continue
-        end
         basicEntryPoints = findBasicEntrypoints(projectsPaths(i));
         timeCrashResults = [timeCrashResults findGoodEntrypoints(basicEntryPoints, thisEntrCSV)];
     end
@@ -40,7 +34,16 @@ function cleanUpAndWriteOutput(originalDirectory, timeCrashResults, entrCSV)
         timeCrashResults(i).scriptName = regexprep(timeCrashResults(i).scriptName(commonPrefixLength:end), '\\', '/');
     end
     writetable(struct2table(timeCrashResults), entrCSV)
-    fprintf("%i entry Points were found\n", sum([timeCrashResults.crash] == 0))
+
+
+    %find number of projects, where an entrypoint was found
+    projectNames =  {};
+    for i = 1:length(timeCrashResults)
+        projectNames{i} = split(timeCrashResults(i).scriptName, '/');
+        projectNames{i} = projectNames(i,1);
+    end
+    numProjects = length(set(projectNames));
+    fprintf("%i entry Points were found in %i different projects.\n", sum([timeCrashResults.crash] == 0), numProjects)
 end
 
 function length = commonprefixlength(a, b)
@@ -53,34 +56,49 @@ function length = commonprefixlength(a, b)
     end
 end
 
-function alreadyVisited = init(path, csvFile)
-    cd(path);
-    %!git reset --hard
-    alreadyVisited = exist(csvFile);
-end
-
 %dynamically identify entry points into .m scripts
 %statically found scripts are run and tested, whether they run
 %logging errors and run time until script finished or crashed
 function timeCrashResults = findGoodEntrypoints(entrypoints, csvFile)
-    timeCrashResults = struct('scriptName', {}, 'time', {}, 'crash', {}, 'errorMessage', {});
-    writetable(struct2table(timeCrashResults), csvFile)
-    for i = 1:length(entrypoints)
-        timeCrashResults(end + 1) = runEntryPoint(entrypoints{i});
+    if exist(csvFile, 'file') && ~isempty(table2struct(readtable(csvFile, 'Delimiter', ',', 'PreserveVariableNames', true)))
+        timeCrashResults = table2struct(readtable(csvFile, 'Delimiter', ',', 'PreserveVariableNames', true))';
+    else %we never tested this project or we never found a running script
+         %we thus try this project (again)
+        timeCrashResults = struct('scriptName', {}, 'time', {}, 'crash', {}, 'errorMessage', {});
+        for i = 1:length(entrypoints)
+            timeCrashResult = struct;
+            timeCrashResult.scriptName = entrypoints{i};
+            timeCrashResult.time = NaN;                         %%time == NaN: we never ran this script, time == -1: we ran the script (and it crashed hard), time > 0: we got an intelligable output
+            timeCrashResult.crash = NaN;
+            timeCrashResult.errorMessage = "";
+            timeCrashResults(end + 1) = timeCrashResult;
+        end
+    end
+    for i = 1:length(timeCrashResults)
+        timeCrashResults(i) = runEntryPoint(timeCrashResults(i), timeCrashResults, i, csvFile);
     end
     writetable(struct2table(timeCrashResults), csvFile)
 end
 
-function timeCrashResult = runEntryPoint(entrypoint)
-    timeCrashResult = struct;
+function timeCrashResult = runEntryPoint(timeCrashResult, timeCrashResults, i, csvFile)
+    if ~isnan(timeCrashResult.time)
+        return
+    end
+    timeCrashResults(i).time = -1;
+    writetable(struct2table(timeCrashResults), csvFile)
+    set(0, 'DefaultFigureVisible', 'off')
+    more off
+    diary off
+    close 'all'
+    echo off
+
     tic
     try
-        timeCrashResult.scriptName = entrypoint;
-        run(entrypoint);
+        run(timeCrashResult.scriptName);
         timeCrashResult.time = toc;
         timeCrashResult.crash = 0;
         timeCrashResult.errorMessage = "";
-        fprintf("###################################\nFound a good Entry Point: %s\n###################################\n", entrypoint)
+        fprintf("###################################\nFound a good Entry Point: %s\n###################################\n", timeCrashResult.scriptName)
     catch ME
         timeCrashResult.time = toc;
         timeCrashResult.crash = 1;
@@ -96,6 +114,7 @@ function basicEntryPoints = findBasicEntrypoints(projectPath)
     fullPath = [projectPath.folder filesep projectPath.name];
     fprintf('Searching entry point for project: %s\n', shortPath);
     depPoints = dependencyPoints(fullPath);
+
     mfiles = vertcat(dir(fullfile(fullPath, strcat('**',filesep,'*.m'))));
     entryPoints = {};
     for j = 1:length(mfiles)
@@ -115,6 +134,7 @@ end
 %build a dependency graph (forest) of .m files, choose roots of forest
 function depPoints = dependencyPoints(projectFolder)
     prjFiles = vertcat(dir(fullfile(projectFolder, strcat('**',filesep,'*.prj'))));
+    depPoints = {};
     try
         if isempty(prjFiles)
             prj = matlab.project.createProject("Folder", projectFolder, "Name", "NewProject");
@@ -132,11 +152,8 @@ function depPoints = dependencyPoints(projectFolder)
         end
     catch ME
         fprintf("An error occured, analyzing %s: %s\n", projectFolder, ME.message)
-        depPoints = {};
         return
     end
-
-    
         
     % update dependencies
     prj.updateDependencies
@@ -154,6 +171,9 @@ function depPoints = dependencyPoints(projectFolder)
     
     % files that are either entry points or unused files
     depPoints = setdiff(callingFiles,calledFiles);
+
+    %close and save project for later use
+    close(prj)
 end
 
 function executability = determineExecutability(fileName)
