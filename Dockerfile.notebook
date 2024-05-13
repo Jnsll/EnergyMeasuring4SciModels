@@ -1,6 +1,6 @@
 ARG REGISTRY=quay.io
 ARG OWNER=jupyter
-ARG BASE_CONTAINER=$REGISTRY/$OWNER/minimal-notebook
+ARG BASE_CONTAINER=$REGISTRY/$OWNER/scipy-notebook:2024-04-29
 FROM $BASE_CONTAINER
 
 LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
