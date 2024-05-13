@@ -1,31 +1,14 @@
-FROM jupyter/scipy-notebook
+ARG REGISTRY=quay.io
+ARG OWNER=jupyter
+ARG BASE_CONTAINER=$REGISTRY/$OWNER/scipy-notebook:2024-04-29
+FROM $BASE_CONTAINER
 
-# Set bash as the default shell
-ENV SHELL=/bin/bash
+LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 
-# Create a working directory
-WORKDIR /app/src
+# Fix: https://github.com/hadolint/hadolint/wiki/DL4006
+# Fix: https://github.com/koalaman/shellcheck/wiki/SC3014
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-COPY . /app
-# Build with some basic utilities
-RUN apt-get update && apt-get install -y \
-    python3-pip \
-    apt-utils \
-    vim \
-    git
+USER root
 
-# alias python='python3'
-RUN ln -s /usr/bin/python3 /usr/bin/python
-
-# build with some basic python packages
-RUN pip install \
-    numpy \
-    torch \
-    jupyterlab
-
-RUN pip install --no-cache-dir --upgrade pip \
-  && pip install --no-cache-dir -r requirements.txt
-
-# start jupyter lab
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser"]
-EXPOSE 8888
+WORKDIR "${HOME}"
