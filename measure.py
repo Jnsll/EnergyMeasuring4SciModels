@@ -4,6 +4,7 @@ import random
 #import pandas as pd
 import argparse
 import time
+from tqdm import tqdm
 
 #### TO DO
 ## Store the list and order of experiments that are run (storing the shuffled list): DONE
@@ -35,12 +36,6 @@ def fibonacci(n):
 
 
 def run_experiments_matlab(input_file, repetition_number):
-    #print("Is it a baseline exp:", baseline)
-    #if baseline:
-    #    for count in range(1,repetition_number+1):
-    #        script_command = ["/home/tdurieux/git/EnergiBridge/target/release/energibridge" ,"--summary" ,"--output", "./output/energy_metrics_baseline_" + str(count) + ".csv" ,"-c" ,"./output/output_simulation_baseline_"+ str(count) + ".txt" ,"docker" ,"run", "--rm", "-v", "./scripts:/scripts" ,"-v" ,"./matlab.dat:/licenses/license.lic", "-e", "MLM_LICENSE_FILE=/licenses/license.lic", "matlab-r2021b-toolbox" ,"-batch", "exit();"]
-    #        result = subprocess.run(script_command)
-    #else:
     ### Extracting scripts of Matlab projects to run
     with open(input_file, "r") as file:
         lines = file.read().splitlines()
@@ -54,7 +49,6 @@ def run_experiments_matlab(input_file, repetition_number):
 
     ## Shuffle of Matlab project to run
     random.shuffle(scripts_executions)
-    print(scripts_executions)
 
     ## Storing the execution order into a csv file
     format_file_execution_order = "\n".join(scripts_executions) # 1 line = 1 execution
@@ -73,7 +67,7 @@ def run_experiments_matlab(input_file, repetition_number):
 
     ### Running experiment executions
     count = 0
-    for execution in scripts_executions:
+    for execution in tqdm(scripts_executions):
         print("Execution:", execution)
         count += 1
         script_command = ["/home/tdurieux/git/EnergiBridge/target/release/energibridge" ,"--summary" ,"--output", "./output/energy_metrics_" + str(count) + ".csv" ,"-c" ,"./output/output_simulation_"+ str(count) + ".txt" ,"docker" ,"run", "--rm", "-v", "./sampling:/sampling" , "-v", "./time_study:/time_study", "-v", "./output:/output", "-v" ,"./matlab.dat:/licenses/license.lic", "-e", "MLM_LICENSE_FILE=/licenses/license.lic", "matlab-r2021b-toolbox" ,"-batch", "run('" + str(execution) + "');exit();"]
