@@ -1,0 +1,240 @@
+  0%|                                                                                                                                                                                                          | 0/41 [00:00<?, ?it/s]Execution: /sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB 神经网络30个案例分析》源程序 数据/chapter11/main.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/MATLAB
+30 /chapter11/main.m not found.
+ 
+Elapsed Time (s): 8.896536588668823
+  2%|████▋                                                                                                                                                                                             | 1/41 [00:13<09:16, 13.90s/it]Execution: /sampling/repos_projects_filtered_top100stars/gptoolbox/wrappers/path_to_triangle.m
+Error using find_first_path (line 9)
+Could not find path
+
+Error in path_to_triangle (line 19)
+      s = find_first_path(guesses);
+
+Error in run (line 91)
+evalin('caller', strcat(script, ';'));
+ 
+Elapsed Time (s): 9.666653633117676
+  5%|█████████▍                                                                                                                                                                                        | 2/41 [00:28<09:19, 14.35s/it]Execution: /sampling/repos_projects_filtered_top100stars/eeglab/functions/adminfunc/biosigpathfirst.m
+Elapsed Time (s): 9.07818078994751
+  7%|██████████████▏                                                                                                                                                                                   | 3/41 [00:42<09:00, 14.23s/it]Execution: /sampling/repos_projects_filtered_top100stars/fieldtrip/external/afni/Test_m3dReorder.m
+Elapsed Time (s): 8.842984199523926
+ 10%|██████████████████▉                                                                                                                                                                               | 4/41 [00:56<08:40, 14.08s/it]Execution: /sampling/repos_projects_filtered_top100stars/fieldtrip/qsub/private/generatesessionid.m
+Elapsed Time (s): 8.866564512252808
+ 12%|███████████████████████▋                                                                                                                                                                          | 5/41 [01:10<08:24, 14.00s/it]Execution: /sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB神经网络原理与实例精解》随书附带源程序/第13章 神经网络应用实例/Elman网络预测上证股市开盘价/elman_stock.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/MATLAB/13
+/Elman/elman_stock.m
+not found.
+ 
+Elapsed Time (s): 8.87856912612915
+ 15%|████████████████████████████▍                                                                                                                                                                     | 6/41 [01:24<08:08, 13.96s/it]Execution: /sampling/repos_projects_filtered_top100stars/Matlab-Machine/036_Data regression prediction based on least squares support vector machine/main.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/Matlab-Machine/036_Data
+regression prediction based on least squares support vector machine/main.m not
+found.
+ 
+Elapsed Time (s): 9.077832460403442
+ 17%|█████████████████████████████████                                                                                                                                                                 | 7/41 [01:38<07:56, 14.00s/it]Execution: /sampling/repos_projects_filtered_top100stars/OptimTraj/demo/toyCar/MAIN.m
+Unrecognized function or variable 'optimTraj'.
+
+Error in MAIN (line 87)
+soln = optimTraj(problem);
+
+Error in run (line 91)
+evalin('caller', strcat(script, ';'));
+ 
+Elapsed Time (s): 10.872126817703247
+ 20%|█████████████████████████████████████▊                                                                                                                                                            | 8/41 [01:54<08:01, 14.60s/it]Execution: /sampling/repos_projects_filtered_top100stars/MIMO_OFDM/第2章 SISO信道模型/SUI信道模型/plot_SUI_channel.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/MIMO_OFDM/2
+SISO/SUI/plot_SUI_channel.m not found.
+ 
+Elapsed Time (s): 9.085665225982666
+ 22%|██████████████████████████████████████████▌                                                                                                                                                       | 9/41 [02:08<07:42, 14.44s/it]Execution: /sampling/repos_projects_filtered_top100stars/MIMO_OFDM/第2章 SISO信道模型/射线信道模型/plot_ray_fading.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/MIMO_OFDM/2
+SISO//plot_ray_fading.m not found.
+ 
+Elapsed Time (s): 8.886341333389282
+ 24%|███████████████████████████████████████████████                                                                                                                                                  | 10/41 [02:22<07:22, 14.27s/it]Execution: /sampling/repos_projects_filtered_top100stars/Smart-Algorithm/Particle_Swarm_Optimization/PSO-basic/main.m
+Elapsed Time (s): 8.86298131942749
+ 27%|███████████████████████████████████████████████████▊                                                                                                                                             | 11/41 [02:36<07:04, 14.15s/it]Execution: /sampling/repos_projects_filtered_top100stars/Matlab-Machine/005_Data classification prediction based on support vector machine (libsvm)/main.m
+Error using xlsread (line 136)
+Unable to open file '.xlsx'.
+File '/sampling/repos_projects_filtered_top100stars/Matlab-Machine/005_Data
+classification prediction based on support vector machine (libsvm)/.xlsx'
+not found.
+
+Error in main (line 8)
+res = xlsread('.xlsx');
+
+Error in run (line 91)
+evalin('caller', strcat(script, ';'));
+ 
+Elapsed Time (s): 10.078203439712524
+ 29%|████████████████████████████████████████████████████████▍                                                                                                                                        | 12/41 [02:51<06:58, 14.43s/it]Execution: /sampling/repos_projects_filtered_top100stars/R-FCN/fetch_data/fetch_region_proposals.m
+Elapsed Time (s): 21.43350577354431
+ 32%|█████████████████████████████████████████████████████████████▏                                                                                                                                   | 13/41 [03:17<08:25, 18.07s/it]Execution: /sampling/repos_projects_filtered_top100stars/CAM/demo.m
+Elapsed Time (s): 12.236923933029175
+ 34%|█████████████████████████████████████████████████████████████████▉                                                                                                                               | 14/41 [03:34<08:01, 17.82s/it]Execution: /sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/MATLAB智能算法30个案例分析/chapter5 基于遗传算法的LQR控制器优化设计/GA_LQR_run.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/MATLAB30/chapter5
+LQR/GA_LQR_run.m not found.
+ 
+Elapsed Time (s): 9.09404969215393
+ 37%|██████████████████████████████████████████████████████████████████████▌                                                                                                                          | 15/41 [03:48<07:14, 16.70s/it]Execution: /sampling/repos_projects_filtered_top100stars/matlab2tikz/test/suites/private/getEnvironment.m
+Elapsed Time (s): 9.046101331710815
+ 39%|███████████████████████████████████████████████████████████████████████████▎                                                                                                                     | 16/41 [04:02<06:37, 15.90s/it]Execution: /sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB图像处理》源文件/本书源文件/chap15/chap15_3.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/MATLAB//chap15/chap15_3.m
+not found.
+ 
+Elapsed Time (s): 8.866451501846313
+ 41%|████████████████████████████████████████████████████████████████████████████████                                                                                                                 | 17/41 [04:16<06:06, 15.29s/it]Execution: /sampling/repos_projects_filtered_top100stars/bnt/SLP/examples/UCI_DataSets/monks1D.m
+Elapsed Time (s): 8.8340163230896
+ 44%|████████████████████████████████████████████████████████████████████████████████████▋                                                                                                            | 18/41 [04:30<05:41, 14.86s/it]Execution: /sampling/repos_projects_filtered_top100stars/Smart-Algorithm/Immunity_Algorithm/IMA/main.m
+Elapsed Time (s): 41.675776720047
+ 46%|█████████████████████████████████████████████████████████████████████████████████████████▍                                                                                                       | 19/41 [05:17<08:57, 24.41s/it]Execution: /sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/HeuristicAlgorithm（补分启发式算法，包括神经网络、模拟退火、遗传算法）/神经网络算法/MATLAB神经网络30个案例分析/案例11 连续Hopfield神经网络的优化-旅行商问题优化计算/main.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/HeuristicAlgorithm//MATLAB30/11
+Hopfield-/main.m not
+found.
+ 
+Elapsed Time (s): 9.085057497024536
+ 49%|██████████████████████████████████████████████████████████████████████████████████████████████▏                                                                                                  | 20/41 [05:31<07:27, 21.31s/it]Execution: /sampling/repos_projects_filtered_top100stars/OptimTraj/demo/minimumSnap/minAccel/MAIN.m
+Unrecognized function or variable 'getIpOptions'.
+
+Error in fmincon (line 860)
+    options = getIpOptions(options,sizes.nVar,mEq,flags.constr,defaultopt,10,0.01);
+
+Error in directCollocation (line 95)
+[zSoln, objVal,exitFlag,output] = fmincon(P);
+
+Error in trapezoid (line 74)
+    soln = directCollocation(problem);
+
+Error in optimTraj (line 180)
+            soln(iter) = trapezoid(P);
+
+Error in MAIN (line 94)
+soln = optimTraj(problem);
+
+Error in run (line 91)
+evalin('caller', strcat(script, ';'));
+ 
+Elapsed Time (s): 11.09360122680664
+ 51%|██████████████████████████████████████████████████████████████████████████████████████████████████▊                                                                                              | 21/41 [05:47<06:34, 19.75s/it]Execution: /sampling/repos_projects_filtered_top100stars/Smart-Algorithm/Genetic_Algorithm/GA_MatLab/GA遗传算法解决非线性最优解/main.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/Smart-Algorithm/Genetic_Algorithm/GA_MatLab/GA/main.m
+not found.
+ 
+Elapsed Time (s): 8.858067274093628
+ 54%|███████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                         | 22/41 [06:01<05:41, 17.98s/it]Execution: /sampling/repos_projects_filtered_top100stars/Math_Model/2-1国赛题目+论文/2013/B254/814姜荣杰，朱佳亭，金建邦/程序/p21/findd.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/Math_Model/2-1+/2013/B254/814//p21/findd.m
+not found.
+ 
+Elapsed Time (s): 9.057104587554932
+ 56%|████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                                                    | 23/41 [06:15<05:02, 16.81s/it]Execution: /sampling/repos_projects_filtered_top100stars/Coursera-Machine-Learning-Stanford/Week 7/Programming Assignment/machine-learning-ex6/ex6/getVocabList.m
+Elapsed Time (s): 8.862995386123657
+ 59%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                                                                                | 24/41 [06:29<04:30, 15.92s/it]Execution: /sampling/repos_projects_filtered_top100stars/FaceVerification/dataset/LFW/getlfwPairs.m
+Index exceeds the number of array elements. Index must not exceed 0.
+
+Error in getlfwPairs (line 23)
+        diff_pair((i-1)*n_num + j,1) = {sprintf('%s/%s/%s_%04d.jpg',pwd,p1{1},p1{1},id1)};
+
+Error in run (line 91)
+evalin('caller', strcat(script, ';'));
+ 
+Elapsed Time (s): 9.285537242889404
+ 61%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                                           | 25/41 [06:43<04:06, 15.43s/it]Execution: /sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/HeuristicAlgorithm（补分启发式算法，包括神经网络、模拟退火、遗传算法）/神经网络算法/MATLAB神经网络30个案例分析/案例22 LVQ神经网络的预测——人脸朝向识别/chapter22_bp.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/HeuristicAlgorithm//MATLAB30/22
+LVQ/chapter22_bp.m not found.
+ 
+Elapsed Time (s): 9.08663272857666
+ 63%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                      | 26/41 [06:57<03:45, 15.03s/it]Execution: /sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《基于MATLAB的高等数学问题求解》 随书附带源程序/CH07/bisect_demo.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/MATLAB
+/CH07/bisect_demo.m not found.
+ 
+Elapsed Time (s): 9.457781553268433
+ 66%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                  | 27/41 [07:12<03:28, 14.86s/it]Execution: /sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/FuzzyMathematicalModel模糊数学模型/多目标模糊综合评价/main.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/FuzzyMathematicalModel//main.m
+not found.
+ 
+Elapsed Time (s): 8.83342957496643
+ 68%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                             | 28/41 [07:26<03:09, 14.55s/it]Execution: /sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/HeuristicAlgorithm（补分启发式算法，包括神经网络、模拟退火、遗传算法）/神经网络算法/MATLAB神经网络30个案例分析/案例10 离散Hopfield神经网络的分类——高校科研能力评价/chapter10.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/HeuristicAlgorithm//MATLAB30/10
+Hopfield/chapter10.m
+not found.
+ 
+Elapsed Time (s): 8.899380922317505
+ 71%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                        | 29/41 [07:39<02:52, 14.36s/it]Execution: /sampling/repos_projects_filtered_top100stars/bnt/KPMtools/optimalMatchingTest.m
+Elapsed Time (s): 9.069874048233032
+ 73%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                                   | 30/41 [07:54<02:37, 14.27s/it]Execution: /sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB图像处理》源文件/本书源文件/chap15/chap15_11.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/MATLAB//chap15/chap15_11.m
+not found.
+ 
+Elapsed Time (s): 8.871687412261963
+ 76%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                                               | 31/41 [08:07<02:21, 14.15s/it]Execution: /sampling/repos_projects_filtered_top100stars/fieldtrip/external/besa/test_matlab2besa.m
+Elapsed Time (s): 9.046549320220947
+ 78%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                          | 32/41 [08:21<02:07, 14.12s/it]Execution: /sampling/repos_projects_filtered_top100stars/Image-Harmonization-Dataset-iHarmony4/Lalonde and Efros/colorStatistics/3rd_party/emd/demo_emd.m
+Elapsed Time (s): 9.229203701019287
+ 80%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                     | 33/41 [08:36<01:53, 14.16s/it]Execution: /sampling/repos_projects_filtered_top100stars/DeepLearnToolbox/tests/runalltests.m
+Elapsed Time (s): 10.05988883972168
+ 83%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                 | 34/41 [08:51<01:41, 14.43s/it]Execution: /sampling/repos_projects_filtered_top100stars/gptoolbox/wrappers/path_to_qslim.m
+Error using find_first_path (line 9)
+Could not find path
+
+Error in path_to_qslim (line 22)
+      s = find_first_path(guesses);
+
+Error in run (line 91)
+evalin('caller', strcat(script, ';'));
+ 
+Elapsed Time (s): 9.061669826507568
+ 85%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                            | 35/41 [09:05<01:25, 14.32s/it]Execution: /sampling/repos_projects_filtered_top100stars/Matlab-Machine/010_Data regression prediction based on random forest algorithm/main.m
+Error using xlsread (line 136)
+Unable to open file '.xlsx'.
+File '/sampling/repos_projects_filtered_top100stars/Matlab-Machine/010_Data
+regression prediction based on random forest algorithm/.xlsx' not found.
+
+Error in main (line 8)
+res = xlsread('.xlsx');
+
+Error in run (line 91)
+evalin('caller', strcat(script, ';'));
+ 
+Elapsed Time (s): 10.070188522338867
+ 88%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                       | 36/41 [09:20<01:12, 14.55s/it]Execution: /sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/HeuristicAlgorithm（补分启发式算法，包括神经网络、模拟退火、遗传算法）/神经网络算法/MATLAB神经网络30个案例分析/案例22 LVQ神经网络的预测——人脸朝向识别/chapter22_lvq.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/HeuristicAlgorithm//MATLAB30/22
+LVQ/chapter22_lvq.m not found.
+ 
+Elapsed Time (s): 9.230369806289673
+ 90%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                  | 37/41 [09:34<00:57, 14.45s/it]Execution: /sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/MATLAB智能算法30个案例分析/chapter9 基于遗传算法的多目标优化算法/my_first_multi_run.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/MATLAB30/chapter9
+/my_first_multi_run.m not found.
+ 
+Elapsed Time (s): 8.837280035018921
+ 93%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉              | 38/41 [09:48<00:42, 14.27s/it]Execution: /sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB 神经网络30个案例分析》源程序 数据/chapter22/test.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/MATLAB
+30 /chapter22/test.m not found.
+ 
+Elapsed Time (s): 8.690432071685791
+ 95%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌         | 39/41 [10:02<00:28, 14.10s/it]Execution: /sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB图像处理》源文件/本书源文件/chap11/chap11_2.m
+Error using run (line 46)
+/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/MATLAB//chap11/chap11_2.m
+not found.
+ 
+Elapsed Time (s): 8.862178802490234
+ 98%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎    | 40/41 [10:16<00:14, 14.03s/it]Execution: baseline
+Elapsed Time (s): 8.867557287216187
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 41/41 [10:29<00:00, 15.36s/it]
