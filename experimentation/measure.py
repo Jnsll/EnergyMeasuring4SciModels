@@ -234,5 +234,5 @@ if __name__ == "__main__":
     parser.add_argument('-rep', '--repetition')
     args = parser.parse_args()
 
-    run_matlab_experimentation(args.file, args.repetition, fibonacci_index)
+    run_matlab_experimentation(args.file, int(args.repetition), fibonacci_index)
 
