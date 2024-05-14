@@ -15,13 +15,33 @@ SLEEP_TIME = 5
 
 
 def fibonacci(n):
-    if n<= 0:
-        print("Incorrect input")
+    """
+    Calculate the nth Fibonacci number using a recursive approach.
+
+    The Fibonacci sequence is a series of numbers where each number is the sum
+    of the two preceding ones, starting from 0 and 1. That is:
+    F(0) = 0, F(1) = 1
+    and F(n) = F(n-1) + F(n-2) for n > 1.
+
+    Parameters:
+    n (int): The position in the Fibonacci sequence to calculate. Must be a non-negative integer.
+
+    Returns:
+    int: The nth Fibonacci number.
+
+    Examples:
+    >>> fibonacci(0)
+    0
+    >>> fibonacci(1)
+    1
+    >>> fibonacci(10)
+    55
+    """
     # First Fibonacci number is 0
-    elif n == 1:
-        return 0
+    if n<= 0:
+       return 0
     # Second Fibonacci number is 1
-    elif n == 2:
+    elif n == 1:
         return 1
     else:
         return fibonacci(n-1)+fibonacci(n-2)
