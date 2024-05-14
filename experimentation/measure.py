@@ -216,7 +216,7 @@ def execute_matlab_script_and_measure_energy(execution, count):
     a delay between executions. The `SLEEP_TIME` constant should be defined elsewhere in the code.
     The energy metrics and elapsed time are saved in CSV files in the "../output" directory.
     """
-    script_command = ["/home/tdurieux/git/EnergiBridge/target/release/energibridge" ,"--summary" ,"--output", "./output/energy_metrics_" + str(count) + ".csv" ,"-c" ,"./output/output_simulation_"+ str(count) + ".txt" ,"docker" ,"run", "--rm", "-v", "./sampling:/sampling" , "-v", "./time_study:/time_study", "-v", "./output:/output", "-v" ,"./matlab.dat:/licenses/license.lic", "-e", "MLM_LICENSE_FILE=/licenses/license.lic", "matlab-r2021b-toolbox" ,"-batch", "run('" + str(execution) + "');exit();"]
+    script_command = ["/home/tdurieux/git/EnergiBridge/target/release/energibridge" ,"--summary" ,"--output", "../output/energy_metrics_" + str(count) + ".csv" ,"-c" ,"../output/output_simulation_"+ str(count) + ".txt" ,"docker" ,"run", "--rm", "-v", "../sampling:/sampling" , "-v", "../output:/output", "-v" ,"../matlab.dat:/licenses/license.lic", "-e", "MLM_LICENSE_FILE=/licenses/license.lic", "matlab-r2021b-toolbox" ,"-batch", "run('" + str(execution) + "');exit();"]
     start = time.time()
     result = subprocess.run(script_command)
     end = time.time()
