@@ -1,25 +1,17 @@
 import subprocess
 import sys
 import random
-#import pandas as pd
 import argparse
 import time
 from tqdm import tqdm
 
-#### TO DO
-## Store the list and order of experiments that are run (storing the shuffled list): DONE
-## Include timestamp + type of experiment (matlab project + repetition number) in the name of the energy measurement output file
-## Do we want to store simulation outputs? (would save storage): DONE
-## Include DRAM metric in EnergiBridge
-## Use the Matlab Profiler => history of files being executed
-## Code analyser MLint: suggestions in Matlab (command line): can we save energy with accepting the suggestions? 
-
 ### Experimental Parameters
 random.seed(42)
+
 repetition_number = 30
 SLEEP_TIME = 5
 
-#sci_script = "/scripts/deep-photo-styletransfer/gen_laplacian/gen_laplacian.m"
+
 
 
 def fibonacci(n):
@@ -53,7 +45,7 @@ def run_experiments_matlab(input_file, repetition_number):
     ## Storing the execution order into a csv file
     format_file_execution_order = "\n".join(scripts_executions) # 1 line = 1 execution
     # write out the CSV
-    with open("output/executions_order.csv", "w") as file:
+    with open("../output/executions_order.csv", "w") as file:
         file.write(format_file_execution_order)
 
 
@@ -75,7 +67,7 @@ def run_experiments_matlab(input_file, repetition_number):
         result = subprocess.run(script_command)
         end = time.time()
         elapsed_time_execution = (end - start)
-        with open("output/execution_elapsed_time_" + str(count) + ".csv", "w") as file_time:
+        with open("../output/execution_elapsed_time_" + str(count) + ".csv", "w") as file_time:
             file_time.write(str(elapsed_time_execution))
         print("Elapsed Time (s):", elapsed_time_execution)
         time.sleep(SLEEP_TIME)
@@ -89,7 +81,8 @@ def run_experiments_matlab(input_file, repetition_number):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('-f', '--file')   
-    #parser.add_argument('-base', '--baseline', action='store_true')
+    parser.add_argument('-rep', '--repetition')
     args = parser.parse_args()
-    run_experiments_matlab(args.file, repetition_number)
+
+    run_experiments_matlab(args.file, args.repetition)
 

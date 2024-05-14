@@ -2,3 +2,5 @@ sampling/archive
 sampling/.idea
 *.asv
 .*
+
+__pycache__
