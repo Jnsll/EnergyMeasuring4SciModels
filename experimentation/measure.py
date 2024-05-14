@@ -43,6 +43,10 @@ def run_matlab_experimentation(input_file, repetition_number, fibonacci_index):
     # Defining Matlab scripts to run by extracting Matlab projects entry point files from given file
     # Ensuring that each Matlab script will be run repetition_number of times
     scripts_executions = create_list_experimental_executions_in_random_order(input_file, repetition_number)
+
+    # Check if there are scripts to execute
+    if scripts_executions is None:
+        sys.exit(1)
     
     # Warm Up to mitigate external factors in the energy measurements
     warm_up_with_fibonacci_sequence(fibonacci_index)
@@ -79,26 +83,29 @@ def create_list_experimental_executions_in_random_order(input_file, repetition_n
     """
 
     ### Extracting scripts of Matlab projects to run
-    with open(input_file, "r") as file:
-        lines = file.read().splitlines()
+    try:
+        with open(input_file, "r") as file:
+            lines = file.read().splitlines()
+        ### Exerimentation set up
+        ## Repetitions
+        # Matlab projects
+        scripts_executions = lines * repetition_number
+        # Baseline executions
+        scripts_executions += [""] * repetition_number
 
-    ### Exerimentation set up
-    ## Repetitions
-    # Matlab projects
-    scripts_executions = lines * repetition_number
-    # Baseline executions
-    scripts_executions += [""] * repetition_number
+        ## Shuffle of Matlab project to run
+        random.shuffle(scripts_executions)
 
-    ## Shuffle of Matlab project to run
-    random.shuffle(scripts_executions)
-
-    ## Storing the execution order into a csv file to be able to match energy output files to each corresponding Matlab script
-    format_file_execution_order = "\n".join(scripts_executions) # 1 line = 1 execution : format of the input file
-    # write out the CSV
-    with open("../output/executions_order.csv", "w") as file:
-        file.write(format_file_execution_order)
+        ## Storing the execution order into a csv file to be able to match energy output files to each corresponding Matlab script
+        format_file_execution_order = "\n".join(scripts_executions) # 1 line = 1 execution : format of the input file
+        # write out the CSV
+        with open("../output/executions_order.csv", "w") as file:
+            file.write(format_file_execution_order)
+        return scripts_executions
+    except FileNotFoundError:
+        print('Something went wrong, the file was not found. Please check that the input file exists.')
+        return None
     
-    return scripts_executions
 
 def warm_up_with_fibonacci_sequence(fibonacci_index):
     """
