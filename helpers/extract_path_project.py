@@ -2,6 +2,7 @@ import pandas as pd
 import random
 import os
 from pathlib import Path
+import argparse
 
 
 random.seed(42)
@@ -111,4 +112,4 @@ if __name__ == "__main__":
 
     #if no ratio, create full entrypoints file
     
-    create_file_with_subset_entrypoints_from_random_selection(args.ratio)
+    create_file_with_subset_entrypoints_from_random_selection(float(args.ratio))
