@@ -1,1 +1,0 @@
-RUST_BACKTRACE=1 ../EnergiBridge/target/release/energibridge --summary --output ../output/energy_metrics.csv -c ../output/output_simulation.txt /Applications/MATLAB_R2023b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "run('/Users/june/Dev/pooja_matlab_test/candidate_script.m');exit();"
