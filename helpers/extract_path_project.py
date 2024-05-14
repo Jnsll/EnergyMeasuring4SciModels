@@ -43,10 +43,10 @@ def create_file_with_subset_entrypoints_from_random_selection(selection_ratio):
         print("Warning! Some projects being selected more than once!")
     else:
         print(str(len(random_selected_projects)), "unique projects being selected (", str(float(len(random_selected_projects)/len(list_projects))), "%).")
-        create_file_from_projects_entrypoints(random_selected_projects)
+        create_file_from_projects_entrypoints(random_selected_projects, selection_ratio)
 
 
-def create_file_from_projects_entrypoints(projects_names):
+def create_file_from_projects_entrypoints(projects_names, selection_ratio):
     """
     Creates a CSV file with a list of MATLAB project entry points, formatted with a specified directory path.
 
@@ -71,7 +71,7 @@ def create_file_from_projects_entrypoints(projects_names):
     append_str = "/sampling/repos_projects_filtered_top100stars/"
     projects_names = [append_str + sub for sub in projects_names]
     list_proj_format =  "\n".join(projects_names)
-    with open("Projects_Time_Study_no_crashes_sample_demo.csv", "w") as file:
+    with open("Scripts_no_crashes_" + str(selection_ratio) + "_sample.csv", "w") as file:
         file.write(list_proj_format)
 
 
