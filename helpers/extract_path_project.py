@@ -71,7 +71,7 @@ def create_file_from_projects_entrypoints(projects_names):
     append_str = "/sampling/repos_projects_filtered_top100stars/"
     projects_names = [append_str + sub for sub in projects_names]
     list_proj_format =  "\n".join(projects_names)
-    with open("Projects_Time_Study_no_crashes_sample_demo.csv", "w") as file:
+    with open("Matlab_Scripts_to_run.csv", "w") as file:
         file.write(list_proj_format)
 
 
@@ -110,6 +110,7 @@ if __name__ == "__main__":
     parser.add_argument('-r', '--ratio')   
     args = parser.parse_args()
 
-    #if no ratio, create full entrypoints file
-    
-    create_file_with_subset_entrypoints_from_random_selection(float(args.ratio))
+    if args.ratio is None:
+        create_file_with_all_entrypoints()
+    else:
+        create_file_with_subset_entrypoints_from_random_selection(float(args.ratio))
