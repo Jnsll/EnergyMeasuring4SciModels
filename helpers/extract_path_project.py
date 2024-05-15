@@ -6,7 +6,7 @@ import argparse
 
 
 random.seed(42)
-selection_ratio = 0.05
+#selection_ratio = 0.05
 
 
 def create_file_with_subset_entrypoints_from_random_selection(selection_ratio):
@@ -43,10 +43,10 @@ def create_file_with_subset_entrypoints_from_random_selection(selection_ratio):
         print("Warning! Some projects being selected more than once!")
     else:
         print(str(len(random_selected_projects)), "unique projects being selected (", str(float(len(random_selected_projects)/len(list_projects))), "%).")
-        create_file_from_projects_entrypoints(random_selected_projects)
+        create_file_from_projects_entrypoints(random_selected_projects, selection_ratio)
 
 
-def create_file_from_projects_entrypoints(projects_names):
+def create_file_from_projects_entrypoints(projects_names, selection_ratio):
     """
     Creates a CSV file with a list of MATLAB project entry points, formatted with a specified directory path.
 
@@ -71,8 +71,12 @@ def create_file_from_projects_entrypoints(projects_names):
     append_str = "/sampling/repos_projects_filtered_top100stars/"
     projects_names = [append_str + sub for sub in projects_names]
     list_proj_format =  "\n".join(projects_names)
-    with open("Matlab_Scripts_to_run.csv", "w") as file:
-        file.write(list_proj_format)
+    if selection_ratio is None:
+        with open("Matlab_Scripts_to_run.csv", "w") as file:
+            file.write(list_proj_format)
+    else:
+        with open("Matlab_Scripts_to_run_" + str(selection_ratio) + "_sample.csv", "w") as file:
+            file.write(list_proj_format)
 
 
 def create_file_with_all_entrypoints():

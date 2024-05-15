@@ -4,6 +4,9 @@ import random
 import argparse
 import time
 from tqdm import tqdm
+import logging
+
+logging.basicConfig(filename='/output/experimentation.log', filemode='w', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
 
 ### Experimental Parameters
 random.seed(42)
@@ -46,7 +49,9 @@ def run_matlab_experimentation(input_file, repetition_number, fibonacci_index):
 
     # Check if there are scripts to execute
     if scripts_executions is None:
+        logging.error("No Matlab script to run.")
         sys.exit(1)
+        
     
     # Warm Up to mitigate external factors in the energy measurements
     warm_up_with_fibonacci_sequence(fibonacci_index)
@@ -104,6 +109,7 @@ def create_list_experimental_executions_in_random_order(input_file, repetition_n
         return scripts_executions
     except FileNotFoundError:
         print('Something went wrong, the file was not found. Please check that the input file exists.')
+        logging.error("File not found!")
         return None
     
 
@@ -130,7 +136,8 @@ def warm_up_with_fibonacci_sequence(fibonacci_index):
     fibonacci(fibonacci_index)
     warm_up_end = time.time()
     warm_up_duration = (warm_up_end - warm_up_start)
-    print("Duration of Warm up:", warm_up_duration)
+    #print("Duration of Warm up:", warm_up_duration)
+    logging.info("Duration of Warm up:", warm_up_duration)
     
     return warm_up_duration
 
@@ -196,7 +203,13 @@ def execute_multiple_matlab_scripts_from_list(scripts_executions):
     ### Running experiment executions
     count = 0
     for execution in tqdm(scripts_executions): #shows progress bar with tqdm (equivalent of for loop)
-        print("Execution:", execution)
+        
+        if execution == "":
+            logging.info("Execution:", "baseline")
+            print("Execution:", "baseline")
+        else:
+            logging.info("Execution:", execution)
+            print("Execution:", execution)
         count += 1
         execute_matlab_script_and_measure_energy(execution, count)
 
@@ -223,7 +236,15 @@ def execute_matlab_script_and_measure_energy(execution, count):
     a delay between executions. The `SLEEP_TIME` constant should be defined elsewhere in the code.
     The energy metrics and elapsed time are saved in CSV files in the "../output" directory.
     """
-    script_command = ["/home/tdurieux/git/EnergiBridge/target/release/energibridge" ,"--summary" ,"--output", "/home/june/EnergyMeasuring4SciModels/output/energy_metrics_" + str(count) + ".csv" ,"-c" ,"/home/june/EnergyMeasuring4SciModels/output/output_simulation_"+ str(count) + ".txt" ,"docker" ,"run", "--rm", "-v", "/home/june/EnergyMeasuring4SciModels/sampling:/sampling" , "-v", "/home/june/EnergyMeasuring4SciModels/output:/output", "-v" ,"/home/june/EnergyMeasuring4SciModels/matlab.dat:/licenses/license.lic", "-e", "MLM_LICENSE_FILE=/licenses/license.lic", "matlab-r2021b-toolbox" ,"-batch", "run('" + str(execution) + "');exit();"]
+    script_command = ["/home/tdurieux/git/EnergiBridge/target/release/energibridge" ,"--summary" ,"--output", 
+    "/home/june/EnergyMeasuring4SciModels/output/energy_metrics_" + str(count) + ".csv" ,
+    "-c" ,"/home/june/EnergyMeasuring4SciModels/output/output_simulation_"+ str(count) + ".txt" ,
+    "docker" ,"run", "--rm", "-v", "/home/june/EnergyMeasuring4SciModels/sampling:/sampling" , 
+    "-v", "/home/june/EnergyMeasuring4SciModels/output:/output", 
+    "-v" ,"/home/june/EnergyMeasuring4SciModels/matlab.dat:/licenses/license.lic", 
+    "-e", "MLM_LICENSE_FILE=/licenses/license.lic", "matlab-r2021b-toolbox" ,
+    "-batch", "run('" + str(execution) + "');exit();"]
+
     start = time.time()
     result = subprocess.run(script_command)
     end = time.time()
@@ -231,6 +252,7 @@ def execute_matlab_script_and_measure_energy(execution, count):
     with open("../output/execution_elapsed_time_" + str(count) + ".csv", "w") as file_time:
         file_time.write(str(elapsed_time_execution))
     print("Elapsed Time (s):", elapsed_time_execution)
+    logging.info("Elapsed Time (s):", elapsed_time_execution)
     time.sleep(SLEEP_TIME)
 
 
