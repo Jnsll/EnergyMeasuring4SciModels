@@ -4,3 +4,6 @@ sampling/.idea
 .*
 
 __pycache__
+output/
+matlab.dat
+network.lic
