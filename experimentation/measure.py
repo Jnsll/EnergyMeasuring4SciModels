@@ -136,7 +136,7 @@ def warm_up_with_fibonacci_sequence(fibonacci_index):
     fibonacci(fibonacci_index)
     warm_up_end = time.time()
     warm_up_duration = (warm_up_end - warm_up_start)
-    #print("Duration of Warm up:", warm_up_duration)
+    print("Duration of Warm up:", warm_up_duration)
     logging.info("Duration of Warm up:", warm_up_duration)
     
     return warm_up_duration
@@ -245,9 +245,14 @@ def execute_matlab_script_and_measure_energy(execution, count):
     "-e", "MLM_LICENSE_FILE=/licenses/license.lic", "matlab-r2021b-toolbox" ,
     "-batch", "run('" + str(execution) + "');exit();"]
 
-    start = time.time()
-    result = subprocess.run(script_command)
-    end = time.time()
+    try:
+        start = time.time()
+        result = subprocess.run(script_command)
+        end = time.time()
+    except:
+        logging.error("Error with command to run Matlab script.")
+        sys.exit(1)
+        
     elapsed_time_execution = (end - start)
     with open("../output/execution_elapsed_time_" + str(count) + ".csv", "w") as file_time:
         file_time.write(str(elapsed_time_execution))
