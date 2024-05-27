@@ -242,8 +242,10 @@ def execute_matlab_script_and_measure_energy(execution, count):
     "docker" ,"run", "--rm", "-v", "/home/june/EnergyMeasuring4SciModels/sampling:/sampling" , 
     "-v", "/home/june/EnergyMeasuring4SciModels/output:/output", 
     "-v" ,"/home/june/EnergyMeasuring4SciModels/matlab.dat:/licenses/license.lic", 
-    "-e", "MLM_LICENSE_FILE=/licenses/license.lic", "matlab-r2021b-toolbox" ,
-    "-batch", "run('" + str(execution) + "');exit();"]
+    "-e", "MLM_LICENSE_FILE=/licenses/license.lic",
+    "-e", "PYTHONIOENCODING=utf-8", 
+    "matlab-r2021b-toolbox" ,
+    "-batch", "try; run('" + str(execution) + "');exit(); catch e; disp(e.message); end;"]
 
     try:
         start = time.time()
