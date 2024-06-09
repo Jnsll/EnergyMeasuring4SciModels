@@ -205,6 +205,7 @@ def execute_multiple_matlab_scripts_from_list(scripts_executions, uniq_scripts):
     count = 0
     values = [0] * len(uniq_scripts)
     dict_repetition_scripts_count = dict(zip(uniq_scripts, values))
+    dict_repetition_scripts_count[''] = 0 # Add baseline count
     for execution in tqdm(scripts_executions): #shows progress bar with tqdm (equivalent of for loop)
         dict_repetition_scripts_count[execution] += 1
         if execution == "":
