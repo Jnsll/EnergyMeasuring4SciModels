@@ -240,8 +240,12 @@ def execute_matlab_script_and_measure_energy(execution, count):
     a delay between executions. The `SLEEP_TIME` constant should be defined elsewhere in the code.
     The energy metrics and elapsed time are saved in CSV files in the "../output" directory.
     """
-    folder_script = Path(execution).parts[-2]
-    script_name = Path(execution).parts[-1]
+    if execution == '':
+        folder_script = ''
+        script_name = "baseline"
+    else:
+        folder_script = Path(execution).parts[-2]
+        script_name = Path(execution).parts[-1]
 
     script_command = ["/home/tdurieux/git/EnergiBridge/target/release/energibridge" ,"--summary" ,"--output", 
     "/home/june/EnergyMeasuring4SciModels/output/energy_metrics_" + str(folder_script) + "-" + str(script_name) + "_" + str(count) + ".csv" ,
