@@ -5,6 +5,7 @@ import argparse
 import time
 from tqdm import tqdm
 import logging
+from pathlib import Path
 
 logging.basicConfig(filename='/output/experimentation.log', filemode='w', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
 
@@ -45,7 +46,7 @@ def run_matlab_experimentation(input_file, repetition_number, fibonacci_index):
     """
     # Defining Matlab scripts to run by extracting Matlab projects entry point files from given file
     # Ensuring that each Matlab script will be run repetition_number of times
-    scripts_executions = create_list_experimental_executions_in_random_order(input_file, repetition_number)
+    scripts_executions, uniq_scripts = create_list_experimental_executions_in_random_order(input_file, repetition_number)
 
     # Check if there are scripts to execute
     if scripts_executions is None:
@@ -57,7 +58,7 @@ def run_matlab_experimentation(input_file, repetition_number, fibonacci_index):
     warm_up_with_fibonacci_sequence(fibonacci_index)
 
     #Execution of the Matlab scripts with energy measurments
-    execute_multiple_matlab_scripts_from_list(scripts_executions)
+    execute_multiple_matlab_scripts_from_list(scripts_executions, uniq_scripts)
 
 
 def create_list_experimental_executions_in_random_order(input_file, repetition_number):
@@ -106,7 +107,7 @@ def create_list_experimental_executions_in_random_order(input_file, repetition_n
         # write out the CSV
         with open("../output/executions_order.csv", "w") as file:
             file.write(format_file_execution_order)
-        return scripts_executions
+        return scripts_executions, lines
     except FileNotFoundError:
         print('Something went wrong, the file was not found. Please check that the input file exists.')
         logging.error("File not found!")
@@ -175,7 +176,7 @@ def fibonacci(n):
         return fibonacci(n-1)+fibonacci(n-2)
 
 
-def execute_multiple_matlab_scripts_from_list(scripts_executions):
+def execute_multiple_matlab_scripts_from_list(scripts_executions, uniq_scripts):
     """
     Executes a list of MATLAB scripts and measures their energy consumption.
 
@@ -202,8 +203,10 @@ def execute_multiple_matlab_scripts_from_list(scripts_executions):
     """
     ### Running experiment executions
     count = 0
+    values = [0] * len(uniq_scripts)
+    dict_repetition_scripts_count = dict(zip(uniq_scripts, values))
     for execution in tqdm(scripts_executions): #shows progress bar with tqdm (equivalent of for loop)
-        
+        dict_repetition_scripts_count[execution] += 1
         if execution == "":
             logging.info("Execution:", "baseline")
             print("Execution:", "baseline")
@@ -211,7 +214,7 @@ def execute_multiple_matlab_scripts_from_list(scripts_executions):
             logging.info("Execution:", execution)
             print("Execution:", execution)
         count += 1
-        execute_matlab_script_and_measure_energy(execution, count)
+        execute_matlab_script_and_measure_energy(execution, dict_repetition_scripts_count[execution])
 
 def execute_matlab_script_and_measure_energy(execution, count):
     """
@@ -236,9 +239,12 @@ def execute_matlab_script_and_measure_energy(execution, count):
     a delay between executions. The `SLEEP_TIME` constant should be defined elsewhere in the code.
     The energy metrics and elapsed time are saved in CSV files in the "../output" directory.
     """
+    folder_script = Path(execution).parts[-2]
+    script_name = Path(execution).parts[-1]
+
     script_command = ["/home/tdurieux/git/EnergiBridge/target/release/energibridge" ,"--summary" ,"--output", 
-    "/home/june/EnergyMeasuring4SciModels/output/energy_metrics_" + str(count) + ".csv" ,
-    "-c" ,"/home/june/EnergyMeasuring4SciModels/output/output_simulation_"+ str(count) + ".txt" ,
+    "/home/june/EnergyMeasuring4SciModels/output/energy_metrics_" + str(folder_script) + "-" + str(script_name) + "_" + str(count) + ".csv" ,
+    "-c" ,"/home/june/EnergyMeasuring4SciModels/output/output_simulation_"+ str(folder_script) + "-" + str(script_name) + "_" + str(count) + ".txt" ,
     "docker" ,"run", "--rm", "-v", "/home/june/EnergyMeasuring4SciModels/sampling:/sampling" , 
     "-v", "/home/june/EnergyMeasuring4SciModels/output:/output", 
     "-v" ,"/home/june/EnergyMeasuring4SciModels/matlab.dat:/licenses/license.lic", 
