@@ -1,0 +1,3 @@
+Downloading region proposals...
+Error in downloading, please try links in README.md https://github.com/daijifeng001/R-FCN
+Error message: The connection to URL 'https://onedrive.live.com/download?resid=F371D9563727B96F!91965&authkey=!AErVqYD6NhjxAfw' timed out after 5.000 seconds. The reason is "Waiting for response header". Perhaps the server is not responding or weboptions.Timeout needs to be set to a higher value.

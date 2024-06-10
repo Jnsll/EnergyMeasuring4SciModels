@@ -1,0 +1,9 @@
+[Warning: Name is nonexistent or not a directory: /opt/caffe/matlab] 
+[> In path (line 109)
+In addpath (line 86)
+In demo (line 6)
+In run (line 91)] 
+ --top1:n03877845 palace --top2:n03220513 dome --top3:n03788195 mosque --top4:n04486054 triumphal arch --top5:n03028079 church, church building
+[Warning: MATLAB has disabled some advanced graphics rendering features by
+switching to software OpenGL. For more information, click <a
+href="matlab:opengl('problems')">here</a>.] 

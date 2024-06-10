@@ -1,0 +1,18 @@
+Number of samples in monks_T (N):
+     7
+
+Unique elements in app(class,:):
+     1     2
+
+Unique elements in test(class,:):
+     1     2
+
+Number of columns in app (Napp):
+   124
+
+Number of columns in test (Ntest):
+   432
+
+Mean of maximum values in each row of monks_T:
+    2.7143
+

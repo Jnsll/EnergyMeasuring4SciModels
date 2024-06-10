@@ -1,0 +1,9 @@
+Matching for [52; 0.01]:
+     1     1
+
+Matching for dst:
+     2     3
+
+Matching for dst transposed:
+     2     1     1
+
