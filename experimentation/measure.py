@@ -262,6 +262,8 @@ def execute_matlab_script_and_measure_energy(execution, count):
         start = time.time()
         result = subprocess.run(script_command)
         end = time.time()
+        print(results)
+        logging.info(result)
     except:
         logging.error("Error with command to run Matlab script.")
         sys.exit(1)
@@ -270,8 +272,7 @@ def execute_matlab_script_and_measure_energy(execution, count):
     with open("../output/execution_elapsed_time_" + str(count) + ".csv", "w") as file_time:
         file_time.write(str(elapsed_time_execution))
     print("Elapsed Time (s):", elapsed_time_execution)
-    logging.info("Elapsed Time (s):", elapsed_time_execution)
-    logging.info(result)
+    logging.info("Elapsed Time (s):", str(elapsed_time_execution))
     time.sleep(SLEEP_TIME)
 
 
