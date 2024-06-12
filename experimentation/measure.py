@@ -271,6 +271,7 @@ def execute_matlab_script_and_measure_energy(execution, count):
         file_time.write(str(elapsed_time_execution))
     print("Elapsed Time (s):", elapsed_time_execution)
     logging.info("Elapsed Time (s):", elapsed_time_execution)
+    logging.info(result)
     time.sleep(SLEEP_TIME)
 
 
