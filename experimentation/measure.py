@@ -260,10 +260,11 @@ def execute_matlab_script_and_measure_energy(execution, count):
 
     try:
         start = time.time()
-        result = subprocess.run(script_command)
+        result = subprocess.run(script_command, capture_output=True, text = True)
         end = time.time()
-        print(results)
-        logging.info(result)
+        print(result.stdout, result.stderr)
+        logging.info(result.stdout)
+        logging.error(result.sdterr)
     except:
         logging.error("Error with command to run Matlab script.")
         sys.exit(1)
