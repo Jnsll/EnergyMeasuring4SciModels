@@ -51,7 +51,7 @@ def run_matlab_experimentation(input_file, repetition_number, FIBONACCI_INDEX):
     """
     # Defining Matlab scripts to run by extracting Matlab projects entry point files from given file
     # Ensuring that each Matlab script will be run repetition_number of times
-    print("rep number", repetition_number)
+    print("rep number", str(repetition_number))
     scripts_executions, uniq_scripts = create_list_experimental_executions_in_random_order(input_file, repetition_number)
 
     # Check if there are scripts to execute
@@ -144,7 +144,7 @@ def warm_up_with_fibonacci_sequence(FIBONACCI_INDEX):
     fibonacci(FIBONACCI_INDEX)
     warm_up_end = time.time()
     warm_up_duration = (warm_up_end - warm_up_start)
-    print("Duration of Warm up:", warm_up_duration)
+    print("Duration of Warm up:", str(warm_up_duration))
     logger.info("Duration of Warm up:", str(warm_up_duration))
     
     return warm_up_duration
@@ -220,7 +220,7 @@ def execute_multiple_matlab_scripts_from_list(scripts_executions, uniq_scripts):
             print("Execution:", "baseline")
         else:
             logger.info("Execution:", str(execution))
-            print("Execution:", execution)
+            print("Execution:", str(execution))
         count += 1
         execute_matlab_script_and_measure_energy(execution, dict_repetition_scripts_count[execution])
 
@@ -276,7 +276,7 @@ def execute_matlab_script_and_measure_energy(execution, count):
     elapsed_time_execution = (end - start)
     with open("../output/execution_elapsed_time_" + str(count) + ".csv", "w") as file_time:
         file_time.write(str(elapsed_time_execution))
-    print("Elapsed Time (s):", elapsed_time_execution)
+    print("Elapsed Time (s):", str(elapsed_time_execution))
     logger.info("Elapsed Time (s):", str(elapsed_time_execution))
     logger.info("Elapsed Time (s): " + str(elapsed_time_execution))
     logger.info(str(result.stdout))
