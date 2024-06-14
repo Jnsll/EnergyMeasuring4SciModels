@@ -11,7 +11,7 @@ from datetime import datetime
 
 timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 
-log_file = '../output/experimentation' + str(timestamp) + '.log'
+log_file = '../output/experimentation_' + str(timestamp) + '.log'
 #if os.path.isfile(log_file):
 #    os.remove(log_file)
 #else:
