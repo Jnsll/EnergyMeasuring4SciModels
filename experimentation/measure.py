@@ -7,18 +7,22 @@ from tqdm import tqdm
 import logging
 from pathlib import Path
 
-logging.basicConfig(filename='/output/experimentation.log', filemode='w', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
+logger.setLevel(logging.INFO)
+file_handler =  logging.FileHandler('../output/experimentation.log')
+formatter = logging.Formatter('%(asctime)s : %(levelname)s : %(name)s : %(message)s')
+file_handler.setFormatter(formatter)
+# Add file handler to logger
+logger.addHandler(file_handler)
 
 ### Experimental Parameters
 random.seed(42)
-
-repetition_number = 30
+REPETITION_NUMBER = 30
 SLEEP_TIME = 5
-fibonacci_index = 35
+FIBONACCI_INDEX = 35
 
 
 
-def run_matlab_experimentation(input_file, repetition_number, fibonacci_index):
+def run_matlab_experimentation(input_file, repetition_number, FIBONACCI_INDEX):
     """
     Runs a series of MATLAB scripts multiple times with energy measurements, after a warm-up phase.
 
@@ -31,7 +35,7 @@ def run_matlab_experimentation(input_file, repetition_number, fibonacci_index):
     Parameters:
     input_file (str): Path to the file containing the MATLAB projects' entry point files.
     repetition_number (int): The number of times each MATLAB script should be executed.
-    fibonacci_index (int): The index for the Fibonacci sequence used in the warm-up phase.
+    FIBONACCI_INDEX (int): The index for the Fibonacci sequence used in the warm-up phase.
 
     Returns:
     None
@@ -50,12 +54,12 @@ def run_matlab_experimentation(input_file, repetition_number, fibonacci_index):
 
     # Check if there are scripts to execute
     if scripts_executions is None:
-        logging.error("No Matlab script to run.")
+        logger.error("No Matlab script to run.")
         sys.exit(1)
         
     
     # Warm Up to mitigate external factors in the energy measurements
-    warm_up_with_fibonacci_sequence(fibonacci_index)
+    warm_up_with_fibonacci_sequence(FIBONACCI_INDEX)
 
     #Execution of the Matlab scripts with energy measurments
     execute_multiple_matlab_scripts_from_list(scripts_executions, uniq_scripts)
@@ -110,11 +114,11 @@ def create_list_experimental_executions_in_random_order(input_file, repetition_n
         return scripts_executions, lines
     except FileNotFoundError:
         print('Something went wrong, the file was not found. Please check that the input file exists.')
-        logging.error("File not found!")
+        logger.error("File not found!")
         return None
     
 
-def warm_up_with_fibonacci_sequence(fibonacci_index):
+def warm_up_with_fibonacci_sequence(FIBONACCI_INDEX):
     """
     Measures the time taken to compute the Fibonacci number at the specified index.
 
@@ -123,7 +127,7 @@ def warm_up_with_fibonacci_sequence(fibonacci_index):
     a warm-up duration.
 
     Parameters:
-    fibonacci_index (int): The position in the Fibonacci sequence to calculate. 
+    FIBONACCI_INDEX (int): The position in the Fibonacci sequence to calculate. 
 
     Returns:
     float: The duration of the computation in seconds.
@@ -134,11 +138,11 @@ def warm_up_with_fibonacci_sequence(fibonacci_index):
     0.002345
     """
     warm_up_start = time.time()
-    fibonacci(fibonacci_index)
+    fibonacci(FIBONACCI_INDEX)
     warm_up_end = time.time()
     warm_up_duration = (warm_up_end - warm_up_start)
     print("Duration of Warm up:", warm_up_duration)
-    logging.info("Duration of Warm up:", warm_up_duration)
+    logger.info("Duration of Warm up:", warm_up_duration)
     
     return warm_up_duration
 
@@ -209,10 +213,10 @@ def execute_multiple_matlab_scripts_from_list(scripts_executions, uniq_scripts):
     for execution in tqdm(scripts_executions): #shows progress bar with tqdm (equivalent of for loop)
         dict_repetition_scripts_count[execution] += 1
         if execution == "":
-            logging.info("Execution:", "baseline")
+            logger.info("Execution:", "baseline")
             print("Execution:", "baseline")
         else:
-            logging.info("Execution:", execution)
+            logger.info("Execution:", execution)
             print("Execution:", execution)
         count += 1
         execute_matlab_script_and_measure_energy(execution, dict_repetition_scripts_count[execution])
@@ -241,7 +245,7 @@ def execute_matlab_script_and_measure_energy(execution, count):
     The energy metrics and elapsed time are saved in CSV files in the "../output" directory.
     """
     if execution == '':
-        folder_script = ''
+        folder_script = 'baseline'
         script_name = "baseline"
     else:
         folder_script = Path(execution).parts[-2]
@@ -262,18 +266,18 @@ def execute_matlab_script_and_measure_energy(execution, count):
         start = time.time()
         result = subprocess.run(script_command, capture_output=True, text = True)
         end = time.time()
-        print(result.stdout, result.stderr)
-        logging.info(result.stdout)
-        logging.error(result.sdterr)
     except:
-        logging.error("Error with command to run Matlab script.")
+        logger.error("Error with command to run Matlab script.")
         sys.exit(1)
         
     elapsed_time_execution = (end - start)
     with open("../output/execution_elapsed_time_" + str(count) + ".csv", "w") as file_time:
         file_time.write(str(elapsed_time_execution))
     print("Elapsed Time (s):", elapsed_time_execution)
-    logging.info("Elapsed Time (s):", str(elapsed_time_execution))
+    logger.info("Elapsed Time (s):", str(elapsed_time_execution))
+    logger.info("Elapsed Time (s): " + str(elapsed_time_execution))
+    logger.info(str(result.stdout))
+    logger.error(str(result.stderr))
     time.sleep(SLEEP_TIME)
 
 
@@ -284,5 +288,5 @@ if __name__ == "__main__":
     parser.add_argument('-rep', '--repetition')
     args = parser.parse_args()
 
-    run_matlab_experimentation(args.file, int(args.repetition), fibonacci_index)
+    run_matlab_experimentation(args.file, int(args.repetition), FIBONACCI_INDEX)
 
