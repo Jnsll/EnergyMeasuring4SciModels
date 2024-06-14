@@ -7,7 +7,8 @@ from tqdm import tqdm
 import logging
 from pathlib import Path
 
-logging.setLevel(logging.INFO)
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 file_handler =  logging.FileHandler('../output/experimentation.log')
 formatter = logging.Formatter('%(asctime)s : %(levelname)s : %(name)s : %(message)s')
 file_handler.setFormatter(formatter)
