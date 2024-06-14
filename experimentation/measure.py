@@ -1,11 +1,18 @@
 import subprocess
 import sys
+import os
 import random
 import argparse
 import time
 from tqdm import tqdm
 import logging
 from pathlib import Path
+
+log_file = '../output/experimentation.log'
+if os.path.isfile(log_file):
+    os.remove(log_file)
+else:
+    print("Error: %s file not found" % log_file)
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
