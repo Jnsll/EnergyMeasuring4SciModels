@@ -216,7 +216,7 @@ def execute_multiple_matlab_scripts_from_list(scripts_executions, uniq_scripts):
     for execution in tqdm(scripts_executions): #shows progress bar with tqdm (equivalent of for loop)
         dict_repetition_scripts_count[execution] += 1
         if execution == "":
-            logger.info("Execution:", "baseline")
+            logger.info("Execution: " + "baseline")
             print("Execution:", "baseline")
         else:
             logger.info("Execution:" + str(execution))
