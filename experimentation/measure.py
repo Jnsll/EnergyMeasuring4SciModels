@@ -116,7 +116,7 @@ def create_list_experimental_executions_in_random_order(input_file, repetition_n
         return scripts_executions, lines
     except FileNotFoundError:
         print('Something went wrong, the file was not found. Please check that the input file exists.')
-        logger.error("File not found!", str(input_file))
+        logger.error("File not found!" + str(input_file))
         sys.exit(1)
 
     
@@ -145,7 +145,7 @@ def warm_up_with_fibonacci_sequence(FIBONACCI_INDEX):
     warm_up_end = time.time()
     warm_up_duration = (warm_up_end - warm_up_start)
     print("Duration of Warm up:", warm_up_duration)
-    logger.info("Duration of Warm up: %.4f", warm_up_duration)
+    logger.info("Duration of Warm up: " +  str(warm_up_duration))
     
     return warm_up_duration
 
@@ -219,7 +219,7 @@ def execute_multiple_matlab_scripts_from_list(scripts_executions, uniq_scripts):
             logger.info("Execution:", "baseline")
             print("Execution:", "baseline")
         else:
-            logger.info("Execution:", str(execution))
+            logger.info("Execution:" + str(execution))
             print("Execution:", str(execution))
         count += 1
         execute_matlab_script_and_measure_energy(execution, dict_repetition_scripts_count[execution])
@@ -277,7 +277,7 @@ def execute_matlab_script_and_measure_energy(execution, count):
     with open("../output/execution_elapsed_time_" + str(count) + ".csv", "w") as file_time:
         file_time.write(str(elapsed_time_execution))
     print("Elapsed Time (s):", str(elapsed_time_execution))
-    logger.info("Elapsed Time (s): %.4f" + str(elapsed_time_execution))
+    logger.info("Elapsed Time (s): " + str(elapsed_time_execution))
     logger.info(str(result.stdout))
     logger.error(str(result.stderr))
     time.sleep(SLEEP_TIME)
