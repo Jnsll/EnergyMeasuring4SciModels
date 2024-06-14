@@ -116,8 +116,9 @@ def create_list_experimental_executions_in_random_order(input_file, repetition_n
         return scripts_executions, lines
     except FileNotFoundError:
         print('Something went wrong, the file was not found. Please check that the input file exists.')
-        logger.error("File not found!")
-        return None
+        logger.error("File not found!", str(input_file))
+        sys.exit(1)
+
     
 
 def warm_up_with_fibonacci_sequence(FIBONACCI_INDEX):
