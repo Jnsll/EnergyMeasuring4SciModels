@@ -144,8 +144,8 @@ def warm_up_with_fibonacci_sequence(FIBONACCI_INDEX):
     fibonacci(FIBONACCI_INDEX)
     warm_up_end = time.time()
     warm_up_duration = (warm_up_end - warm_up_start)
-    print("Duration of Warm up:", str(warm_up_duration))
-    logger.info("Duration of Warm up:", str(warm_up_duration))
+    print("Duration of Warm up:", warm_up_duration)
+    logger.info("Duration of Warm up: %.4f", warm_up_duration)
     
     return warm_up_duration
 
@@ -277,8 +277,7 @@ def execute_matlab_script_and_measure_energy(execution, count):
     with open("../output/execution_elapsed_time_" + str(count) + ".csv", "w") as file_time:
         file_time.write(str(elapsed_time_execution))
     print("Elapsed Time (s):", str(elapsed_time_execution))
-    logger.info("Elapsed Time (s):", str(elapsed_time_execution))
-    logger.info("Elapsed Time (s): " + str(elapsed_time_execution))
+    logger.info("Elapsed Time (s): %.4f" + str(elapsed_time_execution))
     logger.info(str(result.stdout))
     logger.error(str(result.stderr))
     time.sleep(SLEEP_TIME)
