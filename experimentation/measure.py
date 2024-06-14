@@ -51,7 +51,6 @@ def run_matlab_experimentation(input_file, repetition_number, FIBONACCI_INDEX):
     """
     # Defining Matlab scripts to run by extracting Matlab projects entry point files from given file
     # Ensuring that each Matlab script will be run repetition_number of times
-    print("rep number", str(repetition_number))
     scripts_executions, uniq_scripts = create_list_experimental_executions_in_random_order(input_file, repetition_number)
 
     # Check if there are scripts to execute
@@ -116,7 +115,7 @@ def create_list_experimental_executions_in_random_order(input_file, repetition_n
         return scripts_executions, lines
     except FileNotFoundError:
         print('Something went wrong, the file was not found. Please check that the input file exists.')
-        logger.error("File not found!" + str(input_file))
+        logger.error("File not found: " + str(input_file))
         sys.exit(1)
 
     
