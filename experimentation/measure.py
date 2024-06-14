@@ -7,16 +7,19 @@ import time
 from tqdm import tqdm
 import logging
 from pathlib import Path
+from datetime import datetime
 
-log_file = '../output/experimentation.log'
-if os.path.isfile(log_file):
-    os.remove(log_file)
-else:
-    print("Error: %s file not found" % log_file)
+timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+
+log_file = '../output/experimentation' + str(timestamp) + '.log'
+#if os.path.isfile(log_file):
+#    os.remove(log_file)
+#else:
+#    print("Error: %s file not found" % log_file)
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
-file_handler =  logging.FileHandler('../output/experimentation.log')
+file_handler =  logging.FileHandler(log_file)
 formatter = logging.Formatter('%(asctime)s : %(levelname)s : %(name)s : %(message)s')
 file_handler.setFormatter(formatter)
 # Add file handler to logger
