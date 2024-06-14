@@ -74,6 +74,7 @@ def run_matlab_experimentation(input_file, repetition_number, FIBONACCI_INDEX):
 
     #Execution of the Matlab scripts with energy measurments
     execute_multiple_matlab_scripts_from_list(scripts_executions, uniq_scripts)
+    logger.info("---END EXPERIMENTATION---")
 
 
 def create_list_experimental_executions_in_random_order(input_file, repetition_number):
@@ -155,7 +156,7 @@ def warm_up_with_fibonacci_sequence(FIBONACCI_INDEX):
     warm_up_duration = (warm_up_end - warm_up_start)
     print("Duration of Warm up:", warm_up_duration)
     logger.info("Duration of Warm up: " +  str(warm_up_duration))
-    
+    logger.info("---BEGINNING EXPERIMENTATION---")
     return warm_up_duration
 
 
