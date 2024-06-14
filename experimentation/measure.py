@@ -145,7 +145,7 @@ def warm_up_with_fibonacci_sequence(FIBONACCI_INDEX):
     warm_up_end = time.time()
     warm_up_duration = (warm_up_end - warm_up_start)
     print("Duration of Warm up:", warm_up_duration)
-    logger.info("Duration of Warm up:", warm_up_duration)
+    logger.info("Duration of Warm up:", str(warm_up_duration))
     
     return warm_up_duration
 
@@ -219,7 +219,7 @@ def execute_multiple_matlab_scripts_from_list(scripts_executions, uniq_scripts):
             logger.info("Execution:", "baseline")
             print("Execution:", "baseline")
         else:
-            logger.info("Execution:", execution)
+            logger.info("Execution:", str(execution))
             print("Execution:", execution)
         count += 1
         execute_matlab_script_and_measure_energy(execution, dict_repetition_scripts_count[execution])
