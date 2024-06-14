@@ -51,6 +51,7 @@ def run_matlab_experimentation(input_file, repetition_number, FIBONACCI_INDEX):
     """
     # Defining Matlab scripts to run by extracting Matlab projects entry point files from given file
     # Ensuring that each Matlab script will be run repetition_number of times
+    print("rep number", repetition_number)
     scripts_executions, uniq_scripts = create_list_experimental_executions_in_random_order(input_file, repetition_number)
 
     # Check if there are scripts to execute
