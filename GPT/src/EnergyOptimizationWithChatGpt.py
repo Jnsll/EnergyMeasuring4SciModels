@@ -1,20 +1,29 @@
 import concurrent
 import types
 from concurrent.futures import ThreadPoolExecutor
-
+import chardet
 import os
-import subprocess
-import time
-
 import pandas as pd
 from openai import OpenAI
 from tqdm import tqdm
 
 BASIC_PROMPT = """
 Optimize the Matlab code for energy efficiency, refactor it and return the refactored code.
+Output first Matlab code starting with "```matlab" and ending with "```" and then the reasoning for the optimization.
 
 Code:"{script}"
 """
+
+SYSTEM_PROMPT = """
+"You are an expert Matlab developer, specializes in receiving and analyzing user-provided Matlab source code. 
+Your primary function is to meticulously review the code, identify potential areas for energy optimization, and directly implement specific optimizations."
+"""
+
+# Mapping of model names to the file name style matching
+MODEL_FILENAME_MAPPING = {
+    'gpt-3.5-turbo': 'optimized_gpt3',
+    'gpt-4o': 'optimized_gpt4'
+}
 
 # Function to get execution time from CSV file
 def get_execution_time(csv_path, script_path):
@@ -25,23 +34,50 @@ def get_execution_time(csv_path, script_path):
     else:
         raise ValueError(f"No execution time found for {script_path} in {csv_path}")
 
-# Function to run a MATLAB script and return its execution time
-def run_matlab_script(script_path):
-    #start_time = time.time()
-    #result = subprocess.run(["matlab", "-batch", f"run('{script_path}')"], capture_output=True, text=True)
-    #end_time = time.time()
-    #execution_time = end_time - start_time
-    execution_time = 15.4
-    #if result.returncode != 0:
-    #    raise RuntimeError(f"Error running {script_path}: {result.stderr}")
 
-    return execution_time
+def create_model_directory(output_path, model):
+    if model in MODEL_FILENAME_MAPPING:
+        # Construct the full path for the new directory
+        result_path = os.path.join(output_path, MODEL_FILENAME_MAPPING[model])
 
+        # Check if the directory already exists
+        if not os.path.exists(result_path):
+            # Create the directory
+            os.makedirs(result_path)
+            print(f"Directory created: {result_path}")
+        else:
+            print(f"Directory already exists: {result_path}")
+        return result_path
+
+    else:
+        print("Model name not found in the mapping.")
+        return output_path
+
+    return result_path
+
+def get_unique_filename(directory, file_name):
+    # Check if the file exists and generate a unique name if needed
+    file_base_name, file_extension = os.path.splitext(file_name)
+    counter = 1
+    while os.path.exists(os.path.join(directory, file_name)):
+        file_name = f"{file_base_name}_{counter}{file_extension}"
+        counter += 1
+    return file_name
+
+def detect_encoding(file_path):
+    with open(file_path, 'rb') as file:
+        detector = chardet.universaldetector.UniversalDetector()
+        for line in file:
+            detector.feed(line)
+            if detector.done:
+                break
+        detector.close()
+    return detector.result['encoding']
 
 # Read MATLAB code from a file
-def read_code_from_file(file_path):
+def read_code_from_file(file_path, encoding):
     try:
-        with open(file_path, 'r', encoding='utf-8') as file:
+        with open(file_path, 'r', encoding=encoding) as file:
             code = file.read()
     except UnicodeDecodeError:
         with open(file_path, 'r', encoding='latin1') as file:
@@ -49,14 +85,14 @@ def read_code_from_file(file_path):
     return code
 
 # Write MATLAB code to a file
-def write_code_to_file(file_path, code):
-    with open(file_path, 'w') as file:
+def write_code_to_file(file_path, code, encoding):
+    with open(file_path, 'w', encoding = encoding) as file:
         file.write(code)
 
 # Extract MATLAB code and reasoning from the response
 def extract_matlab_code_and_reasoning(response):
     response_text = response[0]  # Get the first item from the response list
-    code_start = response_text.find("```matlab")
+    code_start = response_text.lower().find("```matlab")
     code_end = response_text.find("```", code_start + 1)
     if code_start == -1 or code_end == -1:
         return response_text, ""
@@ -75,6 +111,8 @@ def instruct_gpt_model(client, prompts, model, n=1, temperature=0.5, frequency_p
         max_tokens = 16385
     elif 'preview' in model:
         max_tokens = 4095
+    elif 'gpt-3.5-turbo' in model:
+        max_tokens = 4095
     if not max_tokens:
         if model.startswith('gpt-4o'):
             max_tokens = 4095
@@ -85,7 +123,7 @@ def instruct_gpt_model(client, prompts, model, n=1, temperature=0.5, frequency_p
         messages = [
             {
                 "role": "system",
-                "content": "You are an expert Matlab developer, specializes in receiving and analyzing user-provided Matlab source code. Your primary function is to meticulously review the code, identify potential areas for energy optimization, and directly implement or suggest specific optimizations."
+                "content": SYSTEM_PROMPT
             },
             {
                 "role": "user",
@@ -136,18 +174,19 @@ def instruct_gpt_model(client, prompts, model, n=1, temperature=0.5, frequency_p
     return fetch_parallel_req(prompts)[-1]
 
 # Main pipeline function
-def main_pipeline(api_key, resource_folder, csv_path, output_csv_path):
-    client = OpenAI(
-        # This is the default and can be omitted
-        api_key=api_key,
-    )
-    #openai.api_key = api_key  # Set the API key globally
+def main_pipeline(client, input_project_folder_path, csv_path, output_path):
     df = pd.read_csv(csv_path)
     optimized_scripts = []
     reasonings = []
 
+    # choose the model
+    # model = "text-davinci-003"
+    # model = "gpt-3.5-turbo-16k"
+    # model = "gpt-3.5-turbo"
+    model = "gpt-4o"
+
     for index, row in df.iterrows():
-        file_path = os.path.join(resource_folder, row['ScriptPath'].lstrip("/"))
+        file_path = os.path.join(input_project_folder_path, row['ScriptPath'].lstrip("/"))
         original_time = row['ExecutionTime']
         print(f"Original Execution Time for {file_path}: {original_time} seconds")
 
@@ -156,17 +195,16 @@ def main_pipeline(api_key, resource_folder, csv_path, output_csv_path):
             print(f"File not found: {file_path}")
             continue
 
+        #Detect the encoding of the file first
+        encoding = detect_encoding(file_path)
+        print(f'the encoding of the file is: {encoding}')
+
         # Read original MATLAB code
-        original_code = read_code_from_file(file_path)
+        original_code = read_code_from_file(file_path, encoding)
 
         # Optimize the code using ChatGPT
         prompt = BASIC_PROMPT.format(script=original_code)
         #prompt = f"Optimize this MATLAB code for better performance:\n\n{original_code}"
-
-        #choose the model
-        #model = "text-davinci-003"
-        #model = "gpt-3.5-turbo"
-        model = "gpt-4o"
 
         try:
             optimized_code_list = instruct_gpt_model(client,[prompt], model= model, n=1, temperature=0.5)
@@ -180,20 +218,37 @@ def main_pipeline(api_key, resource_folder, csv_path, output_csv_path):
             # Check if the code was modified
             if optimized_code and optimized_code != original_code:
                 print(f"optimization detected for {file_path}.")
+
                 # Write optimized code to a new file
-                optimized_file_path = file_path.replace(".m", "_optimized.m")
-                write_code_to_file(optimized_file_path, optimized_code)
+                file_name = os.path.basename(file_path) # extract the base name or file name
+                optimized_file_name = file_name.replace(".m", f"_{MODEL_FILENAME_MAPPING[model]}.m")
+                print(f"Optimized file will be named to {optimized_file_name}.")
+                #optimized_file_path = file_path.replace(".m", optimized_file_name) #Uncomment this to save the files in their original folder
+
+                result_path = create_model_directory(output_path,model)
+
+                optimized_file_name = get_unique_filename(result_path, optimized_file_name)
+                optimized_file_path = os.path.join(result_path,optimized_file_name)
+                print(f"Optimized file will be saved to {optimized_file_path}.")
+
+                write_code_to_file(optimized_file_path, optimized_code, encoding)
                 reasonings.append({'OriginalScriptPath':file_path,'OptimizedScriptPath': optimized_file_path, 'Original_code':original_code,'optimized_code': optimized_code,'Reasoning': reasoning})
 
-                optimized_time = run_optimize_code(optimized_file_path, optimized_scripts)
+
+                #optimized_time = run_optimize_code(optimized_file_path, optimized_scripts)
             else:
                 print(f"No optimization or change detected for {file_path}.")
+                reasonings.append({'OriginalScriptPath': file_path, 'OptimizedScriptPath': "NA",
+                                   'Original_code': original_code, 'optimized_code': "NA",
+                                   'Reasoning': reasoning})
 
         except Exception as e:
             print(e)
 
         # Save the optimized scripts and their execution times to a new CSV file
         optimized_df = pd.DataFrame(optimized_scripts)
+        result_path = create_model_directory(output_path, model)
+        output_csv_path = os.path.join(result_path, "OptimizedMatlabScripts.csv")
         optimized_df.to_csv(output_csv_path, index=False)
         print(f"Optimized script details saved to {output_csv_path}")
 
@@ -204,33 +259,32 @@ def main_pipeline(api_key, resource_folder, csv_path, output_csv_path):
         print(f"Reasonings saved to {reasoning_csv_path}")
 
 
-def run_optimize_code(optimized_file_path, optimized_scripts):
-    try:
-        # Run the optimized script and measure its execution time
-        optimized_time = run_matlab_script(optimized_file_path)
-        print(f"Optimized Execution Time for {optimized_file_path}: {optimized_time} seconds")
-
-        # Append to the list of optimized scripts
-        optimized_scripts.append({'ScriptPath': optimized_file_path, 'ExecutionTime': optimized_time})
-    except RuntimeError as e:
-        print(e)
-
-
 def load_api_key():
-    api_key = os.getenv("OPENAI_API_KEY")
+    api_key = os.getenv("ZEST_PROJECT_OPENAI_API_KEY")
     #print(f"Loaded API Key: {api_key}")
-    if not api_key:
-       raise ValueError("The OpenAI API key must be set as an environment variable 'OPENAI_API_KEY'")
+    #if not api_key:
+    #   raise ValueError("The OpenAI API key must be set as an environment variable 'OPENAI_API_KEY'")
     return  api_key
 
+def load_client(api_key):
+    client = OpenAI(
+        # This is the default and can be omitted
+        api_key=api_key,
+    )
+    return client
 
 # Example usage
 if __name__ == "__main__":
     # Load your API key from an environment variable or secret management service
     api_key = load_api_key()
+    client = load_client(api_key)
+    resource_folder = "./../resource/"
+    input_project_folder_path = "./../resource/sampling/repos_projects_filtered_top100stars/"
+    input_csv_path = os.path.join(resource_folder, "entrypoints_no_crashes_only.csv")  # Path to the CSV file containing execution times
+    output_path = os.path.join(resource_folder, "Optimzation_results")  # Output CSV file path
+    if not os.path.exists(output_path):
+        os.makedirs(output_path)
+    else:
+        print(f"Directory already exists: {output_path}")
 
-    resource_folder = "./../resource"
-    csv_path = os.path.join(resource_folder, "MatlabEntryPoints.csv")  # Path to the CSV file containing execution times
-    output_csv_path = os.path.join(resource_folder, "OptimizedMatlabScripts.csv")  # Output CSV file path
-
-    main_pipeline(api_key, resource_folder, csv_path, output_csv_path)
+    main_pipeline(client, input_project_folder_path, input_csv_path, output_path)
