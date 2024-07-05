@@ -266,7 +266,7 @@ def execute_matlab_script_and_measure_energy(execution, count):
 
     script_command = ["/home/tdurieux/git/EnergiBridge/target/release/energibridge" ,"--summary" ,"--output", 
     "/home/june/EnergyMeasuring4SciModels/output/energy_metrics_" + str(folder_script) + "-" + str(script_name) + "_" + str(count) + ".csv" ,
-    "-c" ,"/home/june/EnergyMeasuring4SciModels/output/output_simulation_"+ str(folder_script) + "-" + str(script_name) + "_" + str(count) + ".txt" ,
+    "-c" ,"/home/june/EnergyMeasuring4SciModels/output/output_simulation_" + str(folder_script) + "-" + str(script_name) + "_" + str(count) + ".txt" ,
     "docker" ,"run", "--rm", "-v", "/home/june/EnergyMeasuring4SciModels/sampling:/sampling" , 
     "-v", "/home/june/EnergyMeasuring4SciModels/output:/output", 
     "-v" ,"/home/june/EnergyMeasuring4SciModels/matlab.dat:/licenses/license.lic", 
@@ -277,7 +277,7 @@ def execute_matlab_script_and_measure_energy(execution, count):
 
     try:
         start = time.time()
-        result = subprocess.run(script_command, capture_output=True, text = True)
+        result = subprocess.run(script_command, capture_output=True, text = True, timeout=300)
         end = time.time()
     except:
         logger.error("Error with command to run Matlab script.")
