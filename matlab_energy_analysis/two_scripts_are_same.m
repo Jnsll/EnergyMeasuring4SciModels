@@ -2,18 +2,22 @@
 %
 %output is 1/True IFF both scripts output the same on the console and the
 %repository directory is identical after script execution
-function same_outputs = two_scripts_are_same(root_path, rel_script_path1, rel_script_path2)
+function [same_outputs, runTime, runTimeAI] = two_scripts_are_same(root_path, rel_script_path, script_name, content, contentAI)
+    max_time = 600;
+
     try
-        [hashbefore1, console_output1, hashafter1] = capture_outputs(root_path, rel_script_path1);
-        [hashbefore2, console_output2, hashafter2] = capture_outputs(root_path, rel_script_path2);
+        fprintf('Testing original version of %s\n', script_name)
+        [hashbefore, console_output, hashafter, runTime] = capture_outputs(root_path, rel_script_path, script_name, content, max_time);
+        fprintf('Testing AI version of %s\n', script_name)
+        [hashbeforeAI, console_outputAI, hashafterAI, runTimeAI] = capture_outputs(root_path, rel_script_path, script_name, contentAI, max_time);
     
-        if ~strcmp(hashbefore1, hashbefore2)
+        if ~strcmp(hashbefore, hashbeforeAI)
             error("Error occured during copying temporary copies of the directories.")
         end
 
-        same_outputs = strcmp(console_output1, console_output2) && strcmp(hashafter1, hashafter2);
+        same_outputs = strcmp(console_output, console_outputAI) && strcmp(hashafter, hashafterAI);
     catch ME
-        disp(ME)
+         disp(ME)
         try
             %cleanup if one script produced errors
             rmdir([root_path '_copy'], 's');
@@ -24,8 +28,8 @@ function same_outputs = two_scripts_are_same(root_path, rel_script_path1, rel_sc
     if same_outputs
         disp("Both scripts produced the SAME console outputs and output files.")
     else
-        if ~strcmp(console_output1, console_output2)
-            if strcmp(hashafter1, hashafter2)
+        if ~strcmp(console_output, console_outputAI)
+            if strcmp(hashafter, hashafterAI)
                 disp("The scripts DIVERGE in console outputs!")
             else
                 disp("The scripts DIVERGE in console outputs and output files!")
@@ -36,10 +40,13 @@ function same_outputs = two_scripts_are_same(root_path, rel_script_path1, rel_sc
     end
 end
 
-function [hash1, console_output, hash2] = capture_outputs(root_path, rel_script_path)
+function [hash1, console_output, hash2, runTime] = capture_outputs(root_path, rel_script_path, script_name, content, max_time)
 
     % Create a temporary directory for the copy
     temp_dir = [root_path '_copy'];
+    if exist(temp_dir, 'file')
+        rmdir(temp_dir, 's');
+    end
     mkdir(temp_dir);
 
     % Copy the root_path directory to temp_dir
@@ -48,14 +55,30 @@ function [hash1, console_output, hash2] = capture_outputs(root_path, rel_script_
     % Compute the initial hash of the directory
     hash1 = hash_directory(temp_dir);
 
+    %copy the content into the script file
+    script_file_path = [temp_dir filesep rel_script_path filesep script_name '.m'];
+    fid = fopen(script_file_path, 'w');
+    if fid == -1
+        error('File could not be opened for writing.');
+    end
+    fprintf(fid, '%s', ['%TMP SCRIPT FOR TESTING OUTPUTS' newline newline content]);
+    fclose(fid);
+
     % Capture the output of the script
-    console_output = evalc(['run(''' root_path filesep rel_script_path ''')']);
+    execution_path = [temp_dir filesep rel_script_path];
+    [console_output, runTime] = start_and_monitor(max_time, execution_path, script_name);
 
     % Compute the final hash of the directory
+    delete(script_file_path);
     hash2 = hash_directory(temp_dir);
 
     % Clean up: remove the temporary directory
-    rmdir(temp_dir, 's');
+    try
+        rmdir(temp_dir, 's');
+    catch
+        pause(3)
+        rmdir(temp_dir, 's');
+    end
 end
 
 function hash = hash_directory(directory)
