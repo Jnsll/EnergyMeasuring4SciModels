@@ -1,0 +1,14 @@
+
+observations:
+- often the important stuff is not happening in the scripts themselves but rather in functions called by the scripts.
+- many scripts seem to be a work in progress. Scientists work interactively with the scripts,
+  comment out versions of code lines that they don't want to consider for the moment,
+  omit semicolons because they want to investigate calculation result in the command window,
+  use clear and clc to start the script (which would be unnecessary if it was a function),
+  using tic and toc to time execution time
+- script NaveGo->optimizer.m only runs through because error is caught inside script (file imu_structure doesn't work as a function).
+  Data files to load data from are missing. No optimization possible without any further information.
+- script GenerateTrainingPatches doesn't calculate anything with folder = "Train400" (original folder definition to load files from)
+- script chapter22_bp appears twice - file is copied, no difference in code
+- script vl_setupnn is doing nothing but adding directories to the Matlab path (some of them non-existent)
+- scripts that create a directory might be slower the first time they are run than in following runs

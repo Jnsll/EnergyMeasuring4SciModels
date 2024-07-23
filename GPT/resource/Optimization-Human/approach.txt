@@ -1,0 +1,35 @@
+
+Project setup
+- Copy folder of script to be tested to separate GitLab project
+- Convert scripts to functions
+- Return what I consider as relevant output from the function
+- Setup tester class for unit testing - to make sure the output isn't changing in the process of optimization
+
+Optimization steps:
+- apply "coding guidlines" (inserting space before and after operators)
+- insert empty lines for better readability
+- remove calls to clear, clc
+- optimize for loop to generate symmetric matrix
+- move definitions not depending on iteration variable outside for loop
+- move definition by call to zeros() / ones() outside for loop
+- introduce help functions to remove code clones
+- replace while loop with for loop when there is no reason to use a while loop
+- insert help variable to avoid iterative call to some function (with same parameters)
+- add call to rng("default") when random numbers are used (to make sure test case produces consistent results)
+- apply suggestions given by Matlab code analyzer
+  -- type 1i instead of i or j for complex unit
+  -- preallocate variables when used in for loop (or use implicit preallocation by writing for loop header in the form "for idx = n:-1:1")
+  -- remove unused variables
+  -- replace unused function outputs with ~
+  -- assign loaded variables to a variable in function workspace (e.g. loadRes = load('myMatFile');
+  -- use isempty() instead of numel() == 0
+- reduce number of operations in long formulas by introducing help variables
+- replace for loops with vectorized notation where possible
+- remove for loop with header "for idx = 1:1"
+- remove tic and toc
+- replace length() by numel()
+- replace formula with zero if value of formula is equal to zero
+- replace x = 0 * b with x = zeros(size(b))
+- place expressions not depending on inner for loop variable in outer for loop
+- correct semantic errors in script where obvious (e.g. p3.m in Math_Model_p3 folder)
+- remove redundant code fragments
