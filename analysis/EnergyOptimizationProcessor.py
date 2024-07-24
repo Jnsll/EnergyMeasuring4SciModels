@@ -6,7 +6,7 @@ from collections import defaultdict
 
 TOTAL_NUMBER_CORES = 10
 TOTAL_NUMBER_REPETITIONS = 30
-INPUT_FOLDER = "./../../../EnergyMeasuring4SciModels/Output-new/output/"
+INPUT_FOLDER = "./../../EnergyMeasuring4SciModels_filesTooBig/output/"  #"./../output/"
 script_name_test = "energy_metrics_chap11-chap11_2"
 
 # Mapping of column names
@@ -41,11 +41,16 @@ def compute_time_taken(column_name, data_raw):
     time_taken = float(end_time - start_time)
     return time_taken
 
-def process_energy_file(file_name, file_path, regex):
+def process_energy_file(file_name, file_path, regexes):
     # print(f"Processing file: {file_path}")
     data = pd.read_csv(file_path)
-    match = re.match(regex, file_name)
-    if not match:
+    match_llm_optimized_main = re.match(regexes['llm_main'], file_name)
+    match_llm_optimized_non_main = re.match(regexes['llm'], file_name)
+    match_original_main = re.match(regexes['original_main'], file_name)
+    match_original_non_main = re.match(regexes['original'], file_name)  
+    match_baseline = re.match(regexes['baseline'], file_name)  
+    #match = re.match(regex, file_name)
+    if not match_llm_optimized_main and not match_llm_optimized_non_main and not match_original_main and not match_original_non_main and not match_baseline:
         # baseline files measure the Matlab project
         # if("-baseline" in file_name):
         #     script_name = file_name
@@ -55,16 +60,43 @@ def process_energy_file(file_name, file_path, regex):
         #     return script_name, total_energy, used_memory, time_taken
         # else:
         print(f"No match for file: {file_path}")
-        return None, None, None, None
+        return None, None, None, None, None
 
-    script_name = match.group(1)
+    if match_llm_optimized_main:
+        folder = match_llm_optimized_main.group(1)
+        script = match_llm_optimized_main.group(2)
+        llm = match_llm_optimized_main.group(3)
+        main_number = match_llm_optimized_main.group(4)
+        repetition_number = match_llm_optimized_main.group(5)
+    elif match_llm_optimized_non_main:
+        folder = match_llm_optimized_non_main.group(1)
+        script = match_llm_optimized_non_main.group(2)
+        llm = match_llm_optimized_non_main.group(3)
+        repetition_number = match_llm_optimized_non_main.group(4)
+    elif match_original_main:
+        folder = match_original_main.group(1)
+        script = match_original_main.group(2)
+        repetition_number = match_original_main.group(3)
+        llm = None
+    elif match_original_non_main:
+        folder = match_original_non_main.group(1)
+        script = match_original_non_main.group(2)
+        repetition_number = match_original_non_main.group(3)
+        llm = None
+    elif match_baseline:
+        folder = ""
+        script = "baseline"
+        llm = None
+    
+    #script_name = match.group(1)
+    script_name = folder + "__" + script
 
     # Compute energy consumption for each core
     total_energy = sum(compute_core_energy_consumption(data, core) for core in range(TOTAL_NUMBER_CORES + 1))
     used_memory = compute_used_memory(COLUMN_MAPPING["used_memory"], data)
     time_taken = compute_time_taken(COLUMN_MAPPING["time"], data)
 
-    return script_name, total_energy, used_memory, time_taken
+    return script_name, total_energy, used_memory, time_taken, llm
 
 def compute_averages(data_dict):
     averages = {}
@@ -81,7 +113,14 @@ def compute_averages(data_dict):
 
 def main():
     # regex = re.compile('energy_metrics_(.*).m_(\d+).csv')
-    regex = re.compile(r'energy_metrics_(.*).m_*\d+\.csv')  # macOS
+    #regex = re.compile(r'energy_metrics_(.*).m_*\d+\.csv')  # macOS
+    regex_llm_optimized_main = re.compile(r".*energy_metrics_(.+)-(.+)_optimized_(.+)_(\d+).m_(\d+).csv.*")
+    regex_llm_optimized_non_main = re.compile(r".*energy_metrics_(.+)-(.+)_optimized_([^_]+).m_(\d+).csv.*")
+    regex_original_main = re.compile(r".*energy_metrics_(.+)-(main).m_(\d+).csv.*")
+    regex_original_non_main = re.compile(r".*energy_metrics_(.+)-(.+).m_(\d+).csv.*") 
+    regex_baseline = re.compile(r".*energy_metrics_-baseline_\d+.csv")
+    regexes = {'llm_main': regex_llm_optimized_main, 'llm': regex_llm_optimized_non_main, 'original_main':regex_original_main, 'original':regex_original_non_main, 'baseline': regex_baseline}
+
     #files_output = "../output/"
     files_output = INPUT_FOLDER
     energy_files = [file for file in os.listdir(files_output) if 'energy_metrics_' in file]
@@ -94,38 +133,55 @@ def main():
         lambda: {'baseline': 0,'original': 0, 'optimized_gpt3': 0, 'optimized_gpt4': 0, 'optimized_llama': 0, 'optimized_mixtral': 0})
     time_taken_by_script = defaultdict(lambda: {'baseline': 0,'original': 0, 'optimized_gpt3': 0, 'optimized_gpt4': 0, 'optimized_llama': 0, 'optimized_mixtral': 0})
     used_memory_by_script = defaultdict(lambda: {'baseline': 0,'original': 0, 'optimized_gpt3': 0, 'optimized_gpt4': 0, 'optimized_llama': 0, 'optimized_mixtral': 0})
+    baseline_values = {'energy': 0, 'memory':0, 'time':0}
 
     for energy_file in energy_files:
         file_path = os.path.join(files_output, energy_file)
         # print(f"Processing file: {file_path}")
-        script_name, total_energy, used_memory, time_taken = process_energy_file(energy_file, file_path, regex)
+        script_name, total_energy, used_memory, time_taken, llm = process_energy_file(energy_file, file_path, regexes)
 
         if script_name:
-            base_name = script_name
-            suffix = 'original'
+#            base_name = script_name
+#            suffix = 'original'
+#
+#            if "_optimized_gpt4" in script_name:
+#                base_name = script_name.replace("_optimized_gpt4", "")
+#                suffix = 'optimized_gpt4'
+#            elif "_optimized_llama" in script_name:
+#                base_name = script_name.replace("_optimized_llama", "")
+#                suffix = 'optimized_llama'
+#            elif "_optimized_mixtral" in script_name:
+#                base_name = script_name.replace("_optimized_mixtral", "")
+#                suffix = 'optimized_mixtral'
+#            elif "_optimized_gpt3" in script_name:
+#                base_name = script_name.replace("_optimized_gpt3", "")
+#                suffix = 'optimized_gpt3'
+#            elif "_baseline" in script_name:
+#                base_name = script_name.replace("_baseline", "")
+#                suffix = 'baseline'
+            
 
-            if "_optimized_gpt4" in script_name:
-                base_name = script_name.replace("_optimized_gpt4", "")
-                suffix = 'optimized_gpt4'
-            elif "_optimized_llama" in script_name:
-                base_name = script_name.replace("_optimized_llama", "")
-                suffix = 'optimized_llama'
-            elif "_optimized_mixtral" in script_name:
-                base_name = script_name.replace("_optimized_mixtral", "")
-                suffix = 'optimized_mixtral'
-            elif "_optimized_gpt3" in script_name:
-                base_name = script_name.replace("_optimized_gpt3", "")
-                suffix = 'optimized_gpt3'
-            elif "_baseline" in script_name:
-                base_name = script_name.replace("_baseline", "")
-                suffix = 'baseline'
+            if script_name == "__" + "baseline":
+                baseline_values['energy'] += total_energy
+                baseline_values['memory'] += used_memory
+                baseline_values['time'] += time_taken
+            else:
+                base_name = script_name
+                suffix = 'original'
+                if str(llm) == 'gpt3':
+                    suffix = 'optimized_gpt3'
+                elif str(llm) == "gpt4":
+                    suffix = 'optimized_gpt4'
+                elif str(llm) == "llama":
+                    suffix = 'optimized_llama'
+                elif str(llm) == "mixtral":
+                    suffix = 'optimized_mixtral'
 
+                energy_consumption_by_script[base_name][suffix] += total_energy
+                used_memory_by_script[base_name][suffix] += used_memory
+                time_taken_by_script[base_name][suffix] += time_taken
 
-            energy_consumption_by_script[base_name][suffix] += total_energy
-            used_memory_by_script[base_name][suffix] += used_memory
-            time_taken_by_script[base_name][suffix] += time_taken
-
-            print(f"Updated {base_name} ({suffix}): Energy={total_energy}, Memory={used_memory}, Time={time_taken}")
+                print(f"Updated {base_name} ({suffix}): Energy={total_energy}, Memory={used_memory}, Time={time_taken}")
 
     avg_energy_per_script = compute_averages(energy_consumption_by_script)
     avg_memory_per_script = compute_averages(used_memory_by_script)
@@ -156,10 +212,10 @@ def main():
     final_df = energy_df.merge(memory_df, on='script_name').merge(time_df,on='script_name')
 
     # Save the final DataFrame to a CSV file
-    results_path = os.path.join(files_output, 'processed_results', 'averages_results.csv')
+    results_path = os.path.join("./", 'processed_results', 'averages_results.csv')
     print(f"results saved to {results_path}")
     os.makedirs(os.path.dirname(results_path), exist_ok=True)  # Create directories if they do not exist
-    final_df.to_csv(results_path, index=False)
+    final_df.to_csv(results_path, index=False, sep=";")
 
     return final_df
 
