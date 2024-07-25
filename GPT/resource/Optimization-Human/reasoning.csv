@@ -1,0 +1,200 @@
+﻿OriginalScriptPath;OptimizedScriptPath;Original_code;optimized_code;Reasoning
+./../resource/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB 神经网络30个案例分析》源程序 数据/chapter1/BPDLX.m;GPT/resource/Optimization-Human/m-files/BPDLX_humanOptimized.m;;;"Improve readability
+Extract function
+Set random generator seed
+Remove unnecessary comment"
+./../resource/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/HeuristicAlgorithm（补分启发式算法，包括神经网络、模拟退火、遗传算法）/神经网络算法/MATLAB神经网络30个案例分析/案例5 基于BP_Adaboost的强分类器设计-公司财务预警建模/Bp_Ada_Fore.m;GPT/resource/Optimization-Human/m-files/Bp_Ada_Fore_humanOptimized.m;;;"Preallocation
+Improve code readability
+Remove unnecessary code
+Set random generator seed"
+./../resource/sampling/repos_projects_filtered_top100stars/Must-Reading-on-ISAC/Codes/Fan2018TSP/Codes for DFRC Waveform Design/Constant Modulus/CE_similarity_bb_ARS.m;GPT/resource/Optimization-Human/m-files/CE_similarity_bb_ARS_humanOptimized.m;;;"Remove unnecessary code
+Simplify formula
+Improve code readability
+Set random generator seed
+Use appropriate Matlab pattern
+Preallocation
+Improve loop"
+./../resource/sampling/repos_projects_filtered_top100stars/SAR-Synthetic-Aperture-Radar/1-SAR成像算法/CS算法/1-正侧视，点目标仿真/CSA_imaging.m;GPT/resource/Optimization-Human/m-files/CSA_imaging_humanOptimized.m;;;"Remove unnecessary code
+Improve code readability
+Extract function
+Extract variable
+Use appropriate Matlab pattern"
+./../resource/sampling/repos_projects_filtered_top100stars/Image-Fusion/General Evaluation Metric/Evaluation/Evaluation_for_Single_Algorithm.m;GPT/resource/Optimization-Human/m-files/Evaluation_for_Single_Algorithm_humanOptimized.m;;;"Remove unused variable
+Remove unnecessary code
+Use simplified pattern
+Use appropriate Matlab pattern
+Extract variable
+Improve code readability
+Extract function"
+./../resource/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/HeuristicAlgorithm（补分启发式算法，包括神经网络、模拟退火、遗传算法）/神经网络算法/MATLAB神经网络30个案例分析/案例24 模糊神经网络的预测算法-嘉陵江水质评价/FuzzyNet.m;GPT/resource/Optimization-Human/m-files/FuzzyNet_humanOptimized.m;;;"Set random generator seed
+Remove unnecessary code
+Improve readability
+Extract variable
+Use appropriate Matlab pattern
+Preallocation
+Extract function"
+./../resource/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/MATLAB智能算法30个案例分析/chapter6 遗传算法工具箱详解及应用/GA_demo_run.m;GPT/resource/Optimization-Human/m-files/GA_demo_run_humanOptimized.m;;;
+./../resource/sampling/repos_projects_filtered_top100stars/DnCNN/TrainingCodes/DnCNN_TrainingCodes_v1.1/data/GenerateTrainingPatches.m;GPT/resource/Optimization-Human/m-files/GenerateTrainingPatches_humanOptimized.m;;;"Remove unnecessary code
+Extract variable
+Improve code readability
+Extract function"
+./../resource/sampling/repos_projects_filtered_top100stars/Math_Model/3-1算法-Algorithms_MathModels/HeuristicAlgorithm（补分启发式算法，包括神经网络、模拟退火、遗传算法）/神经网络算法/MATLAB神经网络30个案例分析/案例3 遗传算法优化BP神经网络-非线性函数拟合/Genetic.m;GPT/resource/Optimization-Human/m-files/Genetic_humanOptimized.m;;;"Set random generator seed
+Remove unnecessary code
+Improve code readability
+Reduce number of operations
+Remove unnecessary variable initialization
+Improve loop
+Don't recalculate already known value"
+./../resource/sampling/repos_projects_filtered_top100stars/OptimTraj/demo/minimumWork/MAIN_cstWork.m;GPT/resource/Optimization-Human/m-files/MAIN_cstWork_humanOptimized.m;;;"Remove unnecessary code
+Extract variable"
+./../resource/sampling/repos_projects_filtered_top100stars/OptimTraj/demo/quadRotor3d/MAIN_minThrottleTraj.m;GPT/resource/Optimization-Human/m-files/MAIN_minThrottleTraj_humanOptimized.m;;;"Remove unnecessary code
+Use appropriate Matlab pattern
+Improve code readability
+Extract variable"
+./../resource/sampling/repos_projects_filtered_top100stars/OptimTraj/demo/fiveLinkBiped/TEST_drawRobot.m;GPT/resource/Optimization-Human/m-files/TEST_drawRobot_humanOptimized.m;;;
+./../resource/sampling/repos_projects_filtered_top100stars/Gait-Tracking-With-x-IMU/Gait Tracking With x-IMU/Quaternions/TestScript.m;GPT/resource/Optimization-Human/m-files/TestScript_humanOptimized.m;;;"Remove unnecessary code
+Improve code readability
+Use appropriate Matlab pattern
+Extract function"
+./../resource/sampling/repos_projects_filtered_top100stars/fieldtrip/external/afni/Test_BrikLoad.m;GPT/resource/Optimization-Human/m-files/Test_BrikLoad_humanOptimized.m;;;Remove unnecessary code
+./../resource/sampling/repos_projects_filtered_top100stars/Math_Model/2-1国赛题目+论文/2012/B149/B149/B149源程序/M/Untitled.m;GPT/resource/Optimization-Human/m-files/Untitled_humanOptimized.m;;;"Remove unnecessary code
+Use appropriate Matlab pattern
+Improve code readability
+Simplify formula
+Extract variable
+Extract function
+Improve loop"
+./../resource/sampling/repos_projects_filtered_top100stars/Math_Model/2-1国赛题目+论文/2012/B077/附件/附件/account4.m;GPT/resource/Optimization-Human/m-files/account4_humanOptimized.m;;;"Remove unnecessary code
+Use appropriate Matlab pattern
+Extract function
+Simplify formula
+Improve code readability"
+./../resource/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB图像处理》源文件/本书源文件/chap11/chap11_14.m;GPT/resource/Optimization-Human/m-files/chap11_14_humanOptimized.m;;;"Improve code readability
+Remove unnecessary code"
+./../resource/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB图像处理》源文件/本书源文件/chap11/chap11_2.m;GPT/resource/Optimization-Human/m-files/chap11_2_humanOptimized.m;;;"Extract function
+Improve code readability
+Remove unnecessary code"
+./../resource/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB图像处理》源文件/本书源文件/chap11/chap11_4.m;GPT/resource/Optimization-Human/m-files/chap11_4_humanOptimized.m;;;"Remove unnecessary code
+Improve code readability
+Extract function"
+./../resource/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB图像处理》源文件/本书源文件/chap13/chap13_18.m;GPT/resource/Optimization-Human/m-files/chap13_18_humanOptimized.m;;;"Remove unnecessary code
+Improve code readability"
+./../resource/sampling/repos_projects_filtered_top100stars/Math_Model/3-1算法-Algorithms_MathModels/HeuristicAlgorithm（补分启发式算法，包括神经网络、模拟退火、遗传算法）/神经网络算法/MATLAB神经网络30个案例分析/案例10 离散Hopfield神经网络的分类——高校科研能力评价/chapter10.m;GPT/resource/Optimization-Human/m-files/chapter10_humanOptimized.m;;;"Remove unnecessary code
+Use appropriate Matlab pattern
+Improve code readability
+Add semicolons
+Optimize loop
+Extract variable"
+./../resource/sampling/repos_projects_filtered_top100stars/Math_Model/3-1算法-Algorithms_MathModels/HeuristicAlgorithm（补分启发式算法，包括神经网络、模拟退火、遗传算法）/神经网络算法/MATLAB神经网络30个案例分析/案例16 单层竞争神经网络的数据分类—患者癌症发病预测/chapter16.m;GPT/resource/Optimization-Human/m-files/chapter16_humanOptimized.m;;;"Remove unnecessary code
+Set random generator seed
+Use appropriate Matlab pattern
+Improve code readability
+Extract function"
+./../resource/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB 神经网络30个案例分析》源程序 数据/chapter1/chapter1_1.m;GPT/resource/Optimization-Human/m-files/chapter1_1_humanOptimized.m;;;"Improve readability
+Extract function
+Set random generator seed
+Remove unnecessary comment"
+./../resource/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/HeuristicAlgorithm（补分启发式算法，包括神经网络、模拟退火、遗传算法）/神经网络算法/MATLAB神经网络30个案例分析/案例22 LVQ神经网络的预测——人脸朝向识别/chapter22_bp.m;GPT/resource/Optimization-Human/m-files/chapter22_bp_humanOptimized.m;;;"Remove unnecessary code
+Improve code readability
+Extract variable
+Extract function"
+./../resource/sampling/repos_projects_filtered_top100stars/Math_Model/3-1算法-Algorithms_MathModels/HeuristicAlgorithm（补分启发式算法，包括神经网络、模拟退火、遗传算法）/神经网络算法/MATLAB神经网络30个案例分析/案例22 LVQ神经网络的预测——人脸朝向识别/chapter22_bp.m;GPT/resource/Optimization-Human/m-files/chapter22_bp_humanOptimized.m;;;"Remove unnecessary code
+Improve code readability
+Extract variable
+Set random generator seed
+Add semicolon"
+./../resource/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/HeuristicAlgorithm（补分启发式算法，包括神经网络、模拟退火、遗传算法）/神经网络算法/MATLAB神经网络30个案例分析/案例22 LVQ神经网络的预测——人脸朝向识别/crossvalind_lvq.m;GPT/resource/Optimization-Human/m-files/crossvalind_lvq_humanOptimized.m;;;"Remove unnecessary code
+Improve code readability
+Extract function"
+./../resource/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB神经网络原理与实例精解》随书附带源程序/第13章 神经网络应用实例/Elman网络预测上证股市开盘价/elm_stockpredict.m;GPT/resource/Optimization-Human/m-files/elm_stockpredict_humanOptimized.m;;;"Remove unnecessary code
+Use appropriate Matlab pattern
+Set random generator seed
+Extract variable
+Improve code readability
+Extract function"
+./../resource/sampling/repos_projects_filtered_top100stars/automatic-driving-decision-and-planning-for-matlab/EMPlanner_v0.1/emplanner_init.m;GPT/resource/Optimization-Human/m-files/emplanner_init_humanOptimized.m;;;"Remove unnecessary code
+Improve code readability
+Extract variable
+Simplify formula"
+./../resource/sampling/repos_projects_filtered_top100stars/face_verification_experiment/code/evaluation.m;GPT/resource/Optimization-Human/m-files/evaluation_humanOptimized.m;;;"Use appropriate Matlab pattern
+Extract function
+Improve code readability"
+./../resource/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/MATLAB智能算法30个案例分析/chapter18 基于鱼群算法的函数寻优算法/example1/example1.m;GPT/resource/Optimization-Human/m-files/example1_humanOptimized.m;;;"Remove unnecessary code
+Set random generator seed
+Use appropriate Matlab pattern
+Improve code readability
+Extract variable
+Improve loop"
+./../resource/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/FuzzyMathematicalModel模糊数学模型/模糊聚类/fuzzy_cluster_analysis.m;GPT/resource/Optimization-Human/m-files/fuzzy_cluster_analysis_humanOptimized.m;;;"Remove unnecessary code
+Use appropriate Matlab pattern
+Improve code readability
+Imrpove loop
+Use additional semantic information
+Logical indexing"
+./../resource/sampling/repos_projects_filtered_top100stars/refinenet/main/gen_class_info_cityscapes.m;GPT/resource/Optimization-Human/m-files/gen_class_info_cityscapes_humanOptimized.m;;;"Improve code readability
+Use appropriate Matlab pattern
+"
+./../resource/sampling/repos_projects_filtered_top100stars/matlab2tikz/src/private/getEnvironment.m;GPT/resource/Optimization-Human/m-files/getEnvironment_humanOptimized.m;;;Use appropriate Matlab pattern
+./../resource/sampling/repos_projects_filtered_top100stars/Machine-Learning-homework/machine-learning-ex6/ex6/getVocabList.m;GPT/resource/Optimization-Human/m-files/getVocabList_humanOptimized.m;;;Use appropriate Matlab pattern
+./../resource/sampling/repos_projects_filtered_top100stars/bnt/SLP/examples/UCI_DataSets/houseL.m;GPT/resource/Optimization-Human/m-files/houseL_humanOptimized.m;;;"Place operation inline
+Remove unnecessary code
+Improve code readability"
+./../resource/sampling/repos_projects_filtered_top100stars/2DASL/evaluation/3D_ICP-master/icp_test.m;GPT/resource/Optimization-Human/m-files/icp_test_humanOptimized.m;;;"Remove unnecessary code
+Extract function
+Improve loop"
+./../resource/sampling/repos_projects_filtered_top100stars/OpenTLD/other/init_workspace.m;GPT/resource/Optimization-Human/m-files/init_workspace_humanOptimized.m;;;"Remove unnecessary code
+Use appropriate Matlab pattern"
+./../resource/sampling/repos_projects_filtered_top100stars/Math_Model/2-1国赛题目+论文/2013/A117/1A0902/代码/第四问/lengthstat.m;GPT/resource/Optimization-Human/m-files/lengthstat_humanOptimized.m;;;"Set random generator seed
+Improve loop
+Improve code readability
+Remove unnecessary code"
+./../resource/sampling/repos_projects_filtered_top100stars/machine-learning-coursera-1/Week 9 Assignments/Anomaly Detection and Recommender Systems/mlclass-ex8/loadMovieList.m;GPT/resource/Optimization-Human/m-files/loadMovieList_humanOptimized.m;;;Use appropriate Matlab pattern
+./../resource/sampling/repos_projects_filtered_top100stars/Math_Model/3-1算法-Algorithms_MathModels/FuzzyMathematicalModel模糊数学模型/多目标模糊综合评价/main.m;GPT/resource/Optimization-Human/m-files/FuzzyMathematicalModel__main_humanOptimized.m;;;"Improve code readability
+Remove unnecessary code"
+./../resource/sampling/repos_projects_filtered_top100stars/Smart-Algorithm/Particle_Swarm_Optimization/PSO-basic/main.m;GPT/resource/Optimization-Human/m-files/main1_humanOptimized.m;;;Remove unnecessary code
+./../resource/sampling/repos_projects_filtered_top100stars/Smart-Algorithm/Immunity_Algorithm/IMA解决非线性问题求解/main.m;GPT/resource/Optimization-Human/m-files/main2_humanOptimized.m;;;"Set random generator seed
+Remove unnecessary code
+Use appropriate Matlab pattern
+Improve loop
+Extract function
+Improve code readability"
+./../resource/sampling/repos_projects_filtered_top100stars/Matlab-Machine/034_Data classification prediction based on partial least squares algorithm/main.m;GPT/resource/Optimization-Human/m-files/034_Data__main_humanOptimized.m;;;"Use appropriate Matlab pattern
+Set random generator seed
+Extract variable
+Extract function
+Remove unnecessary code"
+./../resource/sampling/repos_projects_filtered_top100stars/Matlab-Machine/004_Data regression prediction based on support vector machine (libsvm)/main.m;GPT/resource/Optimization-Human/m-files/004_Data_Regression__main_humanOptimized.m;;;"Use appropriate Matlab pattern
+Remove unnecessary code
+Set random generator seed
+Extract variable
+Extract function"
+./../resource/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/MATLAB智能算法30个案例分析/chapter22 蚁群算法的优化计算——旅行商问题（TSP）优化/main.m;GPT/resource/Optimization-Human/m-files/AlgorithmMathModelsChapter22__main_humanOptimized.m;;;"Remove unnecessary code
+Use appropriate Matlab pattern
+Improve loop
+Use additional semantic information
+Improve code readability
+Extract variable"
+./../resource/sampling/repos_projects_filtered_top100stars/bnt/SLP/examples/UCI_DataSets/mushroomsL.m;GPT/resource/Optimization-Human/m-files/mushroomsL_humanOptimized.m;;;"Remove unnecessary code
+Use appropriate Matlab pattern
+Improve code readability
+Extract function"
+./../resource/sampling/repos_projects_filtered_top100stars/NaveGo/examples/sensor-read-example/navego_example_sensor_read.m;GPT/resource/Optimization-Human/m-files/navego_example_sensor_read_humanOptimized.m;;;"Remove unnecessary code
+Use appropriate Matlab pattern"
+./../resource/sampling/repos_projects_filtered_top100stars/NaveGo/examples/visual-data/katwijk-planetary-data/scripts/optimizer.m;GPT/resource/Optimization-Human/m-files/optimizer_humanOptimized.m;;;Remove unnecessary code
+./../resource/sampling/repos_projects_filtered_top100stars/Math_Model/2-1国赛题目+论文/2013/B254/814姜荣杰，朱佳亭，金建邦/程序/p3/p3.m;GPT/resource/Optimization-Human/m-files/p3_humanOptimized.m;;;"Remove unnecessary code
+Improve code readability
+Extract function
+Correct semantic mistake
+Use appropriate Matlab pattern"
+./../resource/sampling/repos_projects_filtered_top100stars/Math_Model/2-1国赛题目+论文/2012/B077/附件/附件/profit.m;GPT/resource/Optimization-Human/m-files/profit_humanOptimized.m;;;"Remove unnecessary code
+Use appropriate Matlab pattern
+Improve code readability
+Simplify formula"
+./../resource/sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB神经网络原理与实例精解》随书附带源程序/第10章 随机神经网络/sa_tsp.m;GPT/resource/Optimization-Human/m-files/sa_tsp_humanOptimized.m;;;"Remove unnecessary code
+Use appropriate Matlab pattern
+Improve loop
+Use additional semantic information
+Improve code readability
+Extract function"
+./../resource/sampling/repos_projects_filtered_top100stars/Math_Model/2-1国赛题目+论文/2013/A056/5486/Matlab源程序/ti31.m;GPT/resource/Optimization-Human/m-files/ti31_humanOptimized.m;;;Vectorization
+./../resource/sampling/repos_projects_filtered_top100stars/cnn-for-image-retrieval/matconvnet-1.0-beta17/matlab/vl_setupnn.m;GPT/resource/Optimization-Human/m-files/vl_setupnn_humanOptimized.m;;;
