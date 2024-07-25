@@ -2,7 +2,7 @@ function compareOutputs
     clear all;
     %csvFiles = {'TmpScripts.csv'};
     csvFiles = {'OptimizedMatlabScripts_gpt3.csv' 'OptimizedMatlabScripts_gpt4.csv' 'OptimizedMatlabScripts_llama.csv' 'OptimizedMatlabScripts_mixtral.csv', 'OptimizedMatlabScripts_human.csv', 'OptimizedMatlabScripts_original.csv'};
-    resultCsvFile = 'compareOutput.csv';
+    resultCsvFile = 'compareOutput_final.csv';
     resultCsv = readtable(resultCsvFile);
     
     for c = 1:length(csvFiles)
