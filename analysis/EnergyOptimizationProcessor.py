@@ -99,7 +99,7 @@ def process_energy_file(file_name, file_path, regexes):
     used_memory = compute_used_memory(COLUMN_MAPPING["used_memory"], data)
     time_taken = compute_time_taken(COLUMN_MAPPING["time"], data)
 
-    return script_name, total_energy, used_memory, time_taken, llm
+    return script_name, total_energy, used_memory, time_taken, llm, folder, script
 
 def compute_averages(data_dict):
     averages = {}
@@ -137,11 +137,30 @@ def main():
     time_taken_by_script = defaultdict(lambda: {'baseline': 0,'original': 0, 'optimized_gpt3': 0, 'optimized_gpt4': 0, 'optimized_llama': 0, 'optimized_mixtral': 0})
     used_memory_by_script = defaultdict(lambda: {'baseline': 0,'original': 0, 'optimized_gpt3': 0, 'optimized_gpt4': 0, 'optimized_llama': 0, 'optimized_mixtral': 0})
     baseline_values = {'energy': [], 'memory':[], 'time':[]}
+    original_script_by_script = {}
 
     for energy_file in energy_files:
         file_path = os.path.join(files_output, energy_file)
         # print(f"Processing file: {file_path}")
-        script_name, total_energy, used_memory, time_taken, llm = process_energy_file(energy_file, file_path, regexes)
+        script_name, total_energy, used_memory, time_taken, llm, folder, script = process_energy_file(energy_file, file_path, regexes)
+
+        #if llm:
+        #    string_to_search = folder + "/" + script + "_optimized_" + str(llm) + ".m"
+        if script == 'baseline':
+            string_to_search = None
+        else: 
+            string_to_search = folder + "/" + script + ".m"
+
+        with open("./../experimentation/Experimentation_scripts.csv", 'r') as f:
+            for index, line in enumerate(f):
+                # search string
+                if string_to_search is not None and string_to_search in line:
+                    print('GREP RESULT')
+                    print(line)
+                    path_to_original_script = line            
+                    # don't look for next lines
+                    break
+         
 
         if script_name:
 #            base_name = script_name
@@ -183,8 +202,10 @@ def main():
                 energy_consumption_by_script[base_name][suffix] += total_energy
                 used_memory_by_script[base_name][suffix] += used_memory
                 time_taken_by_script[base_name][suffix] += time_taken
+                if base_name not in original_script_by_script:
+                    original_script_by_script[base_name] = path_to_original_script
 
-                print(f"Updated {base_name} ({suffix}): Energy={total_energy}, Memory={used_memory}, Time={time_taken}")
+                print(f"Updated {base_name} ({suffix}): Energy={total_energy}, Memory={used_memory}, Time={time_taken}, Path={path_to_original_script}")
 
     avg_energy_per_script = compute_averages(energy_consumption_by_script)
     avg_memory_per_script = compute_averages(used_memory_by_script)
@@ -197,6 +218,9 @@ def main():
         columns={'index': 'script_name'})
     time_df = pd.DataFrame.from_dict(avg_time_per_script, orient='index').reset_index().rename(
         columns={'index': 'script_name'})
+    script_df = pd.DataFrame.from_dict(original_script_by_script, orient='index').reset_index().rename(
+        columns={'index': 'script_name'})
+    print("Script_df", script_df)
 
     baseline_energy_average = statistics.mean(baseline_values['energy'])
     baseline_mem_average = statistics.mean(baseline_values['memory'])
@@ -217,8 +241,12 @@ def main():
         'baseline': 'baseline_time','original': 'original_time', 'optimized_gpt3': 'optimized_gpt3_time',
         'optimized_gpt4': 'optimized_gpt4_time', 'optimized_llama': 'optimized_llama_time', 'optimized_mixtral': 'optimized_mixtral_time'
     })
+
+
     # Merge DataFrames on script_name
     final_df = energy_df.merge(memory_df, on='script_name').merge(time_df,on='script_name')
+    final_df = final_df.merge(script_df, on='script_name')
+    final_df.set_axis([*final_df.columns[:-1], 'original_script'], axis=1, inplace=True)
 
     # Save the final DataFrame to a CSV file
     results_path = os.path.join("./", 'processed_results', 'averages_results.csv')
