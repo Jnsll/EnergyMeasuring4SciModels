@@ -3,6 +3,11 @@ import pandas as pd
 import os
 import re
 from collections import defaultdict
+import statistics
+
+
+ #### Add ath to original script as a column in table
+
 
 TOTAL_NUMBER_CORES = 10
 TOTAL_NUMBER_REPETITIONS = 30
@@ -49,7 +54,6 @@ def process_energy_file(file_name, file_path, regexes):
     match_original_main = re.match(regexes['original_main'], file_name)
     match_original_non_main = re.match(regexes['original'], file_name)  
     match_baseline = re.match(regexes['baseline'], file_name)  
-    #match = re.match(regex, file_name)
     if not match_llm_optimized_main and not match_llm_optimized_non_main and not match_original_main and not match_original_non_main and not match_baseline:
         # baseline files measure the Matlab project
         # if("-baseline" in file_name):
@@ -87,8 +91,7 @@ def process_energy_file(file_name, file_path, regexes):
         folder = ""
         script = "baseline"
         llm = None
-    
-    #script_name = match.group(1)
+
     script_name = folder + "__" + script
 
     # Compute energy consumption for each core
@@ -118,7 +121,7 @@ def main():
     regex_llm_optimized_non_main = re.compile(r".*energy_metrics_(.+)-(.+)_optimized_([^_]+).m_(\d+).csv.*")
     regex_original_main = re.compile(r".*energy_metrics_(.+)-(main).m_(\d+).csv.*")
     regex_original_non_main = re.compile(r".*energy_metrics_(.+)-(.+).m_(\d+).csv.*") 
-    regex_baseline = re.compile(r".*energy_metrics_-baseline_\d+.csv")
+    regex_baseline = re.compile(r".*energy_metrics_.+-baseline_\d+.csv")
     regexes = {'llm_main': regex_llm_optimized_main, 'llm': regex_llm_optimized_non_main, 'original_main':regex_original_main, 'original':regex_original_non_main, 'baseline': regex_baseline}
 
     #files_output = "../output/"
@@ -133,7 +136,7 @@ def main():
         lambda: {'baseline': 0,'original': 0, 'optimized_gpt3': 0, 'optimized_gpt4': 0, 'optimized_llama': 0, 'optimized_mixtral': 0})
     time_taken_by_script = defaultdict(lambda: {'baseline': 0,'original': 0, 'optimized_gpt3': 0, 'optimized_gpt4': 0, 'optimized_llama': 0, 'optimized_mixtral': 0})
     used_memory_by_script = defaultdict(lambda: {'baseline': 0,'original': 0, 'optimized_gpt3': 0, 'optimized_gpt4': 0, 'optimized_llama': 0, 'optimized_mixtral': 0})
-    baseline_values = {'energy': 0, 'memory':0, 'time':0}
+    baseline_values = {'energy': [], 'memory':[], 'time':[]}
 
     for energy_file in energy_files:
         file_path = os.path.join(files_output, energy_file)
@@ -159,12 +162,12 @@ def main():
 #            elif "_baseline" in script_name:
 #                base_name = script_name.replace("_baseline", "")
 #                suffix = 'baseline'
-            
+
 
             if script_name == "__" + "baseline":
-                baseline_values['energy'] += total_energy
-                baseline_values['memory'] += used_memory
-                baseline_values['time'] += time_taken
+                baseline_values['energy'].append(total_energy)
+                baseline_values['memory'].append(used_memory)
+                baseline_values['time'].append(time_taken)
             else:
                 base_name = script_name
                 suffix = 'original'
@@ -195,6 +198,12 @@ def main():
     time_df = pd.DataFrame.from_dict(avg_time_per_script, orient='index').reset_index().rename(
         columns={'index': 'script_name'})
 
+    baseline_energy_average = statistics.mean(baseline_values['energy'])
+    baseline_mem_average = statistics.mean(baseline_values['memory'])
+    baseline_time_average = statistics.mean(baseline_values['time'])
+
+
+
     # Rename the columns for clarity
     energy_df = energy_df.rename(columns={
          'baseline': 'baseline_energy','original': 'original_energy', 'optimized_gpt3': 'optimized_gpt3_energy',
@@ -215,6 +224,9 @@ def main():
     results_path = os.path.join("./", 'processed_results', 'averages_results.csv')
     print(f"results saved to {results_path}")
     os.makedirs(os.path.dirname(results_path), exist_ok=True)  # Create directories if they do not exist
+    final_df['baseline_energy'] =  baseline_energy_average
+    final_df['baseline_memory'] = baseline_mem_average
+    final_df['baseline_time'] = baseline_time_average
     final_df.to_csv(results_path, index=False, sep=";")
 
     return final_df
