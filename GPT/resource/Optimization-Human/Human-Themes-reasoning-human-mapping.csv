@@ -1,0 +1,28 @@
+Theme,Theme-Human-Mapped,Theme-Human
+"Apply ""coding guidlines"" (inserting space before and after operators)",Improved code readability,Improved Code Readability & Maintainability
+Insert empty lines for better readability,Improved code readability,Improved Code Readability & Maintainability
+"Remove calls to clear, clc",Removed Unnecessary Code,Removed Unnecessary Code
+Optimize for loop to generate symmetric matrix,Loop optimization,Improved Indexing & Loops
+Move definitions not depending on iteration variable outside for loop,Loop optimization,Improved Indexing & Loops
+Move definition by call to zeros() / ones() outside for loop,Loop optimization,Improved Indexing & Loops
+Introduce help functions to remove code clones,Removed redundant code,Removed Unnecessary Code
+Replace while loop with for loop when there is no reason to use a while loop,Loop optimization,Improved Indexing & Loops
+Insert help variable to avoid iterative call to some function (with same parameters),Removed redundant code,Removed Unnecessary Code
+"Add call to rng(""default"") when random numbers are used (to make sure test case produces consistent results)",Improved Code Efficiency,Improved Code Efficiency
+Type 1i instead of i or j for complex unit,Improved code readability,Improved Code Readability & Maintainability
+"Preallocate variables when used in for loop (or use implicit preallocation by writing for loop header in the form ""for idx = n:-1:1”)",Preallocation,Improved Memory Management
+Remove unused variables,Removed Unnecessary Code,Removed Unnecessary Code
+Replace unused function outputs with ~,Improved Code Efficiency,Improved Code Efficiency
+Assign loaded variables to a variable in function workspace (e.g. loadRes = load('myMatFile');,Improved Code Efficiency,Improved Code Efficiency
+Use isempty() instead of numel() == 0,Improved code readability,Improved Code Readability & Maintainability
+Reduce number of operations in long formulas by introducing help variables,Removed redundant code,Removed Unnecessary Code
+Replace for loops with vectorized notation where possible,Vectorization,Vectorization
+"Remove for loop with header ""for idx = 1:1""",Loop optimization,Improved Indexing & Loops
+Remove tic and toc,Improved Code Efficiency,Improved Code Efficiency
+Replace length() by numel(),Improved Code Efficiency,Improved Code Efficiency
+Replace formula with zero if value of formula is equal to zero,Improved Code Efficiency,Improved Code Efficiency
+Replace x = 0 * b with x = zeros(size(b)),Improved Matrix operations,Improved Matrix operations
+Place expressions not depending on inner for loop variable in outer for loop,Loop optimization,Improved Indexing & Loops
+Correct semantic errors in script where obvious (e.g. p3.m in Math_Model_p3 folder),Improved Code Efficiency,Improved Code Efficiency
+"Remove redundant code fragments
+",Removed redundant code,Removed Unnecessary Code
