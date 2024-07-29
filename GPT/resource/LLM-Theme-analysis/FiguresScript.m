@@ -20,11 +20,13 @@ ylabel(ax,"Number of Mentionings (unique per file)")
 xlabel(ax,"")
 xticklabels(dict2.keys)
 
-b(1).FaceColor = [0.0941,0.9608,0.9608];
-b(2).FaceColor = [0.2275,0.3255,0.7294];
-b(3).FaceColor = [0.7176,0.2745,1.0000];
-b(4).FaceColor = [0.7882,0.3373,0.1725];
-b(5).FaceColor = [0.9412,0.3882,0.1137];
+% processing = @rgb2gray;
+processing = @(x)x;
+b(1).FaceColor = processing([0.0941,0.9608,0.9608]);
+b(2).FaceColor = processing([0.2275,0.3255,0.7294]);
+b(3).FaceColor = processing([0.7176,0.2745,1.0000]);
+b(4).FaceColor = processing([0.7882,0.3373,0.1725]);
+b(5).FaceColor = processing([0.9412,0.3882,0.1137]);
 
 set(b,'edgecolor','none')
 set(b,'barwidth',1)
