@@ -1,7 +1,6 @@
 % elm_stockpredict.m
 
 %% 清除工作空间中的变量和图形
-function res = elm_stockpredict_humanOptimized
 close all
 
 %% 1.加载337期上证指数开盘价格
@@ -84,15 +83,6 @@ title1 = '测试数据测试结果的残差';
 title2 = '测试数据的测试结果';
 
 mse2 = helpFun2(test_ty, testy, title1, title2);
-
-%%
-res.train_ty = train_ty;
-res.trainy = trainy;
-res.mse1 = mse1;
-res.test_ty = test_ty;
-res.testy = testy;
-res.mse2 = mse2;
-end
 
 function [trainx, trainy] = prepareData(price_n,IDX)
 trainx = price_n(1:6, IDX);

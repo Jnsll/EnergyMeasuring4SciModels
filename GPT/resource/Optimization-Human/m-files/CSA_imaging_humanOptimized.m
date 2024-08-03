@@ -1,5 +1,4 @@
 %%
-function res = CSA_imaging_humanOptimized
 close all;
 
 R_nc = 20e3;            % 景中心斜距
@@ -176,19 +175,6 @@ target_2 = helpFun5(s_image, tg_2_x, NN, tg_2_y, Fr, Fa, Vr);
 tg_3_x   = fix(tg_2_x + delta_R2 * tan(sita_r_c) / Vr * Fa);
 tg_3_y   = tg_2_y + 2 * delta_R2 / c * Fr;
 target_3 = helpFun5(s_image, tg_3_x, NN, tg_3_y, Fr, Fa, Vr);
-
-res.target_1 = target_1;
-res.target_2 = target_2;
-res.target_3 = target_3;
-res.s_image = s_image;
-res.s_echo = s_echo;
-res.tg_1_x = tg_1_x;
-res.tg_1_y = tg_1_y;
-res.tg_2_x = tg_2_x;
-res.tg_2_y = tg_2_y;
-res.tg_3_x = tg_3_x;
-res.tg_3_y = tg_3_y;
-end
 
 function nc_1 = helpFun(y1, x1, sita_r_c, Vr)
 nc_1 = (y1 - x1 * tan(sita_r_c)) / Vr;    % 目标1的波束中心穿越时刻。

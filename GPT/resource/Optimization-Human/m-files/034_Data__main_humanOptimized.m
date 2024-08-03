@@ -1,5 +1,4 @@
 %%  清空环境变量
-function res = main_humanOptimized
 warning off             % 关闭报警信息
 close all               % 关闭开启的图窗
 
@@ -27,15 +26,6 @@ p_train = p_train';
 
 [T_sim1, T_train, error1] = processData(M, p_train, betaPLS, T_train);
 [T_sim2, T_test, error2] = processData(N, p_test, betaPLS, T_test);
-
-output.T_train = T_train;
-output.T_sim1 = T_sim1;
-output.T_test = T_test;
-output.T_sim2 = T_sim2;
-output.error1 = error1;
-output.error2 = error2;
-res = output;
-end
 
 function makeConfusionChart(T_train, T_sim1,type)
 figure

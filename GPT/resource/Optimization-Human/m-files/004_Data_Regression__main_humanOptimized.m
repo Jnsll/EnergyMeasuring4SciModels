@@ -1,5 +1,4 @@
 %%  清空环境变量
-function res = main_humanOptimized
 warning off             % 关闭报警信息
 close all               % 关闭开启的图窗
 
@@ -45,21 +44,6 @@ c = 'b';
 
 plotFun2(T_train, T_sim1, sz, c, '训练集真实值', '训练集预测值');
 plotFun2(T_test, T_sim2, sz, c, '测试集真实值', '测试集预测值');
-
-%%
-output.error1 = error1;
-output.error2 = error2;
-output.T_train = T_train;
-output.T_sim1 = T_sim1;
-output.T_test = T_test;
-output.T_sim2 = T_sim2;
-output.mae1 = mae1;
-output.mae2 = mae2;
-output.mbe1 = mbe1;
-output.mbe2 = mbe2;
-
-res = output;
-end
 
 function [P_t, T_t, M] = helpFun(res, temp, IDX)
 P_t = res(temp(IDX), 1: 7)';

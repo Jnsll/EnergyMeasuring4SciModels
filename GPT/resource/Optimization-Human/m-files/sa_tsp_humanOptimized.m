@@ -1,7 +1,6 @@
 % sa_tsp.m
 % 用模拟退火算法求解TSP问题
 
-function res = sa_tsp_humanOptimized
 %% 清理
 close all
 
@@ -86,14 +85,6 @@ hold off;
 figure;
 semilogx(1:n,di);
 title('路径长度的变化曲线');
-
-res.position = position;
-res.bestx = bestx;
-res.n = n;
-res.di = di;
-res.xx = xx;
-res.index = index;
-end
 
 function [x, xx, n, di] = helpFun(newx, xx, n, di, newl)
 x = newx;

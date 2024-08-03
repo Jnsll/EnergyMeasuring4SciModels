@@ -1,5 +1,4 @@
 
-function res = evaluation_humanOptimized
 % load data
 % load('../ results / LightenedCNN_A_lfw.mat');      % model A
 % load('../ results / LightenedCNN_B_lfw.mat');      % model B
@@ -33,13 +32,6 @@ fprintf('tpr00001:     %f\n', roc.extra.tpr00001 * 100);
 fprintf('tpr000001:    %f\n', roc.extra.tpr000001 * 100);
 fprintf('tpr0:         %f\n', roc.extra.tpr0 * 100);
 result = [ap.measure / 100,roc.measure / 100,roc.extra.tpr001,roc.extra.tpr0001,roc.extra.tpr00001,roc.extra.tpr000001,roc.extra.tpr0];
-
-res.scores = scores;
-res.label = label;
-res.ap = ap;
-res.roc = roc;
-res.result = result;
-end
 
 function [scores, label] = helpFun(pair, features, direction)
 length_pair = length(pair);

@@ -5,7 +5,6 @@
 
 %% 录入输入数据
 % 载入数据并将数据分成训练和预测两类
-function res = chapter16_humanOptimized
 rng("default")
 
 data = load('gene.mat').gene;
@@ -44,17 +43,6 @@ net = train(net,P);
 % 下面将后20个数据带入神经网络模型中，观察网络输出：
 % sim( )来做网络仿真
 [Y, yc] = helpFun(net, T);
-
-res.P = P;
-res.T = T;
-res.Q = Q;
-res.data = data;
-res.Y = Y;
-res.yc = yc;
-res.a = a;
-res.ac = ac;
-res.net = net;
-end
 
 function [val, val_c] = helpFun(net, arg)
 val = sim(net,arg);

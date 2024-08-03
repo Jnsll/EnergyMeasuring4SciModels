@@ -1,6 +1,5 @@
 
 function res = gen_class_info_cityscapes_humanOptimized()
-
 class_info = [];
 
 class_info.class_names = {'road', 'sidewalk', 'building', 'wall', 'fence', 'pole', 'trafficlight',...
@@ -19,8 +18,5 @@ cmap = uint8(load('cityscape_cmap.mat').cityscape_cmap);
 class_info.mask_cmap = im2double(cmap);
 
 class_info = process_class_info(class_info);
-
 res = class_info;
 end
-
-

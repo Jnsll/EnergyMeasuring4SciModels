@@ -1,4 +1,3 @@
-function res = fuzzy_cluster_analysis_humanOptimized
 %% 模糊聚类分析的案例
 
 
@@ -27,15 +26,3 @@ lambda = 0.998;
 b_hat(r2 > lambda) = 1;          % b_hat即反映了分类结果
 
 save data1 r A
-
-res.A = A;
-res.b_hat = b_hat;
-res.lambda = lambda;
-res.m = m;
-res.mu = mu;
-res.n = n;
-res.r1 = r1;
-res.r2 = r2;
-res.r3 = r3;
-res.sigma = sigma;
-end

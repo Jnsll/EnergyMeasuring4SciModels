@@ -1,6 +1,5 @@
 %% Producing Fig. 8 ARS
 
-function res = CE_similarity_bb_ARS_humanOptimized
 close all;
 warning off;
 N = 16;   % Antenna Number
@@ -126,17 +125,6 @@ elp = abs(x_cplx);
 %%
 plot(1:numel(lb_seq),lb_seq,'LineWidth',1.5);hold on;plot(1:numel(lb_seq),ub_seq,'LineWidth',1.5);
 grid on;
-
-res.final_lb = final_lb;
-res.final_ub = final_ub;
-res.x_cplx = x_cplx;
-res.y_rc = y_rc;
-res.inf_norm = inf_norm;
-res.elp = elp;
-res.prob_list = prob_list;
-res.lb_seq = lb_seq;
-res.ub_seq = ub_seq;
-end
 
 function [x_opt, prob_list,ubest,used] = helpFun(ub, ubest, x_opt, xn, prob_list, used, x, xchild_lb, xchild_ub, lb)
 if ub < ubest

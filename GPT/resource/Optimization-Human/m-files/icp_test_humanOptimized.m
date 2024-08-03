@@ -1,4 +1,3 @@
-function res = icp_test_humanOptimized
 %%
 close all;
 
@@ -32,16 +31,6 @@ while cnt == 0 || abs(error - last_error) > 0.01
 end
 
 helpFun(data_g, data_p);
-
-res.R = R;
-res.cnt = cnt;
-res.data_g = data_g;
-res.data_p = data_p;
-res.data_pp = data_pp;
-res.error = error;
-res.last_R = last_R;
-res.last_error = last_error;
-end
 
 function helpFun(data_g, data_p)
 plot_3d_2(data_g, data_p,-90);

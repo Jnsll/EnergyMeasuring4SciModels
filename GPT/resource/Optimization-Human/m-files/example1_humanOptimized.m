@@ -1,5 +1,4 @@
 
-function res = example1_humanOptimized
 rng("default")
 
 close all
@@ -74,9 +73,3 @@ ylabel('优化值')
 title('鱼群算法迭代过程')
 disp(['最优解X：',num2str(bestx,'%1.4f')])
 disp(['最优解Y：',num2str(besty,'%1.4f')])
-
-res.BestX = BestX;
-res.bestx = bestx;
-res.BestY = BestY;
-res.besty = besty;
-end

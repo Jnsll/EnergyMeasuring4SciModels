@@ -1,4 +1,3 @@
-function res = main_humanOptimized
 %% 多目标综合评价的一个案例
 
 % 输入模糊矩阵的原型
@@ -14,9 +13,3 @@ A = [0.25, 0.20, 0.20, 0.10, 0.25];
 
 % 各方案(等级)的综合评价结果
 b = A * r;
-
-res.A = A;
-res.b = b;
-res.r = r;
-res.x = x;
-end

@@ -1,7 +1,6 @@
 
 %%% Generate the training data.
 
-function res = GenerateTrainingPatches_humanOptimized
 close all;
 
 addpath('utilities');
@@ -82,12 +81,6 @@ end
 
 %%% save data
 save(fullfile(dataName,['imdb_',num2str(patchsize),'_',num2str(batchSize)]), 'inputs','set','-v7.3')
-
-res.dataName = dataName;
-res.patchsize = patchsize;
-res.batchSize = batchSize;
-res.inputs = inputs;
-end
 
 function image = part1(folder,filepaths,lengthFilePaths,i)
 image = imread(fullfile(folder,filepaths(i).name)); % uint8

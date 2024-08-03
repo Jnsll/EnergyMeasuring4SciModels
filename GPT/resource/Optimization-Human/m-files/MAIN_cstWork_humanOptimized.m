@@ -19,7 +19,6 @@
 %
 %
 
-function res = MAIN_cstWork_humanOptimized
 addpath ../../
 
 % User-defined dynamics and objective functions
@@ -83,14 +82,6 @@ title('Move Point Mass');
 createSubplot(t,dq,'vel',2)
 createSubplot(t,u(1,:),'force',3)
 createSubplot(t,u(2:3,:),'slack',4)
-
-res.bounds = problem.bounds;
-res.guess = problem.guess;
-res.options = problem.options;
-res.grid = soln.grid;
-soln.info.nlpTime = [];
-res.info = soln.info;
-end
 
 function createSubplot(x,y,str,idx)
 subplot(4,1,idx)

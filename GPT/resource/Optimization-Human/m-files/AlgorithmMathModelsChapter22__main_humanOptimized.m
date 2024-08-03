@@ -4,7 +4,6 @@
 % </ html >
 
 %% 清空环境变量
-function res = main_humanOptimized
 %% 导入数据
 citys = load('citys_data.mat').citys;
 
@@ -146,14 +145,6 @@ title('各代最短距离与平均距离对比')
 % < html >
 % < table width ="656" align ="left" >	< tr >< td align ="center">< p align ="left">< font size ="2"> 相关论坛：</ font ></ p >< p align ="left">< font size ="2"> Matlab技术论坛：< a href ="http:// www.matlabsky.com"> www.matlabsky.com </ a ></ font ></ p >< p align ="left">< font size ="2"> M </ font >< font size ="2"> atlab函数百科：< a href ="http:// www.mfun.la"> www.mfun.la </ a ></ font ></ p ></ td >	</ tr ></ table >
 % </ html >
-
-res.Length_best = Length_best;
-res.Length_ave = Length_ave;
-res.Shortest_Length = Shortest_Length;
-res.Shortest_Route = Shortest_Route;
-res.Tau = Tau;
-res.rabu = tabu;
-end
 
 function Delta_Tau = setDeltaTau(Delta_Tau,IDX1,IDX2,Q,Length,i)
 Delta_Tau(IDX1,IDX2) = Delta_Tau(IDX1,IDX2) + Q / Length(i);

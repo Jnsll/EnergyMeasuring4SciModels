@@ -1,4 +1,3 @@
-function res = test_humanOptimized
 %% 清除环境变量
 rng("default")
 
@@ -36,21 +35,6 @@ result_1 = lvq_predict(P_test,Tc_test,20,w1,w2);
 %% LVQ2算法
 [w1,w2] = lvq2_train(P_train,Tc_train,20,0.01,5,w1,w2);
 result_2 = lvq_predict(P_test,Tc_test,20,w1,w2);
-
-res.M = M;
-res.N = N;
-res.P_test = P_test;
-res.P_train = P_train;
-res.Tc_test = Tc_test;
-res.Tc_train = Tc_train;
-res.direction_label = direction_label;
-res.pixel_value = pixel_value;
-res.rand_label = rand_label;
-res.result_1 = result_1;
-res.result_2 = result_2;
-res.test_label = test_label;
-res.train_label = train_label;
-end
 
 function [t_label, P_t, Tc_t] = helpFun(rand_label, IDX, pixel_value, direction_label)
 t_label = rand_label(IDX);

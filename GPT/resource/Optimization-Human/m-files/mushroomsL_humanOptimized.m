@@ -1,4 +1,3 @@
-function res = mushroomsL_humanOptimized
 mushroomsD = load('-ascii','mushrooms.dat')';
 
 N = size(mushroomsD,1);
@@ -26,16 +25,6 @@ Ntest = m - Napp;
 
 app  = mushroomsD(:,1:Napp);
 test = mushroomsD(:,Napp + 1:end);
-
-res.Napp = Napp;
-res.Ntest = Ntest;
-res.UNI = UNI;
-res.app = app;
-res.mushroomsD = mushroomsD;
-res.ns = ns;
-res.seul = seul;
-res.test = test;
-end
 
 function ns = helpFun(mushroomsD)
 ns = max(mushroomsD,[],2)';

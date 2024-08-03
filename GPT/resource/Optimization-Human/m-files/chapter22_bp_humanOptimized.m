@@ -1,4 +1,3 @@
-function res = chapter22_bp_humanOptimized
 %% BP神经网络的预测——人脸识别
 
 %% 清除环境变量
@@ -43,22 +42,6 @@ T_sim = sim(net,P_test);
 IDX = T_sim < 0.5;
 T_sim(IDX) = 0;
 T_sim(~IDX) = 1;
-
-res.M = M;
-res.N = N;
-res.P_test = P_test;
-res.P_train = P_train;
-res.T_sim = T_sim;
-res.T_test = T_test;
-res.T_train = T_train;
-res.dtest_label = dtest_label;
-res.dtrain_label = dtrain_label;
-res.net = net;
-res.pixel_value = pixel_value;
-res.rand_label = rand_label;
-res.test_label = test_label;
-res.train_label = train_label;
-end
 
 function [t_label, P_t, dt_label, T_train] = helpFun(rand_label, IDX, pixel_value, N, direction_label)
 t_label = rand_label(IDX);
