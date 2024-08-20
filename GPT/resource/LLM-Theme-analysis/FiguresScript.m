@@ -12,6 +12,7 @@ colorsClassicAndTrustworthy = {'#ca3542','#27647b','#849fad','#aec0c9','#57575f'
 selectedColors = colorsClassicAndTrustworthy;
 selectedColors(4:5) = colorsBoldAndBasic(4:5);
 selectedColors = selectedColors([1,4,5,2,3]);
+selectedColors{1} = '#9442c7';
 
 yLabel = "Number of Mentions (unique per file)";
 
@@ -22,6 +23,13 @@ colors = selectedColors;
 titleStr = "Frequency of Themes (50 files)";
 
 createPlot(dataForPlot, legendItems, titleStr, yLabel, xTickLabel, colors);
+
+% design style of the "human" bar
+b = ax.Children(5);
+b.LineWidth = 2;
+b.EdgeColor = [0.3922,0.8314,0.0745];
+b.LineStyle = '--';
+
 exportFileName = 'themes50Files.pdf';
 
 %% plot including all files
