@@ -1,0 +1,179 @@
+------------------------
+Energy: Improved (Top_25), time: Reduced (Bottom_25)
+------------------------
+GPT3: 
+- ./../resource/sampling/repos_projects_filtered_top100stars/fieldtrip/utilities/private/ft_postamble_hastoolbox.m 
+	Theme analysis: the differences between original and optimized script is only spacing. The themes are only suggestion but not implemented.
+
+- sampling/repos_projects_filtered_top100stars/Matlab-Machine/030_Data regression prediction based on particle swarm optimization algorithm optimized support vector machine (libsvm)/main.m
+	Theme analysis: Translated code, spacing, merged two plotting statement,minor optimization related to the type of division operator being used (element wise vs matrix division),
+
+sampling/repos_projects_filtered_top100stars/Image-Fusion/General Evaluation Metric/Evaluation/Evaluation_for_Multi_Algorithm.m
+	- Improved in memory: Efficient Data Handling
+	- Theme analysis: Comment Translated, Spacing, Formatting, Function Extraction, Reducing Redundant Code, Efficient Data Handling
+
+sampling/repos_projects_filtered_top100stars/Gait-Tracking-With-x-IMU/Gait Tracking With x-IMU/Script.m
+	- Theme analysis: Replaced element-wise operations with array operations, 
+
+sampling/repos_projects_filtered_top100stars/OptimTraj/demo/minimumSnap/minJerk/MAIN.m
+	- Theme analysis: Small spacing in comments
+
+sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/MATLAB智能算法30个案例分析/chapter22 蚁群算法的优化计算——旅行商问题（TSP）优化/main.m
+	- Theme analysis: Comment Translated, Removed comments, Replaced nested loops for calculating distances between cities with vectorized operations,  Replaced functions (Used `randi` and `randsample` functions for random number generation to avoid unnecessary loops, Replaced `ismember` function with `setdiff` for faster computation)
+
+
+sampling/repos_projects_filtered_top100stars/Math_Model/2-1国赛题目+论文/2012/B149/B149/B149源程序/M/bei_yingli.m
+	- Theme analysis: Comment Translated, Variables Renamed, Loop improvement using size function
+
+LLama:
+sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB图像处理》源文件/本书源文件/chap11/chap11_8.m
+ 	- Improved Memory as well
+	- Theme analysis: Vectorization instead of loop, Replaced function to simplfy loops, spacing, Reducing redundant operations
+
+sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB神经网络原理与实例精解》随书附带源程序/第13章 神经网络应用实例/Elman网络预测上证股市开盘价/elman_stock.m
+ 	- Degraded Memory as well
+	- Theme analysis: Replaced the `for` loop with a `parfor` loop for parallel processing, Removed comments, combined or simplified functions, fprintf instead of disp function
+
+sampling/repos_projects_filtered_top100stars/Matlab-Machine/036_Data regression prediction based on least squares support vector machine/main.m
+	- Theme analysis: Used `fullfile` to construct the file paths, function replacement (Replaced `randperm` with `rng('shuffle')`, Replaced the `sum` with `mean` and the other way), Removed unncessary code, Removed operation, 
+
+sampling/repos_projects_filtered_top100stars/OptimTraj/demo/minimumSnap/minJerk/MAIN.m
+	- Theme analysis: Removed unnecessary comments	
+
+
+sampling/repos_projects_filtered_top100stars/Math_Model/2-1国赛题目+论文/2012/B149/B149/B149源程序/M/wuding2_yingli.m
+	- Theme analysis: Prealloacte memory, Vectorized operations, Avoid repeated indexing, Use `find` instead of loop, 
+
+Mixtral: 
+sampling/repos_projects_filtered_top100stars/Matlab-Machine/029_Time series forecasting based on extreme learning machine/main.m
+	- Memory degraded
+	- Theme analysis: preallocated the matrix with zeros to improve loop performance
+
+sampling/repos_projects_filtered_top100stars/DnCNN/TrainingCodes/DnCNN_TrainingCodes_v1.1/data/GenerateTrainingPatches.m
+	- Theme analysis: Renamed variable, vectorization (reducing the number of nested loops and replacing them with vectorized operations)
+
+sampling/repos_projects_filtered_top100stars/fieldtrip/external/afni/Test_TellAfni.m
+	- the changes are done to improve the memory efficency but it did not. 
+	- Theme analysis: convert structure array to cell array. 
+
+sampling/repos_projects_filtered_top100stars/OptimTraj/demo/minimumSnap/minJerk/MAIN.m
+	- Theme analysis: Removed comments
+
+sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/MATLAB智能算法30个案例分析/chapter22 蚁群算法的优化计算——旅行商问题（TSP）优化/main.m
+	- Memory improved
+ 	- Theme analysis: Use vectorized operations instead of loops, replace builtin function, Avoid unnecessary calculations
+
+ sampling/repos_projects_filtered_top100stars/Math_Model/2-1国赛题目+论文/2012/B149/B149/B149源程序/M/bei_yingli.m
+ 	- Memory improved a bit. Energy improved quite much and time degraded a bit (diff = 0.6)
+  	- Theme analysis: Preallocate memory, comment translated, spacing added
+
+ GPT4:
+ sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB神经网络原理与实例精解》随书附带源程序/第13章 神经网络应用实例/Elman网络预测上证股市开盘价/elman_stock.m
+ 	- Energy improvement is small, Memory and Time  degraded a bit (diff is not high)
+   	- Theme analysis: Removed comments, Ensuring variable is a Column Vector, Reorganized code (Combined related plotting commands) 
+
+
+ sampling/repos_projects_filtered_top100stars/OptimTraj/demo/acrobot/MAIN.m
+ 	- Energy and Memory improvement is small
+ 	- Theme analysis: Replaced individual assignments with struct initialization, struct usage in switch case and grouping code, Removed comments, removing redundant parentheses
+
+ sampling/repos_projects_filtered_top100stars/NaveGo/examples/real-data/navego_example_real_mpu6000.m
+ 	- Energy  improvement is small and Memory and time degraded a bit
+ 	- The files are identical. 
+
+ sampling/repos_projects_filtered_top100stars/fieldtrip/external/fastica/demosig.m
+	- Energy and Memory improvement is small
+ 	- Theme analysis: Preallocation of array, Added comments
+
+ sampling/repos_projects_filtered_top100stars/eeglab/functions/adminfunc/eeglab_options.m
+ 	- Energy  improvement is good and Memory improvement is small and time degraded a bit
+ 	- Theme analysis: nested try block logic improved, removed comments, removed error statement(lasterr)
+
+sampling/repos_projects_filtered_top100stars/NaveGo/examples/real-data/navego_example_real_mpu6000.m
+	- Energy  improvement is small and Memory and time degraded a bit
+ 	- The files are identical.
+
+ sampling/repos_projects_filtered_top100stars/Smart-Algorithm/Immunity_Algorithm/IMA/main.m
+ 	- Energy  improvement is small and Memory improved and time degraded a bit
+	- Theme analysis: Removed Function Call, Vectorized Operations, Preallocated functions (`zpop` Directly into `pop`), Optimized Function (find function to return only first match than all matches)
+
+
+------------------------
+Energy: Reduced (Bottom_25), time: Improved (Top_25)
+------------------------
+
+GPT3: 
+sampling/repos_projects_filtered_top100stars/RankIQA/data/data_generator/distortion_saver.m
+	- Energy degraded, Memory degraded a lot, time improved more, 
+	- Theme analysis: No changes in te code except Added Spacing
+
+sampling/repos_projects_filtered_top100stars/mexopencv/samples/gausian_median_blur_bilateral_filter.m
+	- Energy degraded more, Memory improved a bit, time improved a lot, 
+	- Theme analysis: No changes in the code except Removed comments
+
+sampling/repos_projects_filtered_top100stars/Matlab-Machine/004_Data regression prediction based on support vector machine (libsvm)/main.m
+	- Energy degraded, Memory improved, time improved 
+	- Theme analysis: Comment translated, Improved Code Readability & Maintainability (code formatting and spacing,) Replaced unused variable, Replace element wise operator
+
+sampling/repos_projects_filtered_top100stars/MIMO_OFDM/第9章 MIMO信道容量/Ergodic_Capacity_Correlation.m
+	- Energy degraded, Memory improved, time improved 
+	- Theme analysis: Added comments, Improved Code Readability & Maintainability  (code formatting and spacing),  replaced functions for matrix operation, replaced `clear all` with `clear`, plotting, 
+
+
+sampling/repos_projects_filtered_top100stars/OptimTraj/demo/minimumWork/MAIN_smoothWork.m
+	- Energy degraded, Memory improved, time improved 
+	- The file is identical except some one line of comment.
+
+sampling/repos_projects_filtered_top100stars/DnCNN/TrainingCodes/DnCNN_TrainingCodes_v1.0/data/GenerateData_model_64_25_Res_Bnorm_Adam.m
+	- Energy degraded a lot, Memory degraded, time improved more, 
+	- Theme analysis: Improved Code Readability & Maintainability (Code Formatting, Spacing), Removed commented code 
+
+sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/MATLAB智能算法30个案例分析/chapter25 有导师学习神经网络的回归拟合——基于近红外光谱的汽油辛烷值预测/main.m
+	- Energy degraded a bit, Memory improved, time improved
+	- Theme analysis: Removed comments, comment translated, renamed variables, duplicate code extracted to function, plotting improved by extracting code to a function, 
+
+sampling/repos_projects_filtered_top100stars/OptimTraj/demo/quadRotor3d/MAIN_minTimeTraj.m
+	- Energy degraded, Memory degraded, time improved more
+	- Theme analysis: Improved Code Readability & Maintainability (Code Formatting, Spacing), Removed comments, Modified function to include the paths in a single line
+
+GPT4: 
+sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB图像处理》源文件/本书源文件/chap15/chap15_3.m
+	- Memory improved, Energy degraded
+	- Theme analysis: Comment translated, Memory Management (`clear all` is replaced with `clear`) , Code Clarity (Simplified the range calculation for `x1` and `h1` by using a single variable `range`), Consolidated figure settings, Added Semicolons
+
+sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/RegressionAnalysis回归分析/unlinear_regression.m
+	- Memory improved, Energy degraded a lot
+	- Theme analysis: Code Clarity and Readability (Added Semicolons, Converted the inline anonymous function into a separate function definition), Energy Efficiency (By refactoring the code into a function, we ensure that the function is compiled and optimized by MATLAB's JIT)
+
+sampling/repos_projects_filtered_top100stars/DnCNN/TrainingCodes/DnCNN_TrainingCodes_v1.0/data/GenerateData_model_64_25_Res_Bnorm_Adam.m
+	- Memory degraded, Energy degraded a lot
+	- Theme analysis: Directory Check, Code Clarity and Readability (Removed Unnecessary `clear` and `close all` and Combined `cat` and `clear` commands for `inputs`, `labels`, and `set` to minimize memory usage, Added `.mat` extension to the filename in the `save` command for clarity)
+
+sampling/repos_projects_filtered_top100stars/automatic-driving-decision-and-planning-for-matlab/EMPlannerV0.5/emplanner_init.m
+	- Memory degraded, Energy degraded a bit
+	- Theme analysis: Vectorization (Replaced the explicit array definition of `right_wheel_ground` with `linspace` ), Preallocation (Used `linspace` to generate `vx_break_point` instead of a loop),Loop Optimization,  Use Matrix Operations, Comment translated, Code Clarity (Reorganized code)
+
+Llama: 
+sampling/repos_projects_filtered_top100stars/matlab2tikz/test/examples/example_quivers.m
+	- Time improved more. Memory improved.  
+	- Theme analysis: Vectorization, In-place operations, operator replacement (`./` operator for element-wise division than the `/` operator), Removed unnecessary variables, Added error handling
+
+
+sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/《MATLAB图像处理》源文件/本书源文件/chap6/chap6_16.m
+	- Time improved more. Memory Improved
+	- Theme analysis: Pre-allocation (pre-allocate the matrix with the correct size and data type), Replacement of Vectorization funtions (  `ndgrid` instead of `meshgrid`), FFT optimization, Reducing redundant operations (reduced computation, reduced function call), 
+
+sampling/repos_projects_filtered_top100stars/Matlab-Machine/004_Data regression prediction based on support vector machine (libsvm)/main.m
+	- Time improved more. Memory degraded
+	- Theme analysis: Combined statements, Removed unnecessary `warning off` statement, Reduced code duplication (redundant parentheses, Used `deal` to initialize variables in single line), Replaced function (sum instead of mean), Added semicolon, 
+
+Mixtral:
+sampling/repos_projects_filtered_top100stars/DnCNN/TrainingCodes/DnCNN_TrainingCodes_v1.0/data/GenerateData_model_64_25_Res_Bnorm_Adam.m
+	- Memory degraded more, Energy degraded a lot
+	- Theme analysis: Combined variable assignment, Reorganized the code (clear statements are moved to later so kept in memory for longer), changed function arguments (It uses exist(modelName, 'dir') than checking for file existence (exist(..., 'file')) when dealing with directories.), Added comments, 
+
+sampling/repos_projects_filtered_top100stars/Math_Model/2-1国赛题目+论文/2012/B149/B149/B149源程序/M/beimian_fadianliang.m
+	- Memory and Energy degraded
+	- Theme analysis: Preallocate memory, Vectorize operations, Removed unused variables, Remove commented oout code
+
+
