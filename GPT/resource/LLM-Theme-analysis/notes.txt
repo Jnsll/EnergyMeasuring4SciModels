@@ -1,0 +1,10 @@
+
+Who checked if the themes from LLMs were reliably extracted?
+Listing 2: didn't LLM convert variables xm and fv back to xm1,xm2,xm3 and fv1,fv2,fv3 ?
+How is similarity of themes calculated?
+What is meant by "covered overall half of the mentions (e.g. 500 out of 1000) ?
+Normal distribution of original values needs more explanation (Shapiro-Wilk-test)
+What is exactly meant by baseline?
+Currently, we lack a benchmark for Matlab applications in terms of energy efficiency... (and we provide it with this study?)
+...mentioned 133 times in the reasoning of various files (not so clear what is meant)
+It is not entirely clear what the difference between "no manual inspection" and "others" is.

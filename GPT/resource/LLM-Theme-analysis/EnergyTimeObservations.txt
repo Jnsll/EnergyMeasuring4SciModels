@@ -1,0 +1,126 @@
+
+BPDLX.m:
+Energy : -
+Runtime: +
+Themes:
+    "Improved Code Efficiency"
+    "Improved Code Readability & Maintainability"
+    "Improved Comments"
+Interpretation:
+Using preallocation and logical indexing to avoid switch block nested inside
+for loop might save energy. On the other hand side extracting code blocks
+inside new help functions might cause runtime overhead.
+
+chap11_4.m:
+Energy : -
+Runtime: +
+Themes:
+    "Improved Code Readability & Maintainability"
+    "Removed Unnecessary Code"
+Interpretation:
+Removing calls to 'clear all' and clc might save energy. Extracting code blocks
+inside new help functions might cause runtime overhead.
+
+chapter1_1: unusable due to missing human optimizations
+
+example1.m:
+Energy : +
+Runtime: -
+Themes:
+    "Improved Code Efficiency"
+    "Improved Code Readability & Maintainability"
+    "Improved Indexing & Loops"
+    "Removed Unnecessary Code"
+Interpretation:
+Using fplot instead of ezplot (which takes a function description as a string
+as input might have reduced runtime. Adding results in a struct (for testing)
+might have increased energy.
+
+gen_class_info_cityscapes.m:
+Energy : -
+Runtime: +
+Themes:
+    "Improved Code Efficiency"
+    "Improved Code Readability & Maintainability"
+Interpretation:
+Runtime might have been increased because of load() statement followed by dot
+indexation inferring runtime overhead. Although energy might have been lowered
+by the same construct because a temporary variable could be avoided.
+
+houseL.m:
+Energy : -
+Runtime: +
+Themes:
+    "Improved Code Efficiency"
+    "Improved Code Readability & Maintainability"
+    "Removed Unnecessary Code"
+Interpretation:
+Energy might have been reduced by assigning load() results directly to a variable
+instead of loading it into the workspace first and then assigning it to the
+variable. An other fact that could reduce the energy is suppressing output 
+to the command window. Runtime might have been increased due to assigning 
+output to variable (for testing)
+
+init_workspace.m:
+Energy : +
+Runtime: -
+Themes:
+    "Improved Code Efficiency"
+    "Removed Unnecessary Code"
+Interpretation:
+Energy might have increased due to additional call to rng('default') to set
+a random generator seed. Runtime might have been reduced by omiting unnecessary
+call to tic at the end of the script.
+
+main.m (sampling/repos_projects_filtered_top100stars/Smart-Algorithm/Particle_Swarm_Optimization/PSO-basic/main.m):
+Energy : -
+Runtime: +
+Themes:
+    "Removed Unnecessary Code"
+Interpretation:
+Runtime might have got increased due to extracting functions causing function
+call overhead. Energy might have been reduced by suppressing unused function
+output when calling [~,res] = max(). Also an unnecessary if block inside a
+while loop got removed.
+
+main.m (sampling/repos_projects_filtered_top100stars/Algorithms_MathModels/MATLABæ™ºèƒ½ç®—æ³•30ä¸ªæ¡ˆä¾‹åˆ†æž/chapter22 èšç¾¤ç®—æ³•çš„ä¼˜åŒ–è®¡ç®—â€”â€”æ—…è¡Œå•†é—®é¢˜ï¼ˆTSPï¼‰ä¼˜åŒ–/main.m):
+Energy : -
+Runtime: +
+Themes:
+    "Improved Code Efficiency"
+    "Improved Code Readability & Maintainability"
+    "Improved Indexing & Loops"
+    "Others"
+    "Removed Unnecessary Code"
+Interpretation:
+Energey might have been reduced due to assigning load result directly to variable
+instead of loading into workspace and then assigning to variable. On the other
+hand side this might consume more runtime (due to dot-indexing). Matrix symmetry
+has been taken advantage of which reduced amount of for loop iterations by
+half. This is supposed to save both energy and runtime. Runtime could have
+been increased because of function extraction (function call overhead).
+
+MAIN_minThrottleTraj.m:
+Energy : +
+Runtime: -
+Themes:
+    "Improved Code Efficiency"
+    "Improved Code Readability & Maintainability"
+    "Removed Unnecessary Code"
+Interpretation:
+Runtime might have been reduced by omiting calls to clear and clc. Energy 
+might have been increased due to introduction of temporary help variable.
+
+sa_tsp.m:
+Energy : -
+Runtime: +
+Themes:
+    "Improved Code Efficiency"
+    "Improved Code Readability & Maintainability"
+    "Improved Indexing & Loops"
+    "Others"
+    "Removed Unnecessary Code"
+Interpretation:
+Matrix symmetry has been made use of. This is expected to reduce both runtime
+and energy. Runtime might have been increased due to function call overhead
+(extracting help functions).

@@ -1,0 +1,179 @@
+
+GPT4 vs. human:
+GPT4 uses xlsread instead of readmatrix - which is recommended by Mathworks
+Human introduced more help functions - maybe resulting in more overhead for function calls...?
+GPT4 doesn't break over long lines
+GPT4 introduces new lines to "finalize" script as it "thinks" it should be finalized
+
+---------------------------------------------------------------------------
+Human vs. original:
+chap13_18.m: 802%
+original used clear all and clc. array elements were separated by space and not by comma
+
+chap11_4.m: 371%
+human made a function out of script. Additional lines at the end to return output (3 out of totally 7 lines)
+
+icp_test.m: 327%
+There were 8 additional lines at the end of the function returning result data - because function has not been turned to script back again.
+human introduced if statement inside a while loop to omit redundant code (that was duplicated outside the while loop)
+
+p3.m: 287%
+human used help function to remove code clone.
+
+getEnvironment.m: 250%
+human used newer matlabRelease-function (as recommended by Mathworks) instead of older ver-function.
+Therefore additional processing was necessary to mimic output of ver-function
+
+loadMovieList.m: 221%
+human used high-level Matlab function readlines whereas original used for loop combined with fgets to read lines of a text file.
+
+account4.m: 211%
+human used readmatrix instead of xlsread. human used new variables for sub expressions of formula
+
+ti31.m: 205%
+human used arrayfun instead of for loop and give back output value for function (instead of script)
+
+getVocabList.m: 181%
+human used high-level Matlab function readlines whereas original used for loop combined with fscanf to read lines of text file.
+In addition human used regexpi to extract words and convertStringsToChars to convert string values to char-array
+
+CSA_imaging.m: 174%
+human used help function and anonymous function to reduce code clones
+
+fuzzy_cluster_analysis.m: 172%
+human used matrix property (symmetry) to reduce for loop iterations. Further 10 lines needed for output returning
+
+Test_Brikload.m: 171%
+human suppressed output of unused return argument. Otherwise it's exactly the same. It's hard to imagine why this yields a plus of 5% in
+energy consumption. Has there been a systematic difference in the setup when running the human optimized experiments compared to the
+experiments of the original files?
+
+chap11_2.m: 170%
+human used help function to remove code clone and separated array elements by comma instead of space
+
+GenerateTrainingPatches.m: 162%
+This script didn't run correctly in the original version because the folder 'Train400' was missing.
+So for loops were not entered. Human corrected folder name to some existing folder so that for loops were entered.
+
+example1.m: 158%
+human optimized used much more white space, 4 lines for output returning, used fplot instead of ezplot
+I suspect that white spaces play a significant role for small scripts in an interpreded language like Matlab.
+Because Matlab has been new started everytime before an experiment was run no Matlab internal optimization
+could be used to optimize "white space cleaning"
+
+profit.m: 157%
+human used readmatrix instead of xlsread,  used vectorization instead of for loop, simplified formula
+
+TestScript.m: 152%
+human basically only extracted functions to remove code clones
+
+chapter22_bp.m: 152%
+human extracted help function to avoid code clone. Random generator seed was set to ensure consistency of results.
+14 lines needed to return output data.
+
+chapter16.m: 149%
+human set random generator seed, extracted help function to avoid code clones, 9 lines needed to return output data
+
+crossvalind_lvq.m: 147%
+human set random number seed, extracted help function to avoid code clone, much more white space, 14 lines to return
+output data
+
+navego_example_sensor_read.m: 146%
+human used fullfile() instead of hard-coded folder name
+
+emplanner_init.m: 113%
+human used variable for sub expression of formula
+
+CE_similarity_bb_ARS.m: 109%
+human extracted help function, 9 lines to return output values, suppressed unused function output, added random number seed
+
+
+
+
+sa_tsp.m: 93%
+human reduced loop iterations by making use of matrix symmetry, turned while into for loops, extracted help functions
+to avoid code clones, 6 lines to return output values
+
+houseL.m: 92%
+human used load() instead of load ..., suppressed unnecessary command window output and omitted unnecessary call to clear at end of script
+
+Bp_Ada_Fore.m: 86%
+human set random number seed, used preallocation, white space was used more frequent by human
+
+mushroomsL.m: 82%
+human used load() instead of load ..., x = size(var,1) instead of [x,y] = size(var), suppressed unused function output,
+extracted help function to avoid code clone
+
+MAIN_cstWork.m: 73%
+human reduced double-dot-indexing (e.g. var1.field1.field2), extracted help function to avoid code clone,
+comparable use of white space
+
+lengthstat.m: 70%
+human suppressed unused function output, placed line inside for loop to remove code clone, set random number seed.
+
+(FuzzyMathematical...) main.m: 69%
+human used comma to separate array elements, 4 lines needed to return output values
+
+chap11_4.m: 53%
+human used help function to avoid code clones, used comma to separate array elements, comparable use of white space
+
+(004_Data...) main.m: 51%
+human used readmatrix instad of xlsread, set random number seed, used help functions to avoid code clones, 11 lines needed
+to return output values, comparable use of white space
+
+FuzzyNet.m: 50%
+human set random number seed, extracted many help functions to avoid massive code cloning, deleted one for loop because it
+was not obvious what it was used for.
+
+(chapter22...) main.m: 42%
+human used load() instead of load ... as suggested by Mathworks, reduce for loop iterations and make use of matrix symmetry,
+replace while with for loop, 6 lines to return output values, used help function to avoid code clones, comparable use of white space
+between human optimized and original
+
+(034_Data...) main.m: 25%
+human used readmatrix instead of xlsread, set random generator seed, used help functions to avoid code clones,
+suppressed unused function output, 7 lines to return output values
+---------------------------------------------------------------------------
+
+GPT4 vs. original
+TestScript.m: 104%
+GPT4 used repmat to group calls to sprintf
+
+
+---------------------------------------------------------------------------
+HYPOTHESISES (for energy saving patterns)
+
+- Don't address persistent variables directly if not needed. Rather do operations as a local variable and assign
+  value to the persistent variable in the end. (getEnvironment)
+
+- White space might play a role because cleaning white spaces is the first part when running interpreted code if the code
+  is executed in a freshly started Matlab session. (chapter1_1)
+
+- Iterative dot-indexing might use more energy than working with a temporary local variable
+  Ex.: (MAIN_cstWork, MAIN_minThrottleTraj)
+  var.field1.a = 0;
+  var.field1.b = 0;
+  var.field1.c = 0;
+
+  field1.a = 0;
+  field1.b = 0;
+  field1.c = 0;
+  var.field1 = field1;
+
+- load matFile var1 var2 var3 (Bp_Ada_Fore, FuzzyNet, chapter10)
+  instead of just
+  load matFile
+
+- extract operations not depending on loop iteration out of the (inner) loop (chapter10)
+
+- set random number seed rng("default") instead of setting no seed (CE_similarity_bb_ARS)
+
+- prefer rng("default") over rng(0) (CE_similarity_bb_ARS)
+
+- don't use tic when toc is not called later on. (init_workspace)
+
+- how about duplicated code in both arms of an if statement? (CE_similarity_bb_ARS)
+
+- is full double for-loop better than reduced for-loop for lower triangular matrix plus matrix transposition? (fuzzy_cluster_analysis, sa_tsp)
+
+- is vectorization always better? (Untitled.m)

@@ -97,7 +97,7 @@ n = dict2.numEntries;
 
 %%
 
-% dataHuman = makeData(sortedThemesNumericHumanOptimized,n);
+dataHuman = makeData(sortedThemesNumericHumanOptimized,n);
 dataGpt3 = makeData(dataGpt3,n);
 dataGpt4 = makeData(dataGpt4,n);
 dataLlama = makeData(dataLlama,n);
