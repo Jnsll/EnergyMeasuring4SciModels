@@ -1,0 +1,45 @@
+
+Energy -: Using preallocation and logical indexing to avoid switch block nested inside for loop might save energy.
+          "Improved Code Efficiency"
+Energy -: Removing calls to 'clear all' and clc might save energy.
+          "Removed Unnecessary Code"
+Energy -: Energy might have been reduced by assigning load() results directly to a variable instead of loading it into the workspace first and then assigning it to the variable.
+          "Improved Code Efficiency"
+Energy -: An other fact that could reduce the energy is suppressing output to the command window.
+          "Improved Code Efficiency"
+Energy -: Energy might have been reduced by suppressing unused function output when calling [~,res] = max(). Also an unnecessary if block inside a while loop got removed.
+          "Removed Unnecessary Code"
+
+Runtime +: Runtime might have got increased due to extracting functions causing function call overhead.
+           "Improved Code Readability & Maintainability"
+Runtime +: Runtime might have been increased because of load() statement followed by dot indexation inferring runtime overhead.
+           "Improved Code Efficiency"
+Runtime +: Runtime might have been increased due to assigning output to variable (for testing)
+           "--no optimization theme--"
+Runtime +: On the other hand side this might consume more runtime (due to dot-indexing).
+           "Improved Code Efficiency"
+
+Matrix symmetry has been taken advantage of which reduced amount of for loop iterations by half. This is supposed to save both energy and runtime.
+
+Runtime -: Using fplot instead of ezplot (which takes a function description as a string as input) might have reduced runtime.
+           "Improved Code Efficiency"
+           "Improved Code Readability & Maintainability"
+
+Runtime -: Runtime might have been reduced by omiting unnecessary call to tic at the end of the script.
+           "Removed Unnecessary Code"
+Runtime -: Runtime might have been reduced by omiting calls to clear and clc.
+           "Removed Unnecessary Code"
+
+Energy +: Adding results in a struct (for testing) might have increased energy.
+          "--no optimization theme--"
+Energy +: Energy might have increased due to additional call to rng('default') to set a random generator seed.
+          "--no optimization theme--"
+Energy +: Energy might have been increased due to introduction of temporary help variable.
+          "Improved Code Readability & Maintainability"
+
+
+"Improved Code Efficiency": tends to Energy + / Runtime -
+"Removed Unnecessary Code": tends to Energy - / Runtime -
+"Improved Code Readability & Maintainability": tends to Energy + Runtime +/-
+"Improved Indexing & Loops": seems to have no clear effect
+"Others": seems to have no clear effect
