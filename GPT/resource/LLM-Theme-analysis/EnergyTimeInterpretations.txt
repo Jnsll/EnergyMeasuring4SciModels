@@ -1,6 +1,7 @@
 
 Energy -: Using preallocation and logical indexing to avoid switch block nested inside for loop might save energy.
           "Improved Code Efficiency"
+          "Improved Indexing & Loops"
 Energy -: Removing calls to 'clear all' and clc might save energy.
           "Removed Unnecessary Code"
 Energy -: Energy might have been reduced by assigning load() results directly to a variable instead of loading it into the workspace first and then assigning it to the variable.
@@ -12,7 +13,7 @@ Energy -: Energy might have been reduced by suppressing unused function output w
 
 Runtime +: Runtime might have got increased due to extracting functions causing function call overhead.
            "Improved Code Readability & Maintainability"
-Runtime +: Runtime might have been increased because of load() statement followed by dot indexation inferring runtime overhead.
+Runtime +: Runtime might have been increased because of load() statement followed by dot indexation introducing runtime overhead.
            "Improved Code Efficiency"
 Runtime +: Runtime might have been increased due to assigning output to variable (for testing)
            "--no optimization theme--"
@@ -38,7 +39,7 @@ Energy +: Energy might have been increased due to introduction of temporary help
           "Improved Code Readability & Maintainability"
 
 
-"Improved Code Efficiency": tends to Energy + / Runtime -
+"Improved Code Efficiency": tends to Energy - / Runtime +
 "Removed Unnecessary Code": tends to Energy - / Runtime -
 "Improved Code Readability & Maintainability": tends to Energy + Runtime +/-
 "Improved Indexing & Loops": seems to have no clear effect
