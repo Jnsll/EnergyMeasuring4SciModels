@@ -81,6 +81,13 @@ Interpretation:
 Matrix symmetry has been made use of. This is expected to reduce both runtime and energy.
 Runtime +: Runtime might have been increased due to function call overhead (extracting help functions).
 
+
+
+
+
+
+
+
 Energy + / Runtime -
 
 4) example1.m:
