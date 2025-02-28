@@ -10,3 +10,6 @@ network.lic
 
 # temporary files
 *~$*
+
+# data is on GitHub as a zip file.
+GPT/resource/Optimzation_results/
