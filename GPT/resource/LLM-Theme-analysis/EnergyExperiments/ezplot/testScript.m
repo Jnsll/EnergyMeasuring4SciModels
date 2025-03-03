@@ -31,21 +31,21 @@ for idx = 1:numRepetitions * 2
     % pause
     pause(pauseDuration)
     if order(idx) == 1
-        callEzplot % warm up
+        callEzplot % callEzplotWithFigure % warm up
 
         tic
         ticke
-        callEzplot % measurement
+        callEzplot % callEzplotWithFigure % measurement
         [energy1Brutto(count1),energy1Net(count1)] = tocke;
         time1(count1) = toc;
 
         count1 = count1 + 1;
     elseif order(idx) == 2
-        callFplot % warm up
+        callFplot % callFplotWithFigure % warm up
 
         tic
         ticke
-        callFplot % measurement
+        callFplot % callFplotWithFigure % measurement
         [energy2Brutto(count2),energy2Net(count2)] = tocke;
         time2(count2) = toc;
         
