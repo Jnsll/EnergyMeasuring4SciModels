@@ -10,7 +10,7 @@ addpath(genpath('/home/jan-andrea-bard/GitLab/general-matlab-files'))
 addpath(genpath('/home/jan-andrea-bard/GitLab/matlab-tools'))
 clear
 numRepetitions = 30;
-pauseDuration = 10;
+pauseDuration = 5;
 order = [ones(1,numRepetitions),ones(1,numRepetitions) * 2];
 order = order(randperm(numRepetitions * 2));
 count1 = 1;
