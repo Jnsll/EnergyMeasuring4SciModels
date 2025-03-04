@@ -88,8 +88,11 @@ Runtime +: Runtime might have been increased due to function call overhead (extr
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ec33a1bcaadea98d0472e5b518a0f8fd9aed5e16
 Energy + / Runtime -
 
 4) example1.m:
